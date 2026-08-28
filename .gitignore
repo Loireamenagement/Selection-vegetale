@@ -1,0 +1,18 @@
+# Fichiers temporaires de génération
+outils/*.pkl
+outils/__pycache__/
+*.pyc
+
+# Tableurs de travail générés
+*.xlsx
+!docs/*.xlsx
+
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
