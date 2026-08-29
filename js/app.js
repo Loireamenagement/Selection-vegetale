@@ -1,3 +1,29 @@
+/* ============================================================
+   IDENTITÉ — le seul bloc à modifier pour personnaliser
+   ============================================================ */
+const MARQUE = {
+  nom:      'Loire Aménagement',
+  baseline: 'Vivez vos extérieurs !',
+  gerant:   'Benoît Courtemanche',
+  fonction: 'Gérant',
+  coord: [
+    'Ancenis, Loire-Atlantique',
+    '06 99 86 18 56 · 02 40 96 16 13',
+    'contact@loire-amenagement.com',
+    'www.loire-amenagement.com'
+  ],
+  // Logo affiché sur les documents. Laisser null pour un rendu typographique.
+  logo: 'assets/logo.png',
+  logoHauteur: 62,
+  // Couleurs relevées dans le logo
+  couleur: '#0C5AA2',       // bleu Loire — titres, filets, en-têtes
+  accent:  '#7BBB43',       // vert prairie — mises en valeur
+  accent2: '#3BACD4',       // bleu clair — baseline
+  // Mentions légales du pied de page. Laisser vide pour masquer.
+  legal: 'Loire Aménagement · SIRET 819 008 608 00013'
+};
+const CLIENT = { nom: '', adresse: '', ville: '', projet: '' };
+
 const MOIS = ['J','F','M','A','M','J','J','A','S','O','N','D'];
 const MOIS_LONG = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 
@@ -133,13 +159,15 @@ function moisFloraison(p){
 /* ---------- filtrage ---------- */
 function correspond(p){
   if(F.q){
-    const t = (p.lat+' '+p.fr).toLowerCase();
-    if(!t.includes(F.q)) return false;
+    const norm = t => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    if(!norm(p.lat+' '+p.fr).includes(norm(F.q))) return false;
   }
-  if(F.type.size && ![...F.type].some(v=>p.type.includes(v))) return false;
-  if(F.expo.size && ![...F.expo].some(v=>p.expo.includes(v))) return false;
-  if(F.sol.size && ![...F.sol].some(v=>p.sol.toLowerCase().includes(v.toLowerCase().split(' ')[0]))) return false;
-  if(F.hum.size && ![...F.hum].some(v=>p.hum.includes(v))) return false;
+  const sansAcc = t => t.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  if(F.type.size && ![...F.type].some(v=>sansAcc(p.type).includes(sansAcc(v)))) return false;
+  if(F.expo.size && ![...F.expo].some(v=>sansAcc(p.expo).includes(sansAcc(v)))) return false;
+  if(F.sol.size && ![...F.sol].some(v=>sansAcc(p.sol).includes(sansAcc(v.split(' ')[0])))) return false;
+  if(F.hum.size && ![...F.hum].some(v=>sansAcc(p.hum).includes(sansAcc(v)))) return false;
   if(F.bdm.size){
     const rang = {'Front de mer':2,'Second rideau':1,'Déconseillé en bord de mer':0};
     const exige = Math.max(...[...F.bdm].map(v=>rang[v]));
@@ -541,6 +569,17 @@ document.addEventListener('keydown', e=>{
   }
 });
 
+function appliquerMarque(){
+  const r = document.documentElement.style;
+  r.setProperty('--vert', MARQUE.couleur);
+  r.setProperty('--mousse', MARQUE.accent);
+  const t = document.querySelector('header h1');
+  if(t) t.textContent = MARQUE.nom;
+  const s = document.querySelector('header .sub');
+  if(s) s.textContent = 'Sélection végétale';
+}
+
+appliquerMarque();
 bâtirFiltres();
 rendre();
 majCompteurFav();
@@ -548,11 +587,7 @@ majCompteurFav();
 
 /* ============ Document de proposition ============ */
 const CFG = { coef: 2.2, mode: 'client' };
-const ENTREPRISE = {
-  nom: 'Loire Aménagement',
-  coord: 'Paysagiste — conception et création de jardins\nSecteur d\'Ancenis, Loire-Atlantique\ncontact@exemple.fr · 02 00 00 00 00'
-};
-const CLIENT = { nom: 'Nom du client', chantier: 'Adresse du chantier' };
+
 
 function dateFr(){
   return new Date().toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
@@ -642,8 +677,26 @@ function ouvrirDocument(){
       </div>`;
 
   /* ---- reglages, uniquement en interne ---- */
-  const reglages = client ? '' : `
+  const saisie = `
     <div style="padding:16px 18px 0">
+      <div class="reglages">
+        <label style="flex:1.4;min-width:180px">Nom du client
+          <input type="text" id="c-nom" value="${CLIENT.nom}" placeholder="M. et Mme Dupont">
+        </label>
+        <label style="flex:1.6;min-width:200px">Adresse du chantier
+          <input type="text" id="c-adr" value="${CLIENT.adresse}" placeholder="12 rue des Jardins">
+        </label>
+        <label style="flex:1.2;min-width:150px">Code postal et ville
+          <input type="text" id="c-vil" value="${CLIENT.ville}" placeholder="44150 Ancenis">
+        </label>
+        <label style="flex:1.4;min-width:170px">Projet
+          <input type="text" id="c-prj" value="${CLIENT.projet}" placeholder="Massif d'entrée">
+        </label>
+      </div>
+    </div>`;
+
+  const reglages = client ? '' : `
+    <div style="padding:10px 18px 0">
       <div class="reglages">
         <label>Coefficient de vente
           <input type="number" id="r-coef" min="1" max="6" step="0.05" value="${CFG.coef}">
@@ -670,23 +723,33 @@ function ouvrirDocument(){
       <button class="pri" id="d-pdf">Imprimer / Enregistrer en PDF</button>
     </div>
 
+    ${saisie}
     ${reglages}
 
-    <div class="page">
+    <div class="page" style="--m:${MARQUE.couleur};--a:${MARQUE.accent};--a2:${MARQUE.accent2}">
       ${bandeau}
       <div class="dh">
-        <div>
-          <div class="ent" contenteditable="true">${ENTREPRISE.nom}</div>
-          <div class="coord" contenteditable="true">${ENTREPRISE.coord.replace(/\n/g,'<br>')}</div>
+        <div class="ident">
+          ${MARQUE.logo
+            ? `<img class="logo" src="${MARQUE.logo}" alt="${MARQUE.nom}"
+                 style="height:${MARQUE.logoHauteur}px"
+                 onerror="this.outerHTML='<div class=\'ent\'>${MARQUE.nom}</div>'">`
+            : `<div class="ent">${MARQUE.nom}</div>`}
+          <div class="bl">${MARQUE.baseline}</div>
+          <div class="coord" contenteditable="true">
+            ${MARQUE.gerant}${MARQUE.fonction?', '+MARQUE.fonction.toLowerCase():''}<br>
+            ${MARQUE.coord.join('<br>')}
+          </div>
         </div>
         <div class="droite">
-          <b contenteditable="true">${CLIENT.nom}</b>
-          <span contenteditable="true">${CLIENT.chantier}</span><br>
-          ${dateFr()}<br>Réf. ${REF}
+          <b>${CLIENT.nom || '<span class="vide2">Nom du client</span>'}</b>
+          ${CLIENT.adresse ? CLIENT.adresse+'<br>' : ''}${CLIENT.ville || ''}
+          <div class="meta2">${dateFr()}<br>Réf. ${REF}</div>
         </div>
       </div>
 
       <h1 class="dtitre">${client ? 'Palette végétale proposée' : 'Récapitulatif des végétaux'}</h1>
+      ${CLIENT.projet ? `<p class="projet">${CLIENT.projet}</p>` : ''}
       <p class="dsstitre">${nbSujets} sujets · ${especes.length} espèces · environ ${fmt(Math.round(surface))} m² plantés</p>
 
       ${client ? `<p class="intro">Cette palette a été composée pour les conditions de votre terrain :
@@ -727,7 +790,14 @@ function ouvrirDocument(){
              Des tarifs dégressifs s'appliquent aux quantités supérieures : vérifier les seuils
              avant commande. Disponibilités à confirmer auprès du fournisseur.`}
       </div>
+      ${MARQUE.legal ? `<div class="legal">${MARQUE.legal}</div>` : ''}
     </div>`;
+
+  [['c-nom','nom'],['c-adr','adresse'],['c-vil','ville'],['c-prj','projet']].forEach(([id,cle])=>{
+    const ch = document.getElementById(id);
+    ch.addEventListener('input', e=>{ CLIENT[cle] = e.target.value; });
+    ch.addEventListener('change', ()=>ouvrirDocument());
+  });
 
   doc.querySelector('.modes').onclick = e=>{
     const b = e.target.closest('button'); if(!b) return;
@@ -744,7 +814,7 @@ function ouvrirDocument(){
   const mail = document.getElementById('d-mail');
   if(mail) mail.onclick = ()=>{
     const corps =
-`Bonjour,
+`Bonjour${CLIENT.nom ? ' '+CLIENT.nom : ''},
 
 Vous trouverez ci-joint la palette végétale proposée pour votre projet.
 
@@ -755,8 +825,11 @@ Chaque espèce est accompagnée de sa fiche technique : conditions de culture, p
 Je reste à votre disposition pour en discuter.
 
 Cordialement,
-${document.querySelector('.dh .ent').textContent}`;
-    location.href = 'mailto:?subject=' + encodeURIComponent('Palette végétale — ' + REF) +
+
+${MARQUE.gerant}
+${MARQUE.nom} — ${MARQUE.baseline}
+${MARQUE.coord.join(' · ')}`;
+    location.href = 'mailto:?subject=' + encodeURIComponent('Palette végétale' + (CLIENT.projet ? ' — '+CLIENT.projet : '') + ' — ' + REF) +
                     '&body=' + encodeURIComponent(corps);
   };
 
