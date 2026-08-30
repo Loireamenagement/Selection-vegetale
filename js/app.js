@@ -207,6 +207,10 @@ function rendre(){
   g.innerHTML = res.map(p=>`
     <div class="cwrap">
     <button class="carte" data-lat="${p.lat}">
+      ${p.ph.length
+        ? `<img class="vign" src="${urlPhoto(p)}" alt="" loading="lazy"
+             onerror="this.remove()">`
+        : `<div class="vign vide3">Pas de photo</div>`}
       <div>
         <div class="nom">${p.fr}</div>
         <div class="lat">${p.lat}</div>
@@ -223,6 +227,9 @@ function rendre(){
     </div>`).join('');
 }
 const fmt = n => String(n).replace('.',',');
+const clePhoto = lat => lat.toLowerCase().normalize('NFD')
+  .replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const urlPhoto = (p, i=1) => `assets/photos/${clePhoto(p.lat)}-${i}.jpg`;
 const dens = d => d>=1 ? fmt(d)+' sujets/m²' : fmt(Math.round(10/d)/10)+' m² par sujet';
 const eur = n => n.toFixed(2).replace('.',',')+' €';
 const prixMin = p => eur(Math.min(...p.refs.map(r=>r.px)));
@@ -346,6 +353,13 @@ function ouvrirFiche(p){
   const mf = moisFloraison(p);
   const couleurs = p.cflo==='—' ? [] : p.cflo.split(',').map(s=>s.trim());
   f.innerHTML = `
+    ${p.ph.length ? `<div class="galerie">
+      <img id="g-grande" src="${urlPhoto(p, p.ph[0])}" alt="${p.fr}">
+      ${p.ph.length > 1 ? `<div class="g-mini">
+        ${p.ph.map((n,i)=>`<img class="${i?'':'on'}" data-n="${n}"
+            src="${urlPhoto(p,n)}" alt="">`).join('')}
+      </div>` : ''}
+    </div>` : ''}
     <div class="fhead">
       <div class="fr">${p.fr}</div>
       <div class="lat">${p.lat}</div>
@@ -443,6 +457,13 @@ function ouvrirFiche(p){
   surf.addEventListener('input',()=>recalc('s'));
   lng.addEventListener('input',()=>recalc('l'));
 
+  const mini = f.querySelector('.g-mini');
+  if(mini) mini.onclick = e=>{
+    const im = e.target.closest('img'); if(!im) return;
+    f.querySelector('#g-grande').src = urlPhoto(p, +im.dataset.n);
+    mini.querySelectorAll('img').forEach(x=>x.classList.toggle('on', x===im));
+  };
+
   f.querySelector('.fclose').onclick = fermerFiche;
   const st = f.querySelector('.star');
   st.classList.toggle('on', estFavori(p.lat));
@@ -484,6 +505,9 @@ function ouvrirPanier(){
   const el = document.getElementById('panier');
   const items = PANIER.length ? PANIER.map(x=>`
     <div class="pitem" data-k="${x.k}">
+      ${(DATA.find(d=>d.lat===x.lat)||{ph:[]}).ph.length
+        ? `<img class="pvign" src="assets/photos/${clePhoto(x.lat)}-1.jpg" alt="" loading="lazy" onerror="this.remove()">`
+        : ''}
       <div class="info">
         <div class="nom">${x.fr}</div>
         <div class="det"><span class="lat">${x.lat}</span>${x.cv?' '+x.cv:''} · ${x.ct}${x.tl?' · '+x.tl:''}</div>
@@ -650,6 +674,7 @@ function ouvrirDocument(){
   /* ---- fiches techniques ---- */
   const fiches = especes.map(p=>`
     <div class="fichetec">
+      ${p.ph.length ? `<img class="ftphoto" src="${urlPhoto(p, p.ph[0])}" alt="">` : ''}
       <h4>${p.fr}</h4>
       <div class="sl"><span class="lat">${p.lat}</span> · ${p.type}</div>
       <dl class="gr">
