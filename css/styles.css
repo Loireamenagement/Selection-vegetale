@@ -404,3 +404,35 @@ table.dev .n2{font-size:11px;color:var(--encre-2)}
   font-size:15px;font-weight:600;color:var(--a2);margin:0 0 3px;
 }
 @media print{ .dh .droite .vide2{display:none} }
+
+/* ---------- photographies ---------- */
+.carte .vign{
+  width:calc(100% + 28px);margin:-13px -14px 2px;height:150px;
+  object-fit:cover;display:block;border-radius:var(--r) var(--r) 0 0;
+  background:#EDEBE2;
+}
+.carte .vign.vide3{
+  display:grid;place-items:center;font-size:11.5px;color:#B9BDB8;
+  background:repeating-linear-gradient(45deg,#F1EFE7,#F1EFE7 8px,#EDEBE2 8px,#EDEBE2 16px);
+}
+.galerie{background:#EDEBE2}
+.galerie>img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.g-mini{display:flex;gap:4px;padding:6px;background:var(--carte)}
+.g-mini img{
+  width:58px;height:58px;object-fit:cover;border-radius:6px;cursor:pointer;
+  opacity:.55;border:2px solid transparent;transition:opacity .12s;
+}
+.g-mini img:hover{opacity:.85}
+.g-mini img.on{opacity:1;border-color:var(--mousse)}
+.pitem .pvign{
+  width:56px;height:56px;object-fit:cover;border-radius:7px;flex:0 0 auto;
+  background:#EDEBE2;
+}
+.fichetec{position:relative;padding-left:15px}
+.fichetec .ftphoto{
+  float:right;width:96px;height:96px;object-fit:cover;border-radius:6px;
+  margin:0 0 8px 12px;
+}
+@media print{
+  .fichetec .ftphoto{width:84px;height:84px}
+}
