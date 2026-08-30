@@ -45,11 +45,12 @@ dont le chemin est indiqué en tête de `outils/nettoyage.py`.
 | Élément | État |
 |---|---|
 | Espèces issues du catalogue | 594 |
-| Fiches horticoles complètes | 50 |
+| Fiches horticoles complètes | 201 (couvrant 304 écritures et 79 % des références) |
 | Références commerciales | 1 884 |
 | Filtres | Type, exposition, sol, humidité, rusticité, littoral, hauteur, feuillage, floraison, plantation, entretien |
 | Chiffrage | Par surface (densité) et par longueur (distance de plantation) |
 | Favoris | Collections par usage, en mémoire de session uniquement |
+| Documents | Palette client sans prix · Récapitulatif interne chiffré |
 | Envoi au client | Simulé |
 
 ## Données commerciales
