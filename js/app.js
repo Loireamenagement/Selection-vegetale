@@ -24,6 +24,16 @@ const MARQUE = {
 };
 const CLIENT = { nom: '', adresse: '', ville: '', projet: '' };
 
+const RISQ = {
+  tox:{lib:'Toxique par ingestion',    ic:'☠'},
+  irr:{lib:'Irritant au contact',      ic:'✋'},
+  epi:{lib:'Épineux',                  ic:'✷'},
+  pol:{lib:'Pollen allergisant',       ic:'❋'},
+  env:{lib:'Envahissante ou réglementée', ic:'⇗'},
+  rac:{lib:'Racines envahissantes',    ic:'⌇'}
+};
+const forte = p => p.rq.some(r=>r.n===2);
+
 const MOIS = ['J','F','M','A','M','J','J','A','S','O','N','D'];
 const MOIS_LONG = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 
@@ -61,6 +71,7 @@ function majCompteurFav(){
 const F = {
   q:'', type:new Set(), expo:new Set(), sol:new Set(), hum:new Set(),
   feu:new Set(), ent:new Set(), plant:new Set(), mois:new Set(), bdm:new Set(),
+  sansRq:new Set(),
   rust:0, hmax:20
 };
 
@@ -112,6 +123,13 @@ function bâtirFiltres(){
     </div>
     ${g('Se plante en','plant',OPTIONS.plant)}
     ${g("Niveau d'entretien",'ent',OPTIONS.ent)}
+    <div class="fgroup">
+      <span class="flabel">Écarter les espèces…</span>
+      <div class="chips" data-cle="sansRq">
+        ${['tox','epi','irr','pol','env','rac'].map(k=>
+          `<button class="chip rq" data-v="${k}">${RISQ[k].ic} ${RISQ[k].lib.split(' ')[0].toLowerCase()}</button>`).join('')}
+      </div>
+    </div>
     <button id="reset">Effacer les filtres</button>`;
 
   el.addEventListener('click', e=>{
@@ -137,7 +155,7 @@ function bâtirFiltres(){
     rendre();
   });
   document.getElementById('reset').addEventListener('click', ()=>{
-    F.q=''; ['type','expo','sol','hum','feu','ent','plant','mois','bdm'].forEach(k=>F[k].clear());
+    F.q=''; ['type','expo','sol','hum','feu','ent','plant','mois','bdm','sansRq'].forEach(k=>F[k].clear());
     F.rust=0; F.hmax=20;
     el.querySelectorAll('.chip.on').forEach(c=>c.classList.remove('on'));
     document.getElementById('q').value='';
@@ -180,6 +198,7 @@ function correspond(p){
     const mf = moisFloraison(p);
     if(![...F.mois].every(m=>mf.includes(m))) return false;
   }
+  if(F.sansRq.size && p.rq.some(r=>F.sansRq.has(r.c))) return false;
   if(F.rust && p.rust > F.rust) return false;
   if(F.hmax<20 && p.h > F.hmax) return false;
   return true;
@@ -220,6 +239,11 @@ function rendre(){
         <span>${p.rust} °C</span><span>${p.feu}</span>
         ${p.bdm==='Front de mer'?'<span style="color:var(--mousse);font-weight:600">Front de mer</span>':''}
       </div>
+      ${p.rq.length ? `<div class="rqline ${forte(p)?'f':''}">
+        ${[...new Set(p.rq.map(r=>r.c))].map(c=>
+          `<span title="${RISQ[c].lib}">${RISQ[c].ic}</span>`).join('')}
+        <b>${forte(p) ? 'Attention' : 'Vigilance'}</b>
+      </div>` : ''}
       ${frise(p)}
       <div class="prix">${prixMin(p)} <span>HT · ${p.refs.length} calibre${p.refs.length>1?'s':''}</span></div>
     </button>
@@ -406,6 +430,15 @@ function ouvrirFiche(p){
         <p class="txt" style="margin:0 0 8px">${p.style}.</p>
         <p class="txt gris" style="margin:0">S'associe avec ${p.asso.toLowerCase()}.</p>
       </div>
+
+      ${p.rq.length ? `<div class="fsec">
+        <h3>Précautions</h3>
+        ${p.rq.map(r=>`<div class="rqbloc n${r.n}">
+          <div class="rqt"><span class="ic">${RISQ[r.c].ic}</span>${RISQ[r.c].lib}
+            <em>${r.n===2?'attention forte':'vigilance'}</em></div>
+          <p>${r.t}</p>
+        </div>`).join('')}
+      </div>` : ''}
 
       <div class="fsec">
         <h3>Entretien — niveau ${p.ent.toLowerCase()}</h3>
@@ -690,6 +723,8 @@ function ouvrirDocument(){
       <p><b>Situation :</b> ${p.style}.</p>
       <p><b>Associations :</b> ${p.asso}.</p>
       <p class="ent"><b>Entretien (${p.ent.toLowerCase()}) :</b> ${p.cons}</p>
+      ${p.rq.length ? `<p class="rqdoc"><b>Précautions :</b> ${
+        p.rq.map(r=>`${RISQ[r.c].lib.toLowerCase()} — ${r.t}`).join(' ')}</p>` : ''}
     </div>`).join('');
 
   /* ---- totaux, uniquement en interne ---- */
@@ -798,6 +833,22 @@ function ouvrirDocument(){
           ? `Cette palette ne présente pas de floraison en ${trous.join(', ')}. Un arbuste à floraison hivernale ou une graminée à épis persistants comblerait ce creux.`
           : `Cette palette assure une présence florale sur l'ensemble de l'année.`}
       </p>
+
+      ${(() => {
+        const g = especes.filter(forte);
+        if(!g.length) return '';
+        return `<div class="dsec">Précautions particulières</div>
+        <p class="txt" style="font-size:12.5px;margin:0 0 10px;line-height:1.55">
+          Les espèces suivantes demandent une attention particulière selon l'usage du jardin
+          et la présence éventuelle de jeunes enfants ou d'animaux. Les autres végétaux de
+          cette palette ne présentent pas de risque notable.</p>
+        <div class="alertes">${g.map(p=>`
+          <div class="al">
+            <div class="alt">${p.fr} <span class="lat">${p.lat}</span></div>
+            ${p.rq.filter(r=>r.n===2).map(r=>
+              `<p><b>${RISQ[r.c].lib} :</b> ${r.t}</p>`).join('')}
+          </div>`).join('')}</div>`;
+      })()}
 
       <div class="dsec">Fiches techniques des espèces retenues</div>
       ${fiches}

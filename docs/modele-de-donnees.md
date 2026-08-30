@@ -29,7 +29,17 @@ taille, prix) sont rattachées à la fiche sous forme de références.
 | `style` | Style et usages | Fiche | Texte |
 | `asso` | Associations | Fiche | Texte |
 | `cons` | Conseils d'entretien | Fiche | Texte |
+| `rq` | Risques | Filtre d'exclusion, encart fiche, document | Tableau |
+| `ph` | Photographies | Numéros des vues disponibles | Tableau |
 | `refs` | Références commerciales | Choix du calibre | Tableau |
+
+## Risques
+
+Chaque risque porte une catégorie (`tox` toxique par ingestion, `irr` irritant au
+contact, `epi` épineux, `pol` pollen allergisant, `env` envahissante ou réglementée,
+`rac` racines envahissantes) et un niveau : 1 pour une vigilance simple, 2 pour une
+attention forte. La section « Précautions particulières » du document client
+n'apparaît que si la sélection contient au moins une espèce de niveau 2.
 
 ## Champs d'une référence commerciale
 

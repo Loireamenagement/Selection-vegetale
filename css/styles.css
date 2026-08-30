@@ -436,3 +436,40 @@ table.dev .n2{font-size:11px;color:var(--encre-2)}
 @media print{
   .fichetec .ftphoto{width:84px;height:84px}
 }
+
+/* ---------- signalement des risques ---------- */
+.chip.rq{font-size:12px}
+.chip.rq.on{background:#8A3A1E;border-color:#8A3A1E}
+.rqline{
+  display:flex;align-items:center;gap:5px;font-size:11px;color:#8A6A20;
+  background:#FDF6E7;border:1px solid #EBD9AE;border-radius:6px;padding:4px 8px;
+}
+.rqline b{font-weight:600;letter-spacing:.02em}
+.rqline.f{color:#8A3A1E;background:#FBEDE8;border-color:#E4BFB2}
+.rqbloc{
+  border-left:3px solid #E0C77E;background:#FDF9F0;border-radius:0 8px 8px 0;
+  padding:10px 13px;margin-bottom:8px;
+}
+.rqbloc.n2{border-left-color:#B3462C;background:#FCF1ED}
+.rqt{
+  display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;
+  color:#7A5E18;margin-bottom:4px;
+}
+.rqbloc.n2 .rqt{color:#8A3A1E}
+.rqt .ic{font-size:14px}
+.rqt em{
+  font-style:normal;font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+  background:rgba(0,0,0,.06);border-radius:99px;padding:2px 7px;margin-left:auto;
+}
+.rqbloc p{margin:0;font-size:13.5px;line-height:1.5;color:var(--encre)}
+
+/* document */
+.page .alertes{display:flex;flex-direction:column;gap:8px;margin-bottom:6px}
+.page .al{
+  border:1px solid #E4BFB2;border-left:3px solid #B3462C;border-radius:0 6px 6px 0;
+  padding:9px 12px;background:#FCF6F4;break-inside:avoid;page-break-inside:avoid;
+}
+.page .alt{font-size:13.5px;font-weight:700;color:#8A3A1E;margin-bottom:3px}
+.page .alt .lat{font-weight:400;color:var(--encre-2);font-size:12px}
+.page .al p{margin:0 0 3px;font-size:11.5px;line-height:1.5}
+.page .rqdoc{font-size:11px;line-height:1.45;color:#7A5E18;margin-top:5px}

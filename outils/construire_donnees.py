@@ -18,6 +18,7 @@ from fiches6 import FICHES6, ALIAS6
 
 ALIAS = {**ALIAS2, **ALIAS3, **ALIAS4, **ALIAS5, **ALIAS6}
 from complements import COMPLEMENTS
+from risques import RISQUES
 
 def toutes_les_fiches():
     """Lot 1 (complements separes) + lot 2 (complements integres)."""
@@ -83,6 +84,7 @@ for f in FICHES_TOUTES:
     d = dict(f)
     d["refs"] = sorted(refs, key=lambda z: z["px"] or 0)
     d["ph"] = photos_de(f["lat"])
+    d["rq"] = RISQUES.get(f["lat"], [])
     sortie.append(d)
 sortie.sort(key=lambda d: d["lat"])
 
