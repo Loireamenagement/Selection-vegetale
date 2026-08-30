@@ -1,0 +1,27 @@
+Déposez ici votre logo, nommé logo.png (ou logo.svg, format à privilégier).
+
+Recommandations :
+- Fond transparent
+- Hauteur minimale 200 px pour rester net à l'impression
+- Version foncée du logo : le document s'imprime sur fond blanc
+
+Le chemin et la hauteur d'affichage se règlent dans js/app.js,
+bloc MARQUE, champs "logo" et "logoHauteur".
+
+Si aucun fichier n'est trouvé, le nom de l'entreprise s'affiche
+automatiquement en typographie à la place du logo.
+
+
+----------------------------------------------------------------
+DOSSIER photos/
+
+757 photographies issues de la photothèque Jardisoft.
+Nommage : <nom-latin-normalise>-<numero>.jpg
+   abelia-grandiflora-1.jpg, acer-palmatum-3.jpg ...
+
+Format : carré, 480 x 480 px, JPEG progressif.
+
+Pour ajouter ou remplacer une photo, déposer le fichier en respectant
+ce nommage puis relancer :
+   python3 outils/construire_donnees.py
+qui met à jour l'index dans data/plantes.js.

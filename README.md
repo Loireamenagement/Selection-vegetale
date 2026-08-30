@@ -21,7 +21,6 @@ index.html                    structure de la page
 css/styles.css                mise en forme
 js/app.js                     filtres, fiches, favoris, sélection
 data/plantes.js               base végétale (généré, ne pas éditer à la main)
-assets/photos/                757 photographies, nommées <nom-latin>-<n>.jpg
 docs/                         modèle de données et feuille de route
 outils/                       scripts de génération de la base
 ```
@@ -45,12 +44,11 @@ dont le chemin est indiqué en tête de `outils/nettoyage.py`.
 
 | Élément | État |
 |---|---|
-| Écritures du catalogue | 594, toutes rattachées à une fiche |
-| Fiches horticoles complètes | **341 — catalogue couvert à 100 %** |
+| Espèces issues du catalogue | 594 |
+| Fiches horticoles complètes | 270 (couvrant 409 écritures et 90 % des références) |
 | Références commerciales | 1 884 |
 | Filtres | Type, exposition, sol, humidité, rusticité, littoral, hauteur, feuillage, floraison, plantation, entretien |
 | Chiffrage | Par surface (densité) et par longueur (distance de plantation) |
-| Photographies | 757 vues sur 338 espèces, issues de la photothèque Jardisoft |
 | Favoris | Collections par usage, en mémoire de session uniquement |
 | Documents | Palette client sans prix · Récapitulatif interne chiffré |
 | Envoi au client | Simulé |
