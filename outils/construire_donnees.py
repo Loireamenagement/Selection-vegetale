@@ -13,8 +13,9 @@ from fiches import FICHES
 from fiches2 import FICHES2, ALIAS as ALIAS2
 from fiches3 import FICHES3, ALIAS3
 from fiches4 import FICHES4, ALIAS4
+from fiches5 import FICHES5, ALIAS5
 
-ALIAS = {**ALIAS2, **ALIAS3, **ALIAS4}
+ALIAS = {**ALIAS2, **ALIAS3, **ALIAS4, **ALIAS5}
 from complements import COMPLEMENTS
 
 def toutes_les_fiches():
@@ -28,6 +29,7 @@ def toutes_les_fiches():
     out.extend(dict(f) for f in FICHES2)
     out.extend(dict(f) for f in FICHES3)
     out.extend(dict(f) for f in FICHES4)
+    out.extend(dict(f) for f in FICHES5)
     return out
 
 CAT = os.path.join(RACINE, "outils", "cat.pkl")
