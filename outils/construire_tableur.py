@@ -8,8 +8,9 @@ from fiches2 import FICHES2, ALIAS as ALIAS2
 from fiches3 import FICHES3, ALIAS3
 from fiches4 import FICHES4, ALIAS4
 from fiches5 import FICHES5, ALIAS5
+from fiches6 import FICHES6, ALIAS6
 
-ALIAS = {**ALIAS2, **ALIAS3, **ALIAS4, **ALIAS5}
+ALIAS = {**ALIAS2, **ALIAS3, **ALIAS4, **ALIAS5, **ALIAS6}
 from complements import COMPLEMENTS
 
 FICHES_TOUTES = []
@@ -22,6 +23,7 @@ FICHES_TOUTES.extend(dict(_f) for _f in FICHES2)
 FICHES_TOUTES.extend(dict(_f) for _f in FICHES3)
 FICHES_TOUTES.extend(dict(_f) for _f in FICHES4)
 FICHES_TOUTES.extend(dict(_f) for _f in FICHES5)
+FICHES_TOUTES.extend(dict(_f) for _f in FICHES6)
 
 cat = pd.read_pickle("/home/claude/cat.pkl")
 fmap = {f["lat"]: f for f in FICHES_TOUTES}
