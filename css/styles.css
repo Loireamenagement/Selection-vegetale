@@ -363,3 +363,44 @@ table.dev .n2{font-size:11px;color:var(--encre-2)}
   letter-spacing:.03em;text-transform:uppercase;
 }
 .intro{font-size:13.5px;line-height:1.6;margin:0 0 4px;color:#3A4640}
+
+/* ---------- identité de marque sur le document ---------- */
+.page{--m:#1F3D30;--a:#6F8F3F}
+.page .dh{border-bottom-color:var(--m)}
+.page .dsec{color:#5A6660}
+.page .dtitre{color:var(--m)}
+.page .totaux .gd{border-top-color:var(--m)}
+.page .dcal i.on{background:var(--a)}
+.dh .ident{max-width:62%}
+.dh .logo{display:block;max-width:230px;object-fit:contain;margin-bottom:7px}
+.legal{
+  margin-top:18px;padding-top:11px;border-top:1px solid var(--ligne);
+  font-size:10px;color:#8A918C;text-align:center;letter-spacing:.02em;
+}
+
+/* ---------- charte Loire Aménagement ---------- */
+.page{--a2:#3BACD4}
+.dh .bl{
+  font-family:Spectral,Georgia,serif;font-style:italic;
+  color:var(--a2);font-size:14px;margin:2px 0 8px;
+}
+.page .dsec{
+  color:var(--m);border-bottom-color:var(--m);
+}
+.page .dtitre{color:var(--m)}
+.page table.dev th{color:var(--m)}
+.page .fichetec h4{color:var(--m)}
+.page .fichetec{border-left:3px solid var(--a)}
+.page .intro{border-left:3px solid var(--a2);padding-left:12px}
+
+.reglages input[type=text]{
+  width:100%;padding:9px 10px;border:1px solid var(--ligne);
+  border-radius:7px;font:inherit;font-size:14px;background:#fff;
+}
+.reglages input[type=text]:focus{outline:0;border-color:var(--mousse);box-shadow:0 0 0 2px rgba(111,143,63,.18)}
+.dh .droite .vide2{color:#B9BDB8;font-weight:400}
+.dh .droite .meta2{margin-top:7px;font-size:11.5px;color:#8A918C}
+.page .projet{
+  font-size:15px;font-weight:600;color:var(--a2);margin:0 0 3px;
+}
+@media print{ .dh .droite .vide2{display:none} }
