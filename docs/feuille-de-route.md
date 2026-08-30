@@ -1,10 +1,18 @@
 # Feuille de route
 
-## Prioritaire
+## Fait
 
-**Compléter les fiches horticoles.** 50 espèces sur 594. C'est le chemin critique :
-sans volume, les filtres croisés ne renvoient presque rien. À traiter par lots, en
-commençant par les espèces les plus prescrites.
+**Photographies : terminé.** 757 vues couvrant 338 des 341 espèces, extraites de la
+photothèque Jardisoft dont l'utilisateur détient les droits, recadrées au carré en
+480 px et recompressées de 101 à 40 Mo. Le rapprochement se fait par le nom latin
+normalisé : assets/photos/<nom-latin>-<n>.jpg. Trois espèces restent sans image :
+Bulbine frutescens, Cardamine pratensis et Isopogon formosus.
+
+**Fiches horticoles : terminé.** 341 fiches rédigées, couvrant les 594 écritures du
+catalogue et la totalité des 1 884 références commerciales. Le système d'alias rattache
+les variantes d'écriture du fournisseur à la fiche correspondante.
+
+## Prioritaire
 
 **Rendre les favoris persistants.** Les collections disparaissent au rechargement.
 À stocker sur le poste puis, à terme, sur un compte synchronisé entre iPad et PC.
@@ -14,10 +22,6 @@ PDF (récapitulatif chiffré et fiches techniques des espèces retenues) et l'en
 par email.
 
 ## Ensuite
-
-**Photos.** Une image par espèce. Trois sources dans l'ordre : la photothèque du
-fournisseur (à demander), Wikimedia Commons sous licence libre, et les photos de
-chantiers. Les images trouvées sur le web sont protégées et inutilisables ici.
 
 **Mise en PWA.** Manifeste et service worker, pour installer l'application sur
 l'écran d'accueil de l'iPad et la lancer sans barre de navigateur.
