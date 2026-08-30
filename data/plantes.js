@@ -112,6 +112,18 @@ const DATA = [
     "px": 5.41
    },
    {
+    "cv": "Radiance",
+    "ct": "C3L",
+    "tl": "40/50",
+    "px": 5.63
+   },
+   {
+    "cv": "Confetti",
+    "ct": "C3L",
+    "tl": "30/40",
+    "px": 5.68
+   },
+   {
     "cv": "",
     "ct": "C5L",
     "tl": "80/+",
@@ -122,6 +134,18 @@ const DATA = [
     "ct": "C10L",
     "tl": "80/+",
     "px": 14.23
+   },
+   {
+    "cv": "Confetti",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 15.17
+   },
+   {
+    "cv": "Radiance",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 15.17
    },
    {
     "cv": "Kaleidoscope",
@@ -556,6 +580,18 @@ const DATA = [
     "px": 1.82
    },
    {
+    "cv": "Hybride Pamina",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "× Hybrida ‘Honorine Jobert’",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.96
+   },
+   {
     "cv": "(rose spl)",
     "ct": "C1,3L",
     "tl": "",
@@ -584,6 +620,162 @@ const DATA = [
     "ct": "C1,3L",
     "tl": "",
     "px": 3.49
+   },
+   {
+    "cv": "Hybrida Mont Rose",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   },
+   {
+    "cv": "Hybride Pamina",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   }
+  ]
+ },
+ {
+  "lat": "Arabis caucasica",
+  "fr": "Corbeille d'argent",
+  "type": "Couvre-sol",
+  "h": 0.2,
+  "l": 0.4,
+  "expo": "Plein soleil",
+  "sol": "Drainé, calcaire, pauvre, caillouteux",
+  "hum": "Sec",
+  "rust": -20,
+  "feu": "Persistant",
+  "cfeu": "Vert grisé",
+  "m1": 3,
+  "m2": 5,
+  "flo": "Mars à mai",
+  "cflo": "Blanc",
+  "plant": "Automne à printemps",
+  "popt": "Septembre à octobre ou mars",
+  "ent": "Faible",
+  "style": "Rocaille, muret, talus sec, dallage, bordure basse",
+  "asso": "Aubrieta, Iberis, Cerastium, Armeria, Sedum",
+  "cons": "Retombe joliment d'un muret ou d'un dessus de mur, en nappe blanche au printemps. Rabattre de moitié après floraison pour garder un port compact, sinon elle s'étale et se dégarnit au centre. Redoute l'humidité stagnante bien plus que le froid.",
+  "bdm": "Front de mer",
+  "dens": 6,
+  "esp": 0.4,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.36
+   },
+   {
+    "cv": "Deep Rose",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "(Snow Cap)",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   },
+   {
+    "cv": "Rosea",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   }
+  ]
+ },
+ {
+  "lat": "Aronia prunifolia",
+  "fr": "Aronie",
+  "type": "Arbuste",
+  "h": 2.0,
+  "l": 1.5,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Tout type, acide à neutre, argileux toléré",
+  "hum": "Frais à humide",
+  "rust": -30,
+  "feu": "Caduc",
+  "cfeu": "Vert, rouge écarlate en automne",
+  "m1": 4,
+  "m2": 5,
+  "flo": "Avril à mai",
+  "cflo": "Blanc",
+  "plant": "Automne à printemps",
+  "popt": "Octobre à mars",
+  "ent": "Faible",
+  "style": "Haie libre, jardin de biodiversité, jardin nourricier, massif d'automne",
+  "asso": "Viburnum opulus, Cornus, Sambucus, graminées",
+  "cons": "Trois saisons d'intérêt : floraison blanche au printemps, baies noires en été, feuillage rouge feu en automne. Baies très riches en antioxydants, consommées en jus ou en gelée, un argument qui séduit. Tolère les sols lourds et humides. Aucune taille nécessaire, aucune maladie connue.",
+  "bdm": "Second rideau",
+  "dens": 0.4,
+  "esp": 1.5,
+  "refs": [
+   {
+    "cv": "'Viking'",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 1.83
+   },
+   {
+    "cv": "Rubina",
+    "ct": "C3.5L",
+    "tl": "60/80",
+    "px": 5.63
+   },
+   {
+    "cv": "Rubina",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 15.61
+   }
+  ]
+ },
+ {
+  "lat": "Astrantia major",
+  "fr": "Grande astrance",
+  "type": "Vivace",
+  "h": 0.7,
+  "l": 0.5,
+  "expo": "Mi-ombre",
+  "sol": "Profond, humifère, frais",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert franc découpé",
+  "m1": 6,
+  "m2": 9,
+  "flo": "Juin à septembre",
+  "cflo": "Blanc rosé, rouge pourpre",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai ou septembre",
+  "ent": "Faible",
+  "style": "Massif d'ombre, jardin romantique, sous-bois clair, jardin de fleurs à couper",
+  "asso": "Hosta, fougères, Geranium vivace, Anemone du Japon, Deschampsia",
+  "cons": "Fleurs en collerettes d'une finesse remarquable, presque des étoiles de papier, excellentes en bouquet frais ou séché. Exige un sol qui reste frais tout l'été : c'est sa seule vraie condition, elle dépérit en terrain sec. Rabattre après la première floraison pour une remontée. Se ressème doucement.",
+  "bdm": "Second rideau",
+  "dens": 5,
+  "esp": 0.4,
+  "refs": [
+   {
+    "cv": "Alba",
+    "ct": "GT8",
+    "tl": "",
+    "px": 2.2
+   },
+   {
+    "cv": "",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.87
+   },
+   {
+    "cv": "Alba",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.87
    }
   ]
  },
@@ -764,6 +956,104 @@ const DATA = [
   ]
  },
  {
+  "lat": "Bergenia cordifolia",
+  "fr": "Bergénia",
+  "type": "Couvre-sol / Vivace",
+  "h": 0.4,
+  "l": 0.5,
+  "expo": "Soleil à ombre",
+  "sol": "Tout type, humifère",
+  "hum": "Frais",
+  "rust": -30,
+  "feu": "Persistant",
+  "cfeu": "Vert foncé coriace, pourpre en hiver",
+  "m1": 3,
+  "m2": 5,
+  "flo": "Mars à mai",
+  "cflo": "Rose vif, blanc",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai ou septembre",
+  "ent": "Faible",
+  "style": "Bordure d'ombre, pied d'arbre, massif structuré, façade nord, jardin contemporain",
+  "asso": "Hosta, fougères, Carex, Heuchera, Geranium macrorrhizum",
+  "cons": "Grandes feuilles épaisses et persistantes qui structurent un massif toute l'année et rougissent en hiver. Floraison précoce, dès mars, quand rien d'autre ne fleurit. Tolère à peu près tout : soleil ou ombre, sec ou frais, sol ingrat. Une des vivaces les plus fiables du catalogue. Retirer les feuilles abîmées au printemps.",
+  "bdm": "Front de mer",
+  "dens": 4,
+  "esp": 0.5,
+  "refs": [
+   {
+    "cv": "(Winterglow)",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.52
+   },
+   {
+    "cv": "Rotblum",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.52
+   },
+   {
+    "cv": "Rotblum",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   }
+  ]
+ },
+ {
+  "lat": "Betula verrucosa",
+  "fr": "Bouleau verruqueux",
+  "type": "Arbre",
+  "h": 20.0,
+  "l": 8.0,
+  "expo": "Plein soleil",
+  "sol": "Drainé, léger, acide à neutre, pauvre toléré",
+  "hum": "Frais",
+  "rust": -30,
+  "feu": "Caduc",
+  "cfeu": "Vert clair, jaune d'or en automne",
+  "m1": 4,
+  "m2": 5,
+  "flo": "Avril à mai",
+  "cflo": "Vert (chatons)",
+  "plant": "Automne",
+  "popt": "Novembre à février",
+  "ent": "Faible",
+  "style": "Sujet isolé, bosquet, jardin contemporain, écorce décorative en hiver",
+  "asso": "Graminées, fougères, bulbes de printemps, Hydrangea, Hedera",
+  "cons": "Écorce blanche remarquable, surtout planté en bosquet de trois sujets. Croissance rapide mais durée de vie courte, 50 à 60 ans. Racines traçantes et superficielles à éloigner des constructions et des canalisations. Souffre des étés secs en sol léger. Pollen fortement allergisant : à signaler au client.",
+  "bdm": "Second rideau",
+  "dens": 0.02,
+  "esp": 6.0,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "C7.5L",
+    "tl": "200/250",
+    "px": 11.36
+   },
+   {
+    "cv": "Youngii tbb",
+    "ct": "C10L",
+    "tl": "200/250",
+    "px": 21.95
+   },
+   {
+    "cv": "Youngii tbb",
+    "ct": "C25L",
+    "tl": "250/300",
+    "px": 51.85
+   },
+   {
+    "cv": "Youngii tete",
+    "ct": "C25L",
+    "tl": "8/10",
+    "px": 90.45
+   }
+  ]
+ },
+ {
   "lat": "Buddleia davidii",
   "fr": "Arbre aux papillons",
   "type": "Arbuste",
@@ -789,6 +1079,24 @@ const DATA = [
   "dens": 0.3,
   "esp": 1.8,
   "refs": [
+   {
+    "cv": "'Nanho Blue'",
+    "ct": "C1.3",
+    "tl": "40/60",
+    "px": 1.71
+   },
+   {
+    "cv": "Pink Delight'",
+    "ct": "C1.3",
+    "tl": "40/60",
+    "px": 1.71
+   },
+   {
+    "cv": "Royal Red",
+    "ct": "C1.3",
+    "tl": "40/60",
+    "px": 1.71
+   },
    {
     "cv": "Nanho blue",
     "ct": "C3L",
@@ -1016,6 +1324,128 @@ const DATA = [
   ]
  },
  {
+  "lat": "Campanula lactiflora",
+  "fr": "Campanule à fleurs de lait",
+  "type": "Vivace",
+  "h": 1.2,
+  "l": 0.6,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Profond, frais, humifère",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert franc",
+  "m1": 6,
+  "m2": 8,
+  "flo": "Juin à août",
+  "cflo": "Bleu lavande, blanc, rose",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai ou septembre",
+  "ent": "Faible",
+  "style": "Massif de vivaces, jardin de curé, jardin romantique, arrière-plan",
+  "asso": "Rosiers, Geranium vivace, Alchemilla, Astrantia, Nepeta",
+  "cons": "Grandes panicules bleutées qui apportent de la hauteur sans lourdeur. Peut nécessiter un tuteurage discret en situation venteuse. Rabattre après la première floraison pour une remontée. Se ressème doucement. Apprécie un sol qui ne sèche pas en été.",
+  "bdm": "Second rideau",
+  "dens": 3,
+  "esp": 0.6,
+  "refs": [
+   {
+    "cv": "Loddon Anna",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "Prichard's Variety",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "Loddon Anna",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   },
+   {
+    "cv": "Prichard's Variety",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   }
+  ]
+ },
+ {
+  "lat": "Carex buchananii",
+  "fr": "Laîche de Buchanan",
+  "type": "Graminée",
+  "h": 0.6,
+  "l": 0.4,
+  "expo": "Plein soleil",
+  "sol": "Drainé, tout type",
+  "hum": "Sec à frais",
+  "rust": -15,
+  "feu": "Persistant",
+  "cfeu": "Bronze cuivré",
+  "m1": 5,
+  "m2": 7,
+  "flo": "Mai à juillet",
+  "cflo": "Brun discret",
+  "plant": "Printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Massif contemporain, potée, jardin de gravier, contraste de couleur",
+  "asso": "Festuca glauca, Sedum, Heuchera pourpre, Euphorbia, Phormium",
+  "cons": "Couleur bronze permanente, unique parmi les graminées, qui fait contraste avec les feuillages verts ou argentés. Les clients la croient souvent morte : préciser que cette teinte est naturelle et présente toute l'année. Peigner à la main au printemps plutôt que rabattre. Drainage impératif en hiver.",
+  "bdm": "Front de mer",
+  "dens": 5,
+  "esp": 0.4,
+  "refs": [
+   {
+    "cv": "(Red Rooster)",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.52
+   },
+   {
+    "cv": "Prairie Fire",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.87
+   },
+   {
+    "cv": "'Red Rooster'",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 2.05
+   },
+   {
+    "cv": "'Prairie Fire'",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 2.05
+   },
+   {
+    "cv": "(Red Rooster)",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   },
+   {
+    "cv": "Prairie fire",
+    "ct": "C2L",
+    "tl": "30/40",
+    "px": 3.36
+   }
+  ]
+ },
+ {
   "lat": "Carex morrowii",
   "fr": "Laîche du Japon",
   "type": "Graminée",
@@ -1041,6 +1471,24 @@ const DATA = [
   "dens": 6,
   "esp": 0.4,
   "refs": [
+   {
+    "cv": "Flacca",
+    "ct": "P8",
+    "tl": "15/20",
+    "px": 0.86
+   },
+   {
+    "cv": "Comans 'Bronze Form'",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.87
+   },
+   {
+    "cv": "Flacca",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.87
+   },
    {
     "cv": "",
     "ct": "C1.3",
@@ -1094,6 +1542,58 @@ const DATA = [
     "ct": "C1,3L",
     "tl": "",
     "px": 3.87
+   }
+  ]
+ },
+ {
+  "lat": "Carex pendula",
+  "fr": "Laîche pendante",
+  "type": "Graminée",
+  "h": 1.4,
+  "l": 1.0,
+  "expo": "Mi-ombre à ombre",
+  "sol": "Tout type, humifère, argileux toléré",
+  "hum": "Frais à humide",
+  "rust": -25,
+  "feu": "Persistant",
+  "cfeu": "Vert franc",
+  "m1": 5,
+  "m2": 7,
+  "flo": "Mai à juillet",
+  "cflo": "Brun vert, épis pendants",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Sous-bois, bord de bassin, zone humide ombragée, jardin naturaliste",
+  "asso": "Fougères, Hosta, Persicaria, Lythrum, Astrantia",
+  "cons": "Espèce indigène, l'une des rares graminées à prospérer à l'ombre humide, là où beaucoup échouent. Longs épis retombants très graphiques. Se ressème abondamment en milieu favorable : à surveiller, ou à réserver aux endroits où cette spontanéité est bienvenue.",
+  "bdm": "Second rideau",
+  "dens": 2,
+  "esp": 0.7,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "P8",
+    "tl": "15/20",
+    "px": 0.86
+   },
+   {
+    "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.87
+   },
+   {
+    "cv": "",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
    }
   ]
  },
@@ -1208,6 +1708,110 @@ const DATA = [
   ]
  },
  {
+  "lat": "Castanea sativa",
+  "fr": "Châtaignier",
+  "type": "Arbre / Fruitier",
+  "h": 20.0,
+  "l": 15.0,
+  "expo": "Plein soleil",
+  "sol": "Drainé, acide, profond, léger",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert franc, jaune ocre en automne",
+  "m1": 6,
+  "m2": 7,
+  "flo": "Juin à juillet",
+  "cflo": "Jaune crème (chatons)",
+  "plant": "Automne",
+  "popt": "Novembre à février",
+  "ent": "Faible",
+  "style": "Verger, grand jardin, arbre d'ombrage, jardin nourricier",
+  "asso": "Prairie, haie champêtre, sous-bois de fougères",
+  "cons": "Arbre de grand développement, à réserver aux terrains vastes : 20 m de haut et autant d'envergure. Redoute absolument le calcaire, il faut un sol acide, ce qui limite fortement son emploi en Loire-Atlantique selon les secteurs. Prévoir deux variétés pour la fructification. Surveiller le chancre et l'encre.",
+  "bdm": "Déconseillé en bord de mer",
+  "dens": 0.01,
+  "esp": 10.0,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "C10L",
+    "tl": "125/150",
+    "px": 14.01
+   },
+   {
+    "cv": "",
+    "ct": "C10L",
+    "tl": "150/+",
+    "px": 15.33
+   },
+   {
+    "cv": "",
+    "ct": "C18.5L",
+    "tl": "200/250",
+    "px": 37.06
+   },
+   {
+    "cv": "Doree de lyon",
+    "ct": "C25L",
+    "tl": "1/2 T 8/10",
+    "px": 82.73
+   }
+  ]
+ },
+ {
+  "lat": "Centranthus ruber",
+  "fr": "Valériane rouge",
+  "type": "Vivace",
+  "h": 0.8,
+  "l": 0.6,
+  "expo": "Plein soleil",
+  "sol": "Drainé, calcaire, pauvre, caillouteux",
+  "hum": "Sec",
+  "rust": -20,
+  "feu": "Semi-persistant",
+  "cfeu": "Vert bleuté",
+  "m1": 5,
+  "m2": 9,
+  "flo": "Mai à septembre",
+  "cflo": "Rouge carminé, rose, blanc",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Muret, rocaille, talus sec, jardin méditerranéen, jardin de gravier",
+  "asso": "Lavandula, Stipa, Euphorbia, Erigeron, Santolina",
+  "cons": "Pousse dans les fissures de murs sans une once de terre : la plante idéale pour habiller un vieux mur ou un enrochement. Floraison très longue si on rabat après la première vague. Se ressème abondamment, ce qui fait son charme dans un jardin naturel mais demande une régulation ailleurs. Aucun arrosage.",
+  "bdm": "Front de mer",
+  "dens": 3,
+  "esp": 0.6,
+  "refs": [
+   {
+    "cv": "Alba",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.52
+   },
+   {
+    "cv": "Coccineus",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.52
+   },
+   {
+    "cv": "Alba",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.18
+   },
+   {
+    "cv": "Coccineus",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.18
+   }
+  ]
+ },
+ {
   "lat": "Chaenomeles superba",
   "fr": "Cognassier du Japon",
   "type": "Arbuste",
@@ -1234,6 +1838,18 @@ const DATA = [
   "esp": 1.5,
   "refs": [
    {
+    "cv": "Falconnet tuteuré rose",
+    "ct": "C3L",
+    "tl": "60/80",
+    "px": 6.12
+   },
+   {
+    "cv": "Rubra grandiflora rouge tuteuré",
+    "ct": "C3L",
+    "tl": "60/80",
+    "px": 6.12
+   },
+   {
     "cv": "Cameo tuteuré saumon",
     "ct": "C3L",
     "tl": "60/80",
@@ -1258,6 +1874,12 @@ const DATA = [
     "px": 6.12
    },
    {
+    "cv": "Kinshiden",
+    "ct": "C7.5L",
+    "tl": "80/100",
+    "px": 14.84
+   },
+   {
     "cv": "Cameo tuteuré saumon",
     "ct": "C7.5L",
     "tl": "80/100",
@@ -1268,6 +1890,58 @@ const DATA = [
     "ct": "C7.5L",
     "tl": "80/100",
     "px": 14.84
+   }
+  ]
+ },
+ {
+  "lat": "Cistus corbariensis",
+  "fr": "Ciste de Corbières",
+  "type": "Arbuste",
+  "h": 0.8,
+  "l": 1.2,
+  "expo": "Plein soleil",
+  "sol": "Drainé, sec, pauvre, calcaire toléré",
+  "hum": "Sec",
+  "rust": -15,
+  "feu": "Persistant",
+  "cfeu": "Vert franc, pourpré en hiver",
+  "m1": 5,
+  "m2": 6,
+  "flo": "Mai à juin",
+  "cflo": "Blanc à cœur jaune",
+  "plant": "Printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Talus sec, jardin méditerranéen, couvre-sol arbustif, bord de mer",
+  "asso": "Lavandula, Rosmarinus, Phlomis, Santolina, graminées sèches",
+  "cons": "Le plus rustique des cistes et le plus tolérant au calcaire, ce qui en fait le meilleur choix pour un talus sec en Loire-Atlantique. Port étalé qui couvre bien le sol. Feuillage prenant des teintes pourprées en hiver. Ne jamais tailler sur le vieux bois, il ne repart pas.",
+  "bdm": "Front de mer",
+  "dens": 1,
+  "esp": 1.0,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "P8",
+    "tl": "15/20",
+    "px": 0.89
+   },
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "10/20",
+    "px": 1.93
+   },
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 2.04
+   },
+   {
+    "cv": "",
+    "ct": "C3",
+    "tl": "30/40",
+    "px": 4.1
    }
   ]
  },
@@ -1376,6 +2050,52 @@ const DATA = [
   ]
  },
  {
+  "lat": "Cordyline australis",
+  "fr": "Cordyline",
+  "type": "Arbuste / Petit arbre",
+  "h": 5.0,
+  "l": 2.0,
+  "expo": "Plein soleil",
+  "sol": "Drainé, léger, sableux",
+  "hum": "Sec à frais",
+  "rust": -8,
+  "feu": "Persistant",
+  "cfeu": "Vert, pourpre ou panaché selon cultivar",
+  "m1": 6,
+  "m2": 7,
+  "flo": "Juin à juillet",
+  "cflo": "Blanc crème parfumé",
+  "plant": "Printemps",
+  "popt": "Avril à mai",
+  "ent": "Faible",
+  "style": "Jardin exotique, bord de mer, sujet architectural, potée, entrée",
+  "asso": "Phormium, Agapanthus, Yucca, graminées, Pittosporum",
+  "cons": "Silhouette en palmier qui donne immédiatement un air exotique, très employée sur le littoral. Rusticité faible, c'est sa limite : les cultivars pourpres et panachés souffrent dès -6 °C, le type vert tient un peu mieux. Drainage impératif, l'humidité au collet en hiver la fait pourrir. À réserver aux situations abritées.",
+  "bdm": "Front de mer",
+  "dens": 0.3,
+  "esp": 1.8,
+  "refs": [
+   {
+    "cv": "Red star",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 10.15
+   },
+   {
+    "cv": "Torbay dazzer",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 10.15
+   },
+   {
+    "cv": "Southernsplendour",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 25.37
+   }
+  ]
+ },
+ {
   "lat": "Cornus alba",
   "fr": "Cornouiller blanc",
   "type": "Arbuste",
@@ -1456,6 +2176,12 @@ const DATA = [
     "px": 4.58
    },
    {
+    "cv": "Flaviramea",
+    "ct": "C3.5L",
+    "tl": "60/+",
+    "px": 4.58
+   },
+   {
     "cv": "Argenteomarginiata",
     "ct": "C3.5L",
     "tl": "80/100",
@@ -1474,6 +2200,12 @@ const DATA = [
     "px": 4.85
    },
    {
+    "cv": "Kelsey dwarf",
+    "ct": "C3L",
+    "tl": "30/40",
+    "px": 4.85
+   },
+   {
     "cv": "Sibirica",
     "ct": "C10L",
     "tl": "80/100",
@@ -1483,6 +2215,12 @@ const DATA = [
     "cv": "Kesselringii",
     "ct": "C10L",
     "tl": "80/100",
+    "px": 13.68
+   },
+   {
+    "cv": "Flaviramea",
+    "ct": "C10L",
+    "tl": "60/80",
     "px": 13.68
    },
    {
@@ -1508,6 +2246,58 @@ const DATA = [
     "ct": "C10L",
     "tl": "60/80",
     "px": 14.78
+   }
+  ]
+ },
+ {
+  "lat": "Cornus sanguinea",
+  "fr": "Cornouiller sanguin",
+  "type": "Arbuste",
+  "h": 3.0,
+  "l": 2.5,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Tout type, calcaire toléré, argileux toléré",
+  "hum": "Frais",
+  "rust": -30,
+  "feu": "Caduc",
+  "cfeu": "Vert, rouge pourpre en automne",
+  "m1": 5,
+  "m2": 6,
+  "flo": "Mai à juin",
+  "cflo": "Blanc crème",
+  "plant": "Automne à printemps",
+  "popt": "Octobre à mars",
+  "ent": "Faible",
+  "style": "Haie champêtre, jardin de biodiversité, talus, bosquet, massif d'hiver",
+  "asso": "Viburnum opulus, Corylus, Crataegus, Sambucus, Prunus spinosa",
+  "cons": "Espèce indigène incontournable de la haie champêtre : fleurs mellifères, baies noires pour les oiseaux, feuillage d'automne pourpre et bois rouge en hiver. Pousse absolument partout, y compris en sol lourd et calcaire. Drageonne et s'étale : lui donner de l'espace ou recéper régulièrement.",
+  "bdm": "Second rideau",
+  "dens": 0.3,
+  "esp": 1.8,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "C3",
+    "tl": "80+",
+    "px": 3.97
+   },
+   {
+    "cv": "",
+    "ct": "C3.5L",
+    "tl": "60/80",
+    "px": 4.25
+   },
+   {
+    "cv": "Midwinter fire",
+    "ct": "C3L",
+    "tl": "60/80",
+    "px": 5.18
+   },
+   {
+    "cv": "Midwinter fire",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 14.89
    }
   ]
  },
@@ -1550,6 +2340,12 @@ const DATA = [
     "px": 4.25
    },
    {
+    "cv": "Purpurea",
+    "ct": "C3.5L",
+    "tl": "60/80",
+    "px": 7.39
+   },
+   {
     "cv": "Merveille de bolwiller",
     "ct": "C3.5L",
     "tl": "80/100",
@@ -1557,6 +2353,12 @@ const DATA = [
    },
    {
     "cv": "Webb's prize cob",
+    "ct": "C3.5L",
+    "tl": "80/100",
+    "px": 7.83
+   },
+   {
+    "cv": "Rouge de zeller",
     "ct": "C3.5L",
     "tl": "80/100",
     "px": 7.83
@@ -1580,6 +2382,12 @@ const DATA = [
     "px": 16.44
    },
    {
+    "cv": "Purpurea",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 17.04
+   },
+   {
     "cv": "Webb's prize cob",
     "ct": "C10L",
     "tl": "80/100",
@@ -1590,6 +2398,12 @@ const DATA = [
     "ct": "C10L",
     "tl": "100/+",
     "px": 17.21
+   },
+   {
+    "cv": "Rouge de zeller",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 17.32
    },
    {
     "cv": "Merveille de bolwiller",
@@ -1620,6 +2434,58 @@ const DATA = [
     "ct": "C10L",
     "tl": "100/125",
     "px": 26.36
+   }
+  ]
+ },
+ {
+  "lat": "Cotinus coggygria",
+  "fr": "Arbre à perruque",
+  "type": "Arbuste",
+  "h": 4.0,
+  "l": 3.5,
+  "expo": "Plein soleil",
+  "sol": "Drainé, calcaire toléré, pauvre",
+  "hum": "Sec à frais",
+  "rust": -20,
+  "feu": "Caduc",
+  "cfeu": "Pourpre foncé ou vert, écarlate en automne",
+  "m1": 6,
+  "m2": 7,
+  "flo": "Juin à juillet",
+  "cflo": "Rose fumé vaporeux",
+  "plant": "Automne à printemps",
+  "popt": "Octobre à mars",
+  "ent": "Faible",
+  "style": "Sujet isolé, massif de contraste, jardin sec, fond de massif",
+  "asso": "Graminées, Perovskia, Sedum, Verbena bonariensis, vivaces claires",
+  "cons": "Les inflorescences vaporeuses donnent l'effet de fumée rose qui vaut son nom, et le feuillage pourpre s'embrase en automne. Sol pauvre et sec impératif : en terre riche il fait du bois et perd sa couleur. Deux conduites possibles : laissé libre il fleurit, recépé chaque année il donne un feuillage plus grand mais aucune fleur.",
+  "bdm": "Second rideau",
+  "dens": 0.2,
+  "esp": 2.5,
+  "refs": [
+   {
+    "cv": "Flame",
+    "ct": "C3L",
+    "tl": "30/40",
+    "px": 6.4
+   },
+   {
+    "cv": "Royal purple",
+    "ct": "C3L",
+    "tl": "40/50",
+    "px": 6.56
+   },
+   {
+    "cv": "Royal purple",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 15.99
+   },
+   {
+    "cv": "Young lady",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 17.32
    }
   ]
  },
@@ -1858,6 +2724,52 @@ const DATA = [
   ]
  },
  {
+  "lat": "Delosperma cooperi",
+  "fr": "Pourpier vivace",
+  "type": "Couvre-sol",
+  "h": 0.1,
+  "l": 0.4,
+  "expo": "Plein soleil",
+  "sol": "Drainé, sec, sableux, très pauvre",
+  "hum": "Sec",
+  "rust": -15,
+  "feu": "Persistant",
+  "cfeu": "Vert charnu",
+  "m1": 6,
+  "m2": 10,
+  "flo": "Juin à octobre",
+  "cflo": "Magenta, jaune, orange",
+  "plant": "Printemps",
+  "popt": "Avril à juin",
+  "ent": "Faible",
+  "style": "Rocaille, toiture végétalisée, muret, gravier, talus sec, bord de mer",
+  "asso": "Sedum, Thymus serpyllum, Festuca glauca, Sempervivum",
+  "cons": "Floraison fluorescente presque continue de juin aux gelées, avec des fleurs qui ne s'ouvrent qu'au soleil. Aucun arrosage, aucun amendement. Le drainage est vital : c'est l'humidité hivernale qui la tue, jamais le froid. À proscrire en sol lourd, à réserver aux rocailles, murets et toitures.",
+  "bdm": "Front de mer",
+  "dens": 9,
+  "esp": 0.3,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "Rouge",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   }
+  ]
+ },
+ {
   "lat": "Deschampsia cespitosa",
   "fr": "Canche cespiteuse",
   "type": "Graminée",
@@ -1978,6 +2890,54 @@ const DATA = [
   "esp": 1.5,
   "refs": [
    {
+    "cv": "Nikko",
+    "ct": "P8",
+    "tl": "15/20",
+    "px": 0.83
+   },
+   {
+    "cv": "",
+    "ct": "P8",
+    "tl": "15/20",
+    "px": 0.85
+   },
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 1.76
+   },
+   {
+    "cv": "Nikko",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.76
+   },
+   {
+    "cv": "Hybrida Perle Rose",
+    "ct": "C1.3",
+    "tl": "40/60",
+    "px": 1.76
+   },
+   {
+    "cv": "Gracilis Nikko",
+    "ct": "C3L",
+    "tl": "20/30",
+    "px": 4.69
+   },
+   {
+    "cv": "",
+    "ct": "C3.5L",
+    "tl": "40/50",
+    "px": 4.69
+   },
+   {
+    "cv": "Hybride Mont rose",
+    "ct": "C3.5L",
+    "tl": "60/80",
+    "px": 4.96
+   },
+   {
     "cv": "",
     "ct": "C3.5L",
     "tl": "60/80",
@@ -1996,6 +2956,24 @@ const DATA = [
     "px": 4.96
    },
    {
+    "cv": "Tourbillon rouge",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 5.13
+   },
+   {
+    "cv": "",
+    "ct": "C10L",
+    "tl": "50/60",
+    "px": 13.07
+   },
+   {
+    "cv": "Hybride Mont rose",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 13.95
+   },
+   {
     "cv": "",
     "ct": "C10L",
     "tl": "80/100",
@@ -2006,6 +2984,98 @@ const DATA = [
     "ct": "C10L",
     "tl": "80/100",
     "px": 13.95
+   }
+  ]
+ },
+ {
+  "lat": "Dryopteris erythrosora",
+  "fr": "Fougère automnale",
+  "type": "Fougère",
+  "h": 0.6,
+  "l": 0.6,
+  "expo": "Mi-ombre à ombre",
+  "sol": "Humifère, drainé, acide à neutre",
+  "hum": "Frais",
+  "rust": -20,
+  "feu": "Semi-persistant",
+  "cfeu": "Cuivré rosé au débourrement, puis vert foncé",
+  "m1": 0,
+  "m2": 0,
+  "flo": "Non fleurie",
+  "cflo": "—",
+  "plant": "Printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Sous-bois, massif d'ombre, jardin japonais, bord de bassin ombragé",
+  "asso": "Hosta, Carex, Heuchera, Epimedium, Hakonechloa, Astrantia",
+  "cons": "Les jeunes frondes sortent cuivrées puis rosées avant de verdir, ce qui est très rare chez une fougère : elle apporte de la couleur à l'ombre. Semi-persistante en climat doux, elle garde une présence hivernale. Exige un sol qui ne dessèche pas et un paillage. Ne pas couper les vieilles frondes avant le printemps.",
+  "bdm": "Second rideau",
+  "dens": 3,
+  "esp": 0.6,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "GT9",
+    "tl": "",
+    "px": 2.2
+   },
+   {
+    "cv": "",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.87
+   },
+   {
+    "cv": "Prolifica",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.87
+   }
+  ]
+ },
+ {
+  "lat": "Echinacea",
+  "fr": "Échinacée",
+  "type": "Vivace",
+  "h": 0.9,
+  "l": 0.5,
+  "expo": "Plein soleil",
+  "sol": "Drainé, profond, fertile",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert foncé",
+  "m1": 7,
+  "m2": 9,
+  "flo": "Juillet à septembre",
+  "cflo": "Rose pourpré, blanc, orange, jaune",
+  "plant": "Printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Massif naturaliste, prairie fleurie, jardin de vivaces, massif d'été",
+  "asso": "Rudbeckia, graminées, Perovskia, Sedum, Salvia nemorosa, Achillea",
+  "cons": "Pilier du jardin naturaliste, très mellifère et attractive pour les papillons. Conserver les cônes fanés en hiver : ils sont décoratifs et nourrissent les oiseaux. Redoute l'humidité hivernale en sol lourd, qui est la cause d'échec la plus fréquente. Les cultivars orange et jaune sont souvent moins pérennes que les roses.",
+  "bdm": "Second rideau",
+  "dens": 4,
+  "esp": 0.5,
+  "refs": [
+   {
+    "cv": "Green Jewel",
+    "ct": "GT9",
+    "tl": "",
+    "px": 3.64
+   },
+   {
+    "cv": "Green Jewel",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 4.09
+   },
+   {
+    "cv": "Minibelle",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 4.09
    }
   ]
  },
@@ -2035,6 +3105,30 @@ const DATA = [
   "dens": 0.5,
   "esp": 1.0,
   "refs": [
+   {
+    "cv": "Ebbingei",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.71
+   },
+   {
+    "cv": "Ebbingei Compacta",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.72
+   },
+   {
+    "cv": "Ebbingei Gilt Edge",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.83
+   },
+   {
+    "cv": "Ebbingei Lime Light",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.83
+   },
    {
     "cv": "Compacta",
     "ct": "C3L",
@@ -2070,6 +3164,52 @@ const DATA = [
     "ct": "C25L",
     "tl": "150/+",
     "px": 29.56
+   }
+  ]
+ },
+ {
+  "lat": "Escallonia",
+  "fr": "Escallonia",
+  "type": "Arbuste",
+  "h": 2.5,
+  "l": 2.0,
+  "expo": "Plein soleil",
+  "sol": "Drainé, tout type, calcaire toléré",
+  "hum": "Frais",
+  "rust": -12,
+  "feu": "Persistant",
+  "cfeu": "Vert foncé brillant, vernissé",
+  "m1": 6,
+  "m2": 9,
+  "flo": "Juin à septembre",
+  "cflo": "Rose, rouge, blanc",
+  "plant": "Automne à printemps",
+  "popt": "Octobre ou mars",
+  "ent": "Moyen",
+  "style": "Haie fleurie persistante, bord de mer, écran, massif structuré",
+  "asso": "Elaeagnus, Pittosporum, Griselinia, Phormium, Agapanthus",
+  "cons": "Rare et précieux : une haie à la fois persistante et longuement fleurie, ce que peu d'arbustes offrent. Excellente tenue aux embruns, on le trouve partout sur le littoral atlantique. Rusticité limitée, à éviter en secteur froid et exposé. Tailler après la floraison principale. Feuillage aromatique au froissement.",
+  "bdm": "Front de mer",
+  "dens": 0.6,
+  "esp": 0.9,
+  "refs": [
+   {
+    "cv": "'Iveyi'",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 1.91
+   },
+   {
+    "cv": "Apple blossom",
+    "ct": "C3L",
+    "tl": "40/+",
+    "px": 4.96
+   },
+   {
+    "cv": "Red dream",
+    "ct": "C3L",
+    "tl": "20/30",
+    "px": 5.18
    }
   ]
  },
@@ -2138,6 +3278,110 @@ const DATA = [
   ]
  },
  {
+  "lat": "Euonymus japonicus",
+  "fr": "Fusain du Japon",
+  "type": "Arbuste",
+  "h": 2.5,
+  "l": 1.5,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Tout type, drainé, calcaire toléré",
+  "hum": "Frais",
+  "rust": -15,
+  "feu": "Persistant",
+  "cfeu": "Vert foncé brillant ou panaché de jaune",
+  "m1": 6,
+  "m2": 7,
+  "flo": "Juin à juillet",
+  "cflo": "Vert crème discret",
+  "plant": "Automne à printemps",
+  "popt": "Octobre à mars",
+  "ent": "Moyen",
+  "style": "Haie taillée, topiaire, bord de mer, potée, massif structuré",
+  "asso": "Pittosporum, Elaeagnus, Griselinia, Viburnum tinus, Phormium",
+  "cons": "Excellente tenue aux embruns et à la pollution, ce qui explique sa présence dans les aménagements côtiers et urbains. Se taille en haie nette ou en boule. Les formes panachées éclairent bien mais sont plus sensibles au froid. Surveiller l'oïdium en situation confinée.",
+  "bdm": "Front de mer",
+  "dens": 0.7,
+  "esp": 0.6,
+  "refs": [
+   {
+    "cv": "Microphyllus",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.83
+   },
+   {
+    "cv": "Président Gauthier",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.83
+   },
+   {
+    "cv": "Aureomarginiatus",
+    "ct": "C3L",
+    "tl": "30/40",
+    "px": 5.07
+   },
+   {
+    "cv": "Bravo",
+    "ct": "C3L",
+    "tl": "30/40",
+    "px": 5.07
+   }
+  ]
+ },
+ {
+  "lat": "Euphorbia amygdaloides",
+  "fr": "Euphorbe des bois",
+  "type": "Vivace / Couvre-sol",
+  "h": 0.5,
+  "l": 0.5,
+  "expo": "Mi-ombre à ombre",
+  "sol": "Tout type, humifère, drainé",
+  "hum": "Frais",
+  "rust": -20,
+  "feu": "Persistant",
+  "cfeu": "Vert foncé ou pourpre (var. Purpurea)",
+  "m1": 4,
+  "m2": 6,
+  "flo": "Avril à juin",
+  "cflo": "Vert chartreuse",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai ou septembre",
+  "ent": "Faible",
+  "style": "Sous-bois, massif d'ombre, pied de haie, jardin naturaliste",
+  "asso": "Fougères, Hosta, Geranium macrorrhizum, Epimedium, Carex",
+  "cons": "L'une des rares euphorbes vraiment adaptées à l'ombre, contrairement à characias qui veut le soleil. Les bractées vert acide éclairent un massif sombre au printemps. La variété Purpurea offre un feuillage pourpre remarquable. Latex irritant : gants obligatoires à la taille, à signaler s'il y a des enfants.",
+  "bdm": "Second rideau",
+  "dens": 4,
+  "esp": 0.5,
+  "refs": [
+   {
+    "cv": "Purpurea",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "Var.robbiae",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "Purpurea",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.87
+   },
+   {
+    "cv": "Var.robbiae",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.87
+   }
+  ]
+ },
+ {
   "lat": "Euphorbia characias",
   "fr": "Euphorbe des garrigues",
   "type": "Vivace",
@@ -2188,6 +3432,12 @@ const DATA = [
     "px": 1.82
    },
    {
+    "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
     "cv": "Characias Silver Edge",
     "ct": "C1.3",
     "tl": "20/30",
@@ -2224,6 +3474,12 @@ const DATA = [
     "px": 2.2
    },
    {
+    "cv": "Ascot Rainbow",
+    "ct": "GT8",
+    "tl": "",
+    "px": 2.2
+   },
+   {
     "cv": "Black Pearl",
     "ct": "C1,3L",
     "tl": "",
@@ -2249,6 +3505,18 @@ const DATA = [
    },
    {
     "cv": "Wulfenii",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.87
+   },
+   {
+    "cv": "",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.87
+   },
+   {
+    "cv": "Ascot Rainbow",
     "ct": "C1,3L",
     "tl": "",
     "px": 3.87
@@ -2480,6 +3748,58 @@ const DATA = [
   ]
  },
  {
+  "lat": "Foeniculum vulgare",
+  "fr": "Fenouil bronze",
+  "type": "Vivace / Aromatique",
+  "h": 1.8,
+  "l": 0.6,
+  "expo": "Plein soleil",
+  "sol": "Drainé, calcaire toléré, pauvre",
+  "hum": "Sec",
+  "rust": -20,
+  "feu": "Caduc",
+  "cfeu": "Bronze pourpré, très finement découpé",
+  "m1": 7,
+  "m2": 9,
+  "flo": "Juillet à septembre",
+  "cflo": "Jaune, en ombelles",
+  "plant": "Printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Massif naturaliste, jardin d'aromatiques, effet vaporeux, prairie fleurie",
+  "asso": "Verbena bonariensis, graminées, Echinacea, Salvia, Gaura",
+  "cons": "Feuillage en nuage bronze d'une finesse remarquable, qui allège un massif comme aucune autre plante. Très mellifère et plante hôte du machaon, dont on trouve les chenilles rayées sur les tiges. Se ressème beaucoup : couper les ombelles avant maturité si on veut le contenir. Feuillage et graines comestibles.",
+  "bdm": "Front de mer",
+  "dens": 2,
+  "esp": 0.7,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "Purpureum",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   },
+   {
+    "cv": "Purpureum",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   }
+  ]
+ },
+ {
   "lat": "Forsythia intermedia",
   "fr": "Forsythia",
   "type": "Arbuste",
@@ -2652,6 +3972,24 @@ const DATA = [
     "ct": "C1,3L",
     "tl": "",
     "px": 3.49
+   },
+   {
+    "cv": "Red color",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 4.74
+   },
+   {
+    "cv": "Siskiyou pink",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 4.74
+   },
+   {
+    "cv": "Whirling butterflies",
+    "ct": "C3L",
+    "tl": "40/50",
+    "px": 4.74
    }
   ]
  },
@@ -2770,6 +4108,18 @@ const DATA = [
   "esp": 0.4,
   "refs": [
    {
+    "cv": "Biokovo",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "Cambridge",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
     "cv": "Ingwersen's Var.",
     "ct": "GT8",
     "tl": "",
@@ -2782,6 +4132,12 @@ const DATA = [
     "px": 2.96
    },
    {
+    "cv": "Cambridge",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   },
+   {
     "cv": "Ingwersens Var.",
     "ct": "C1,3L",
     "tl": "",
@@ -2792,6 +4148,52 @@ const DATA = [
     "ct": "C1,3L",
     "tl": "",
     "px": 3.49
+   }
+  ]
+ },
+ {
+  "lat": "Grevillea juniperina",
+  "fr": "Grévilléa",
+  "type": "Arbuste",
+  "h": 1.5,
+  "l": 2.0,
+  "expo": "Plein soleil",
+  "sol": "Drainé, sableux, acide, très pauvre",
+  "hum": "Sec",
+  "rust": -10,
+  "feu": "Persistant",
+  "cfeu": "Vert fin et piquant",
+  "m1": 11,
+  "m2": 6,
+  "flo": "Novembre à juin",
+  "cflo": "Jaune, orange, rouge",
+  "plant": "Printemps",
+  "popt": "Avril à mai",
+  "ent": "Faible",
+  "style": "Jardin sec, bord de mer, massif exotique, talus, jardin de gravier",
+  "asso": "Cistus, Phormium, graminées sèches, Callistemon, Yucca",
+  "cons": "Floraison hivernale et printanière très longue, en fleurs araignées originales, à une saison où presque rien ne fleurit. Redoute absolument le calcaire et les sols riches en phosphore : ne jamais fertiliser, cela la tue. Rusticité limitée, à réserver aux secteurs doux et abrités. Feuillage piquant, à écarter des passages.",
+  "bdm": "Front de mer",
+  "dens": 0.5,
+  "esp": 1.4,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 1.81
+   },
+   {
+    "cv": "",
+    "ct": "C3L",
+    "tl": "30/40",
+    "px": 5.35
+   },
+   {
+    "cv": "",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 13.95
    }
   ]
  },
@@ -2846,6 +4248,18 @@ const DATA = [
     "px": 0.84
    },
    {
+    "cv": "Colchica",
+    "ct": "Plaque 28T",
+    "tl": "15/20",
+    "px": 0.97
+   },
+   {
+    "cv": "Colchica",
+    "ct": "P8",
+    "tl": "15/20",
+    "px": 0.97
+   },
+   {
     "cv": "Algerian Bellecour",
     "ct": "P8",
     "tl": "15/20",
@@ -2868,6 +4282,12 @@ const DATA = [
     "ct": "C1.3",
     "tl": "30/40",
     "px": 1.74
+   },
+   {
+    "cv": "Colchica",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 2.35
    },
    {
     "cv": "Algerian Bellecour",
@@ -3006,6 +4426,58 @@ const DATA = [
   ]
  },
  {
+  "lat": "Hibiscus moscheutos",
+  "fr": "Hibiscus des marais",
+  "type": "Vivace",
+  "h": 1.5,
+  "l": 1.0,
+  "expo": "Plein soleil",
+  "sol": "Profond, humifère, riche",
+  "hum": "Frais à humide",
+  "rust": -20,
+  "feu": "Caduc",
+  "cfeu": "Vert franc",
+  "m1": 7,
+  "m2": 9,
+  "flo": "Juillet à septembre",
+  "cflo": "Rouge, rose, blanc",
+  "plant": "Printemps",
+  "popt": "Avril à mai",
+  "ent": "Moyen",
+  "style": "Bord de bassin, massif estival, zone fraîche, jardin exotique",
+  "asso": "Miscanthus, Persicaria, Lythrum, Canna, graminées",
+  "cons": "Fleurs immenses, jusqu'à 25 cm de diamètre, qui produisent un effet spectaculaire. Contrairement à l'Hibiscus syriacus, c'est une vivace herbacée qui disparaît totalement en hiver et redémarre très tard, souvent en mai : ne pas la croire morte et marquer son emplacement. Exige de la fraîcheur au sol tout l'été.",
+  "bdm": "Second rideau",
+  "dens": 1,
+  "esp": 1.0,
+  "refs": [
+   {
+    "cv": "Fujin akata blc rose",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 6.73
+   },
+   {
+    "cv": "Planet griotte rouge",
+    "ct": "C7.5L",
+    "tl": "60/80",
+    "px": 16.44
+   },
+   {
+    "cv": "Planet solene rose",
+    "ct": "C7.5L",
+    "tl": "60/80",
+    "px": 16.44
+   },
+   {
+    "cv": "Raijin akata rouge",
+    "ct": "C7.5L",
+    "tl": "60/80",
+    "px": 16.44
+   }
+  ]
+ },
+ {
   "lat": "Hibiscus syriacus",
   "fr": "Althéa",
   "type": "Arbuste",
@@ -3126,6 +4598,18 @@ const DATA = [
     "px": 2.43
    },
    {
+    "cv": "Albopicta",
+    "ct": "GT9",
+    "tl": "",
+    "px": 2.43
+   },
+   {
+    "cv": "Aureomarginata",
+    "ct": "GT9",
+    "tl": "",
+    "px": 2.43
+   },
+   {
     "cv": "Guacamole",
     "ct": "GT9",
     "tl": "",
@@ -3133,6 +4617,18 @@ const DATA = [
    },
    {
     "cv": "Krossa Regal",
+    "ct": "GT9",
+    "tl": "",
+    "px": 2.43
+   },
+   {
+    "cv": "Elegans",
+    "ct": "GT9",
+    "tl": "",
+    "px": 2.43
+   },
+   {
+    "cv": "Frances Williams",
     "ct": "GT9",
     "tl": "",
     "px": 2.43
@@ -3144,6 +4640,12 @@ const DATA = [
     "px": 3.87
    },
    {
+    "cv": "Aureomarginata",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.87
+   },
+   {
     "cv": "Guacamole",
     "ct": "C1,3L",
     "tl": "",
@@ -3151,6 +4653,18 @@ const DATA = [
    },
    {
     "cv": "Krossa Regal",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.87
+   },
+   {
+    "cv": "Elegans",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.87
+   },
+   {
+    "cv": "Frances Williams",
     "ct": "C1,3L",
     "tl": "",
     "px": 3.87
@@ -3406,6 +4920,58 @@ const DATA = [
   ]
  },
  {
+  "lat": "Hydrangea quercifolia",
+  "fr": "Hortensia à feuilles de chêne",
+  "type": "Arbuste",
+  "h": 2.0,
+  "l": 2.0,
+  "expo": "Mi-ombre",
+  "sol": "Humifère, drainé, acide à neutre",
+  "hum": "Frais",
+  "rust": -20,
+  "feu": "Caduc",
+  "cfeu": "Vert, pourpre écarlate en automne",
+  "m1": 6,
+  "m2": 8,
+  "flo": "Juin à août",
+  "cflo": "Blanc virant rose",
+  "plant": "Automne à printemps",
+  "popt": "Octobre ou mars",
+  "ent": "Faible",
+  "style": "Massif d'ombre, sous-bois clair, jardin de terre de bruyère, massif d'automne",
+  "asso": "Azalea, Acer palmatum, Hosta, fougères, Carex",
+  "cons": "Le plus intéressant des hortensias sur l'année entière : grandes feuilles lobées originales, panicules blanches en été, feuillage écarlate en automne et écorce exfoliante en hiver. Fleurit sur le bois de l'année précédente, donc taille légère uniquement. Supporte mieux la sécheresse que le macrophylla.",
+  "bdm": "Second rideau",
+  "dens": 0.4,
+  "esp": 1.5,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "C3L",
+    "tl": "40/50",
+    "px": 5.41
+   },
+   {
+    "cv": "Alice",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 6.73
+   },
+   {
+    "cv": "Alice",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 14.89
+   },
+   {
+    "cv": "",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 16.05
+   }
+  ]
+ },
+ {
   "lat": "Hypericum calycinum",
   "fr": "Millepertuis rampant",
   "type": "Couvre-sol",
@@ -3494,6 +5060,52 @@ const DATA = [
   ]
  },
  {
+  "lat": "Imperata cylindrica",
+  "fr": "Herbe sanglante du Japon",
+  "type": "Graminée",
+  "h": 0.5,
+  "l": 0.4,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Humifère, drainé, frais",
+  "hum": "Frais",
+  "rust": -15,
+  "feu": "Caduc",
+  "cfeu": "Vert à pointe rouge sang, s'intensifiant en été",
+  "m1": 0,
+  "m2": 0,
+  "flo": "Rarement fleurie",
+  "cflo": "—",
+  "plant": "Printemps",
+  "popt": "Avril à mai",
+  "ent": "Faible",
+  "style": "Massif contemporain, potée, premier plan à contre-jour, jardin japonais",
+  "asso": "Ophiopogon noir, Heuchera pourpre, Sedum, Carex, Hakonechloa",
+  "cons": "Le rouge translucide du feuillage prend toute sa valeur à contre-jour : à placer en fonction du soleil couchant, sinon l'effet est perdu. Croissance lente et touffe modeste, planter en groupe de cinq ou plus. Exige de la fraîcheur au sol en été. Supprimer toute pousse revenant au vert pur.",
+  "bdm": "Second rideau",
+  "dens": 6,
+  "esp": 0.4,
+  "refs": [
+   {
+    "cv": "'Red Baron'",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.87
+   },
+   {
+    "cv": "Red Baron",
+    "ct": "GT8",
+    "tl": "",
+    "px": 2.43
+   },
+   {
+    "cv": "Red Baron",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 4.09
+   }
+  ]
+ },
+ {
   "lat": "Juniperus chin",
   "fr": "Genévrier de Chine",
   "type": "Conifère",
@@ -3550,10 +5162,28 @@ const DATA = [
     "px": 5.18
    },
    {
+    "cv": "Blue star",
+    "ct": "C3L",
+    "tl": "20/30",
+    "px": 5.35
+   },
+   {
     "cv": "Old gold",
     "ct": "C7.5L",
     "tl": "50/60",
     "px": 14.01
+   },
+   {
+    "cv": "Blue carpet",
+    "ct": "C7.5L",
+    "tl": "50/70",
+    "px": 15.44
+   },
+   {
+    "cv": "Blue star",
+    "ct": "C7.5L",
+    "tl": "30/40",
+    "px": 15.44
    }
   ]
  },
@@ -3606,6 +5236,52 @@ const DATA = [
     "ct": "C7.5L",
     "tl": "30/40",
     "px": 17.04
+   }
+  ]
+ },
+ {
+  "lat": "Kerria japonica",
+  "fr": "Corète du Japon",
+  "type": "Arbuste",
+  "h": 2.0,
+  "l": 2.0,
+  "expo": "Mi-ombre à ombre",
+  "sol": "Tout type, humifère, frais",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert clair, tiges vertes en hiver",
+  "m1": 4,
+  "m2": 5,
+  "flo": "Avril à mai",
+  "cflo": "Jaune d'or",
+  "plant": "Automne à printemps",
+  "popt": "Octobre à mars",
+  "ent": "Faible",
+  "style": "Massif d'ombre, sous-bois, jardin de curé, façade nord, haie libre",
+  "asso": "Hosta, fougères, Hydrangea, Vinca, Carex",
+  "cons": "L'un des rares arbustes à fleurir généreusement à l'ombre, ce qui en fait une solution précieuse pour une façade nord. Les tiges restent vertes en hiver, apportant de la couleur à la mauvaise saison. Drageonne franchement : lui donner de l'espace. Tailler après la floraison en supprimant les vieilles tiges à la base.",
+  "bdm": "Second rideau",
+  "dens": 0.4,
+  "esp": 1.5,
+  "refs": [
+   {
+    "cv": "Golden guinée",
+    "ct": "C3L",
+    "tl": "50/60",
+    "px": 5.02
+   },
+   {
+    "cv": "Pleniflora",
+    "ct": "C3L",
+    "tl": "50/60",
+    "px": 5.41
+   },
+   {
+    "cv": "Pleniflora",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 14.89
    }
   ]
  },
@@ -3964,6 +5640,52 @@ const DATA = [
   ]
  },
  {
+  "lat": "Ligustrum japonicum",
+  "fr": "Troène du Japon",
+  "type": "Arbuste",
+  "h": 3.0,
+  "l": 2.0,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Tout type, drainé, calcaire toléré",
+  "hum": "Frais",
+  "rust": -15,
+  "feu": "Persistant",
+  "cfeu": "Vert foncé brillant, coriace",
+  "m1": 6,
+  "m2": 7,
+  "flo": "Juin à juillet",
+  "cflo": "Blanc crème",
+  "plant": "Automne à printemps",
+  "popt": "Octobre à mars",
+  "ent": "Faible",
+  "style": "Haie persistante, écran, topiaire, sujet isolé, jardin méditerranéen",
+  "asso": "Elaeagnus, Photinia, Viburnum tinus, Pittosporum, Phillyrea",
+  "cons": "Vrai persistant, contrairement au troène de Californie qui se dégarnit l'hiver : c'est le bon choix quand le client veut un écran fiable toute l'année. Feuillage épais et brillant, plus élégant. Croissance plus lente, donc moins de tailles. Bonne tolérance au calcaire et à la sécheresse une fois installé.",
+  "bdm": "Front de mer",
+  "dens": 0.6,
+  "esp": 0.8,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "C3.5L",
+    "tl": "60/80",
+    "px": 4.52
+   },
+   {
+    "cv": "Texanum",
+    "ct": "C3L",
+    "tl": "60/+",
+    "px": 4.52
+   },
+   {
+    "cv": "Texanum",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 14.34
+   }
+  ]
+ },
+ {
   "lat": "Ligustrum ovalifolium",
   "fr": "Troène de Californie",
   "type": "Arbuste",
@@ -4226,6 +5948,98 @@ const DATA = [
   ]
  },
  {
+  "lat": "Loropetalum",
+  "fr": "Loropétale de Chine",
+  "type": "Arbuste",
+  "h": 2.0,
+  "l": 2.0,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Humifère, drainé, acide",
+  "hum": "Frais",
+  "rust": -12,
+  "feu": "Persistant",
+  "cfeu": "Pourpre foncé ou vert selon cultivar",
+  "m1": 3,
+  "m2": 5,
+  "flo": "Mars à mai",
+  "cflo": "Rose fuchsia, blanc",
+  "plant": "Printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Massif contemporain, jardin de terre de bruyère, potée, contraste de feuillage",
+  "asso": "Azalea, Nandina, Ophiopogon, Acer palmatum, Carex",
+  "cons": "Feuillage pourpre persistant toute l'année et floraison en franges roses au printemps : peu d'arbustes offrent les deux. Exige un sol acide comme les azalées, le calcaire provoque une chlorose. Rusticité moyenne, à abriter des vents froids. Se taille bien pour maintenir un volume compact.",
+  "bdm": "Second rideau",
+  "dens": 0.5,
+  "esp": 1.4,
+  "refs": [
+   {
+    "cv": "Fire Dance",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 2.55
+   },
+   {
+    "cv": "Black Pearl",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 3.03
+   },
+   {
+    "cv": "Plum Gorgeous",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 3.55
+   }
+  ]
+ },
+ {
+  "lat": "Luzula nivea",
+  "fr": "Luzule blanche",
+  "type": "Graminée",
+  "h": 0.5,
+  "l": 0.4,
+  "expo": "Mi-ombre à ombre",
+  "sol": "Humifère, drainé, acide à neutre",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Persistant",
+  "cfeu": "Vert franc, marges velues",
+  "m1": 5,
+  "m2": 7,
+  "flo": "Mai à juillet",
+  "cflo": "Blanc crème",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai ou septembre",
+  "ent": "Faible",
+  "style": "Sous-bois, couvre-sol d'ombre, bordure ombragée, jardin naturaliste",
+  "asso": "Fougères, Hosta, Epimedium, Geranium macrorrhizum, Carex",
+  "cons": "Une des rares graminées à floraison réellement visible à l'ombre, en petites houppes blanches. Persistante, elle structure un sous-bois toute l'année. Forme progressivement un tapis dense qui limite les adventices. Supporte la sécheresse d'été sous les arbres une fois installée.",
+  "bdm": "Second rideau",
+  "dens": 6,
+  "esp": 0.4,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.52
+   },
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 2.1
+   },
+   {
+    "cv": "",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   }
+  ]
+ },
+ {
   "lat": "Lythrum salicaria",
   "fr": "Salicaire",
   "type": "Vivace",
@@ -4326,6 +6140,58 @@ const DATA = [
     "ct": "C7.5L",
     "tl": "80/100",
     "px": 18.37
+   }
+  ]
+ },
+ {
+  "lat": "Malus coccinela",
+  "fr": "Pommier d'ornement",
+  "type": "Arbre",
+  "h": 4.0,
+  "l": 3.5,
+  "expo": "Plein soleil",
+  "sol": "Tout type, profond, calcaire toléré",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert pourpré, orangé en automne",
+  "m1": 4,
+  "m2": 5,
+  "flo": "Avril à mai",
+  "cflo": "Rose vif à rouge",
+  "plant": "Automne",
+  "popt": "Novembre à février",
+  "ent": "Faible",
+  "style": "Sujet isolé, petit jardin, alignement, jardin de biodiversité",
+  "asso": "Bulbes de printemps, prairie fleurie, graminées, vivaces basses",
+  "cons": "Le bon arbre pour un petit jardin : floraison abondante au printemps, puis petites pommes décoratives qui tiennent jusqu'en hiver et nourrissent les oiseaux. Excellent pollinisateur pour un verger voisin. Aucune taille nécessaire. Surveiller la tavelure sur les cultivars anciens ; les récents y sont résistants.",
+  "bdm": "Second rideau",
+  "dens": 0.06,
+  "esp": 4.0,
+  "refs": [
+   {
+    "cv": "Courtarou",
+    "ct": "C3.5L",
+    "tl": "60/80",
+    "px": 7.78
+   },
+   {
+    "cv": "Courtarou",
+    "ct": "C10L",
+    "tl": "100/125",
+    "px": 17.54
+   },
+   {
+    "cv": "Courtarou",
+    "ct": "C10L",
+    "tl": "125/150",
+    "px": 18.97
+   },
+   {
+    "cv": "Courtarou",
+    "ct": "C25L",
+    "tl": "T 8/10",
+    "px": 72.25
    }
   ]
  },
@@ -4540,6 +6406,104 @@ const DATA = [
     "ct": "C18.5L",
     "tl": "double u",
     "px": 90.45
+   }
+  ]
+ },
+ {
+  "lat": "Malva moschata",
+  "fr": "Mauve musquée",
+  "type": "Vivace",
+  "h": 0.8,
+  "l": 0.5,
+  "expo": "Plein soleil",
+  "sol": "Drainé, tout type, pauvre toléré",
+  "hum": "Sec à frais",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert finement découpé",
+  "m1": 6,
+  "m2": 9,
+  "flo": "Juin à septembre",
+  "cflo": "Rose tendre, blanc",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Prairie fleurie, jardin champêtre, massif naturaliste, bordure",
+  "asso": "Achillea, Centranthus, graminées, Salvia nemorosa, Knautia",
+  "cons": "Espèce indigène de nos bords de chemins, parfaite pour un aménagement champêtre ou une prairie fleurie. Floraison longue et très mellifère. Se ressème spontanément et se déplace, ce qui donne un aspect naturel mais demande de l'accepter. Durée de vie courte, compensée par le semis.",
+  "bdm": "Front de mer",
+  "dens": 4,
+  "esp": 0.5,
+  "refs": [
+   {
+    "cv": "Rosea",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "Alba",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   },
+   {
+    "cv": "Rosea",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   }
+  ]
+ },
+ {
+  "lat": "Mentha spicata",
+  "fr": "Menthe verte",
+  "type": "Vivace / Aromatique",
+  "h": 0.6,
+  "l": 0.8,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Tout type, humifère, riche",
+  "hum": "Frais à humide",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert franc aromatique",
+  "m1": 7,
+  "m2": 9,
+  "flo": "Juillet à septembre",
+  "cflo": "Mauve pâle",
+  "plant": "Printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Jardin d'aromatiques, potager, bord de bassin, potée",
+  "asso": "Melissa, Origanum, Foeniculum, Salvia officinalis",
+  "cons": "Extrêmement traçante par rhizomes : plantée en pleine terre elle envahit tout le massif en deux saisons. La planter systématiquement en pot enterré ou en bac, c'est la seule méthode fiable. Apprécie un sol frais et une mi-ombre. Rabattre en été pour relancer un feuillage tendre.",
+  "bdm": "Second rideau",
+  "dens": 5,
+  "esp": 0.45,
+  "refs": [
+   {
+    "cv": "Forte In Vitro F2",
+    "ct": "P8",
+    "tl": "20/30",
+    "px": 0.83
+   },
+   {
+    "cv": "(Menthe verte)",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "Forte In Vitro F2",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 2.0
+   },
+   {
+    "cv": "(Menthe verte)",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
    }
   ]
  },
@@ -4882,6 +6846,18 @@ const DATA = [
     "px": 1.52
    },
    {
+    "cv": "Purrsian Blue",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.52
+   },
+   {
+    "cv": "X Faassenii 'Senior'",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 2.37
+   },
+   {
     "cv": "Six Hill's Giant",
     "ct": "C1,3L",
     "tl": "",
@@ -4898,6 +6874,110 @@ const DATA = [
     "ct": "C1,3L",
     "tl": "",
     "px": 2.96
+   },
+   {
+    "cv": "Purrsian Blue",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   }
+  ]
+ },
+ {
+  "lat": "Origanum vulgare",
+  "fr": "Origan",
+  "type": "Vivace / Aromatique",
+  "h": 0.5,
+  "l": 0.5,
+  "expo": "Plein soleil",
+  "sol": "Drainé, calcaire, pauvre, caillouteux",
+  "hum": "Sec",
+  "rust": -25,
+  "feu": "Semi-persistant",
+  "cfeu": "Vert franc ou doré, aromatique",
+  "m1": 6,
+  "m2": 9,
+  "flo": "Juin à septembre",
+  "cflo": "Rose mauve",
+  "plant": "Printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Jardin d'aromatiques, rocaille, bordure, jardin sec, prairie fleurie",
+  "asso": "Thymus, Salvia officinalis, Lavandula, Achillea, Santolina",
+  "cons": "L'une des plantes les plus mellifères du catalogue : en floraison, la touffe est couverte d'abeilles et de papillons. Double usage, culinaire et ornemental. Le cultivar doré éclaire une bordure mais brûle au soleil brûlant. Rabattre en fin d'hiver. Exige un sol vraiment drainant.",
+  "bdm": "Front de mer",
+  "dens": 5,
+  "esp": 0.45,
+  "refs": [
+   {
+    "cv": "(Marjolaine)",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "Compactum",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "(Marjolaine)",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   },
+   {
+    "cv": "Compactum",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   }
+  ]
+ },
+ {
+  "lat": "Osmanthus burkwoodii",
+  "fr": "Osmanthe de Burkwood",
+  "type": "Arbuste",
+  "h": 2.5,
+  "l": 2.0,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Drainé, humifère, calcaire toléré",
+  "hum": "Frais",
+  "rust": -18,
+  "feu": "Persistant",
+  "cfeu": "Vert foncé brillant",
+  "m1": 4,
+  "m2": 5,
+  "flo": "Avril à mai",
+  "cflo": "Blanc, très parfumé",
+  "plant": "Automne à printemps",
+  "popt": "Octobre à mars",
+  "ent": "Faible",
+  "style": "Haie persistante, topiaire, près d'un passage pour le parfum, massif structuré",
+  "asso": "Viburnum tinus, Elaeagnus, Photinia, Prunus lusitanica, Choisya",
+  "cons": "Parfum de fleur d'oranger d'une puissance remarquable, perceptible à plusieurs mètres : c'est l'argument, il faut le placer près d'une entrée ou d'une terrasse. Port dense et croissance lente, très facile à maintenir en volume. Se taille bien en boule. Une des meilleures alternatives au buis pour un sujet structurant.",
+  "bdm": "Second rideau",
+  "dens": 0.6,
+  "esp": 0.8,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "C3L",
+    "tl": "60/80",
+    "px": 5.02
+   },
+   {
+    "cv": "",
+    "ct": "C5L",
+    "tl": "80/100",
+    "px": 9.54
+   },
+   {
+    "cv": "",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 14.78
    }
   ]
  },
@@ -5590,6 +7670,70 @@ const DATA = [
   ]
  },
  {
+  "lat": "Phormium tenax",
+  "fr": "Lin de Nouvelle-Zélande",
+  "type": "Vivace / Arbuste",
+  "h": 2.0,
+  "l": 1.5,
+  "expo": "Plein soleil",
+  "sol": "Drainé, profond, tout type",
+  "hum": "Frais",
+  "rust": -10,
+  "feu": "Persistant",
+  "cfeu": "Vert, pourpre, bronze ou panaché de rose et crème",
+  "m1": 6,
+  "m2": 7,
+  "flo": "Juin à juillet",
+  "cflo": "Rouge brique",
+  "plant": "Printemps",
+  "popt": "Avril à mai",
+  "ent": "Faible",
+  "style": "Jardin contemporain, bord de mer, sujet architectural, potée, jardin exotique",
+  "asso": "Agapanthus, graminées, Pittosporum, Griselinia, Yucca",
+  "cons": "Silhouette en gerbe très architecturale, présente toute l'année, qui structure un massif comme peu de plantes. Excellente tenue aux embruns, d'où sa présence sur tout le littoral atlantique. Rusticité limitée : les cultivars pourpres et panachés sont plus fragiles que le type vert. Prévoir sa taille adulte, souvent sous-estimée.",
+  "bdm": "Front de mer",
+  "dens": 0.6,
+  "esp": 1.3,
+  "refs": [
+   {
+    "cv": "Special surfer bronze",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 10.92
+   },
+   {
+    "cv": "Apricot queen",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 22.06
+   },
+   {
+    "cv": "Duet",
+    "ct": "C10L",
+    "tl": "50/70",
+    "px": 22.06
+   },
+   {
+    "cv": "Hybride Golden ray",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 22.06
+   },
+   {
+    "cv": "",
+    "ct": "C10L",
+    "tl": "100/125",
+    "px": 22.06
+   },
+   {
+    "cv": "Purpureum",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 22.06
+   }
+  ]
+ },
+ {
   "lat": "Photinia fraseri",
   "fr": "Photinia",
   "type": "Arbuste",
@@ -5615,6 +7759,30 @@ const DATA = [
   "dens": 0.5,
   "esp": 1.0,
   "refs": [
+   {
+    "cv": "Fraseri 'Carré Rouge'",
+    "ct": "C1.3",
+    "tl": "30+",
+    "px": 1.9
+   },
+   {
+    "cv": "Red Robbin",
+    "ct": "C3",
+    "tl": "40/60",
+    "px": 3.96
+   },
+   {
+    "cv": "Carré Rouge 7/10 Banches",
+    "ct": "C3",
+    "tl": "30+",
+    "px": 4.35
+   },
+   {
+    "cv": "Red Robbin",
+    "ct": "C3",
+    "tl": "60/80",
+    "px": 4.85
+   },
    {
     "cv": "Red robin",
     "ct": "C3L",
@@ -5886,7 +8054,25 @@ const DATA = [
     "px": 2.1
    },
    {
+    "cv": "Tobira",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 2.1
+   },
+   {
+    "cv": "Green Moon",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 2.32
+   },
+   {
     "cv": "Midget",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 3.3
+   },
+   {
+    "cv": "Tobira ‘Nana’",
     "ct": "C1.3",
     "tl": "20/30",
     "px": 3.3
@@ -5968,6 +8154,18 @@ const DATA = [
     "px": 4.25
    },
    {
+    "cv": "",
+    "ct": "C3L",
+    "tl": "20/30",
+    "px": 4.41
+   },
+   {
+    "cv": "",
+    "ct": "C3L",
+    "tl": "30/40",
+    "px": 4.41
+   },
+   {
     "cv": "Gold finger",
     "ct": "C3L",
     "tl": "20/30",
@@ -6014,6 +8212,12 @@ const DATA = [
     "ct": "C10L",
     "tl": "40/50",
     "px": 13.13
+   },
+   {
+    "cv": "",
+    "ct": "C10L",
+    "tl": "40/60",
+    "px": 13.4
    },
    {
     "cv": "Gold finger",
@@ -7102,6 +9306,76 @@ const DATA = [
   ]
  },
  {
+  "lat": "Ribes rubrum",
+  "fr": "Groseillier à grappes",
+  "type": "Fruitier",
+  "h": 1.5,
+  "l": 1.2,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Humifère, frais, profond",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert franc",
+  "m1": 4,
+  "m2": 5,
+  "flo": "Avril à mai",
+  "cflo": "Vert jaune discret",
+  "plant": "Automne",
+  "popt": "Novembre à mars",
+  "ent": "Moyen",
+  "style": "Jardin nourricier, potager, haie fruitière, massif mi-ombragé",
+  "asso": "Rubus, Vaccinium, plantes mellifères, aromatiques",
+  "cons": "L'un des rares fruitiers productifs à mi-ombre, ce qui permet de valoriser une exposition difficile. Fructifie sur le bois de deux et trois ans : supprimer chaque hiver les branches de plus de quatre ans pour renouveler. Autofertile, un seul pied suffit. Paillage indispensable, il craint la sécheresse.",
+  "bdm": "Second rideau",
+  "dens": 0.8,
+  "esp": 1.2,
+  "refs": [
+   {
+    "cv": "Andega",
+    "ct": "C3.5L",
+    "tl": "40/60",
+    "px": 4.08
+   },
+   {
+    "cv": "Geant de boskoop",
+    "ct": "C3.5L",
+    "tl": "40/60",
+    "px": 4.08
+   },
+   {
+    "cv": "Noir de bourgogne",
+    "ct": "C3.5L",
+    "tl": "40/60",
+    "px": 4.08
+   },
+   {
+    "cv": "Jonkheer van tets",
+    "ct": "C3.5L",
+    "tl": "40/60",
+    "px": 4.08
+   },
+   {
+    "cv": "London market",
+    "ct": "C3.5L",
+    "tl": "40/60",
+    "px": 4.08
+   },
+   {
+    "cv": "Versaillaise blanche",
+    "ct": "C3.5L",
+    "tl": "40/60",
+    "px": 4.08
+   },
+   {
+    "cv": "Versaillaise rouge",
+    "ct": "C3.5L",
+    "tl": "40/60",
+    "px": 4.08
+   }
+  ]
+ },
+ {
   "lat": "Rosa",
   "fr": "Rosier paysager",
   "type": "Arbuste",
@@ -7304,6 +9578,30 @@ const DATA = [
   "esp": 0.5,
   "refs": [
    {
+    "cv": "Tricolor",
+    "ct": "P8",
+    "tl": "15/20",
+    "px": 0.64
+   },
+   {
+    "cv": "Tricolor Betty Ashburner",
+    "ct": "P8",
+    "tl": "15/20",
+    "px": 0.64
+   },
+   {
+    "cv": "Tricolor",
+    "ct": "C1.3",
+    "tl": "40/60",
+    "px": 1.69
+   },
+   {
+    "cv": "Tricolor Betty Ashburner",
+    "ct": "C1.3",
+    "tl": "40/60",
+    "px": 1.69
+   },
+   {
     "cv": "Autumn bliss remontant",
     "ct": "C3L",
     "tl": "touffe",
@@ -7338,6 +9636,52 @@ const DATA = [
     "ct": "C3L",
     "tl": "touffe",
     "px": 4.19
+   }
+  ]
+ },
+ {
+  "lat": "Salix purpurea",
+  "fr": "Saule pourpre",
+  "type": "Arbuste",
+  "h": 3.0,
+  "l": 2.5,
+  "expo": "Plein soleil",
+  "sol": "Tout type, argileux toléré",
+  "hum": "Frais à humide",
+  "rust": -30,
+  "feu": "Caduc",
+  "cfeu": "Vert bleuté, rameaux pourprés",
+  "m1": 3,
+  "m2": 4,
+  "flo": "Mars à avril",
+  "cflo": "Gris argenté (chatons)",
+  "plant": "Automne à printemps",
+  "popt": "Novembre à mars",
+  "ent": "Moyen",
+  "style": "Berge, noue, zone humide, haie champêtre, fascine et génie végétal",
+  "asso": "Cornus alba, Viburnum opulus, Lythrum, Molinia, Juncus",
+  "cons": "Espèce indigène de berge, capable de vivre les pieds dans l'eau. Utilisée en génie végétal pour stabiliser un talus ou une berge : les boutures reprennent presque systématiquement, plantées à même le sol en hiver. Chatons très précoces, ressource majeure pour les abeilles en sortie d'hiver. Recéper tous les 2 à 3 ans.",
+  "bdm": "Second rideau",
+  "dens": 0.3,
+  "esp": 1.8,
+  "refs": [
+   {
+    "cv": "Nana",
+    "ct": "P8",
+    "tl": "20/30",
+    "px": 0.78
+   },
+   {
+    "cv": "Nana",
+    "ct": "C1.3",
+    "tl": "40/60",
+    "px": 1.78
+   },
+   {
+    "cv": "Gracilis",
+    "ct": "C3.5L",
+    "tl": "50/60",
+    "px": 4.58
    }
   ]
  },
@@ -7498,6 +9842,12 @@ const DATA = [
     "px": 0.8
    },
    {
+    "cv": "",
+    "ct": "P8",
+    "tl": "20/30",
+    "px": 0.8
+   },
+   {
     "cv": "Cardonna",
     "ct": "P8",
     "tl": "20/30",
@@ -7547,6 +9897,12 @@ const DATA = [
    },
    {
     "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "",
     "ct": "C1.3",
     "tl": "30/40",
     "px": 2.2
@@ -7559,6 +9915,12 @@ const DATA = [
    },
    {
     "cv": "Caradonna",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   },
+   {
+    "cv": "",
     "ct": "C1,3L",
     "tl": "",
     "px": 3.49
@@ -7770,6 +10132,208 @@ const DATA = [
   ]
  },
  {
+  "lat": "Santolina chamaecyparissus",
+  "fr": "Santoline",
+  "type": "Arbuste",
+  "h": 0.5,
+  "l": 0.7,
+  "expo": "Plein soleil",
+  "sol": "Drainé, sec, calcaire, pauvre, caillouteux",
+  "hum": "Sec",
+  "rust": -15,
+  "feu": "Persistant",
+  "cfeu": "Argenté, très découpé",
+  "m1": 6,
+  "m2": 8,
+  "flo": "Juin à août",
+  "cflo": "Jaune bouton",
+  "plant": "Printemps",
+  "popt": "Mars à mai",
+  "ent": "Moyen",
+  "style": "Bordure taillée, jardin de curé, jardin sec, rocaille, parterre géométrique",
+  "asso": "Lavandula, Rosmarinus, Cistus, Thymus, Phlomis",
+  "cons": "Feuillage argenté persistant qui se taille en boule ou en bordure basse, une alternative méditerranéenne au buis. Taille annuelle obligatoire juste après la floraison, sur le bois vert uniquement : taillée trop court elle ne repart pas. Certains suppriment les fleurs jaunes, qui jurent avec l'argenté. Se dégarnit après 5 ou 6 ans.",
+  "bdm": "Front de mer",
+  "dens": 2.5,
+  "esp": 0.6,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "P8",
+    "tl": "20/30",
+    "px": 0.74
+   },
+   {
+    "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.52
+   },
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 1.78
+   },
+   {
+    "cv": "",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   }
+  ]
+ },
+ {
+  "lat": "Scabiosa columbaria",
+  "fr": "Scabieuse colombaire",
+  "type": "Vivace",
+  "h": 0.6,
+  "l": 0.4,
+  "expo": "Plein soleil",
+  "sol": "Drainé, calcaire, pauvre",
+  "hum": "Sec",
+  "rust": -25,
+  "feu": "Semi-persistant",
+  "cfeu": "Vert grisé",
+  "m1": 5,
+  "m2": 10,
+  "flo": "Mai à octobre",
+  "cflo": "Bleu lavande, rose",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Prairie fleurie, massif naturaliste, bordure, jardin sec",
+  "asso": "Achillea, Salvia nemorosa, graminées, Gaura, Knautia, Nepeta",
+  "cons": "Floraison exceptionnellement longue, de mai jusqu'aux gelées si on supprime régulièrement les fleurs fanées. Espèce indigène des pelouses calcaires, très attractive pour les papillons. Redoute l'humidité hivernale en sol lourd. Rabattre en fin d'hiver seulement.",
+  "bdm": "Front de mer",
+  "dens": 5,
+  "esp": 0.4,
+  "refs": [
+   {
+    "cv": "Butterfly Blue",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "Pink Mist",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "Butterfly Blue",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   },
+   {
+    "cv": "Pink Mist",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   }
+  ]
+ },
+ {
+  "lat": "Sedum acre",
+  "fr": "Orpin âcre",
+  "type": "Couvre-sol",
+  "h": 0.1,
+  "l": 0.3,
+  "expo": "Plein soleil",
+  "sol": "Drainé, sec, très pauvre, caillouteux",
+  "hum": "Sec",
+  "rust": -30,
+  "feu": "Persistant",
+  "cfeu": "Vert clair charnu",
+  "m1": 5,
+  "m2": 7,
+  "flo": "Mai à juillet",
+  "cflo": "Jaune vif",
+  "plant": "Printemps",
+  "popt": "Mars à juin",
+  "ent": "Faible",
+  "style": "Toiture végétalisée, dallage, muret, rocaille, gravier, entre-pavés",
+  "asso": "Delosperma, Thymus serpyllum, Sempervivum, Festuca glauca",
+  "cons": "Pousse littéralement sur rien : quelques centimètres de substrat pauvre lui suffisent, d'où son usage systématique en toiture végétalisée. Supporte le piétinement léger et la sécheresse totale. Colonise rapidement par fragmentation, un simple morceau posé au sol s'enracine. Ne jamais amender ni arroser.",
+  "bdm": "Front de mer",
+  "dens": 9,
+  "esp": 0.3,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "Elegans",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.52
+   },
+   {
+    "cv": "",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   },
+   {
+    "cv": "Elegans",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   }
+  ]
+ },
+ {
+  "lat": "Sesleria caerulea",
+  "fr": "Seslérie bleue",
+  "type": "Graminée",
+  "h": 0.3,
+  "l": 0.3,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Drainé, calcaire, pauvre",
+  "hum": "Sec à frais",
+  "rust": -25,
+  "feu": "Persistant",
+  "cfeu": "Bleu vert, revers argenté",
+  "m1": 4,
+  "m2": 5,
+  "flo": "Avril à mai",
+  "cflo": "Gris argenté",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Couvre-sol graminéen, prairie sèche, bordure, massif contemporain, entre-dalles",
+  "asso": "Sedum, Festuca glauca, Salvia nemorosa, Achillea, Thymus",
+  "cons": "Petite graminée persistante à floraison très précoce, employée en nappe pour remplacer un gazon en zone sèche et peu circulée. Supporte le calcaire et la mi-ombre, ce qui est rare. Compter 8 plants au m² pour un tapis continu. Peigner au printemps. Reste basse et régulière sans aucune intervention.",
+  "bdm": "Front de mer",
+  "dens": 8,
+  "esp": 0.35,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 1.86
+   },
+   {
+    "cv": "",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   }
+  ]
+ },
+ {
   "lat": "Spiraea japonica",
   "fr": "Spirée du Japon",
   "type": "Arbuste",
@@ -7972,6 +10536,262 @@ const DATA = [
   ]
  },
  {
+  "lat": "Spiraea nipponica",
+  "fr": "Spirée du Japon blanche",
+  "type": "Arbuste",
+  "h": 2.0,
+  "l": 2.0,
+  "expo": "Plein soleil",
+  "sol": "Tout type, drainé, calcaire toléré",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert bleuté",
+  "m1": 5,
+  "m2": 6,
+  "flo": "Mai à juin",
+  "cflo": "Blanc pur",
+  "plant": "Automne à printemps",
+  "popt": "Octobre à mars",
+  "ent": "Faible",
+  "style": "Haie libre fleurie, massif de printemps, jardin blanc, aménagement collectif",
+  "asso": "Deutzia, Philadelphus, Weigelia, Syringa, graminées",
+  "cons": "Rameaux arqués entièrement couverts de fleurs blanches au printemps, un effet de cascade très différent des spirées d'été à fleurs roses. Attention : celle-ci fleurit sur le bois de l'année précédente, la taille se fait donc après la floraison, à l'inverse de Spiraea japonica. Confondre les deux, c'est perdre la floraison.",
+  "bdm": "Second rideau",
+  "dens": 0.4,
+  "esp": 1.5,
+  "refs": [
+   {
+    "cv": "Snowmound",
+    "ct": "P8",
+    "tl": "20/30",
+    "px": 0.8
+   },
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "30/40",
+    "px": 1.78
+   },
+   {
+    "cv": "Snowmound",
+    "ct": "C1.3",
+    "tl": "10/20",
+    "px": 1.81
+   },
+   {
+    "cv": "Snowmound",
+    "ct": "C3L",
+    "tl": "30/40",
+    "px": 4.41
+   },
+   {
+    "cv": "",
+    "ct": "C3L",
+    "tl": "30/40",
+    "px": 4.41
+   },
+   {
+    "cv": "",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 13.4
+   }
+  ]
+ },
+ {
+  "lat": "Stachys byzanthina",
+  "fr": "Oreille d'ours",
+  "type": "Couvre-sol",
+  "h": 0.4,
+  "l": 0.6,
+  "expo": "Plein soleil",
+  "sol": "Drainé, sec, pauvre, caillouteux",
+  "hum": "Sec",
+  "rust": -25,
+  "feu": "Persistant",
+  "cfeu": "Argenté, feutré et duveteux",
+  "m1": 6,
+  "m2": 8,
+  "flo": "Juin à août",
+  "cflo": "Rose mauve",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Bordure, rocaille, jardin sec, jardin tactile, contraste de feuillage",
+  "asso": "Lavandula, Nepeta, Salvia nemorosa, Sedum, graminées",
+  "cons": "Feuillage argenté et velouté irrésistible au toucher, très apprécié des enfants : un bon choix en bordure d'allée. Redoute l'humidité, qui fait pourrir les feuilles feutrées : jamais d'arrosage sur le feuillage, et retirer les feuilles abîmées après l'hiver. Certains suppriment les hampes florales pour ne garder que le tapis argenté.",
+  "bdm": "Front de mer",
+  "dens": 5,
+  "esp": 0.45,
+  "refs": [
+   {
+    "cv": "(lanata)",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "Silver Carpet",
+    "ct": "GT9",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "(lanata)",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   },
+   {
+    "cv": "Silver Carpet",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   }
+  ]
+ },
+ {
+  "lat": "Stipa tenuifolia",
+  "fr": "Cheveux d'ange",
+  "type": "Graminée",
+  "h": 0.6,
+  "l": 0.4,
+  "expo": "Plein soleil",
+  "sol": "Drainé, sec, pauvre, caillouteux",
+  "hum": "Sec",
+  "rust": -15,
+  "feu": "Semi-persistant",
+  "cfeu": "Vert clair, blond doré en été",
+  "m1": 6,
+  "m2": 9,
+  "flo": "Juin à septembre",
+  "cflo": "Beige argenté",
+  "plant": "Printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Jardin sec, massif contemporain, bordure souple, jardin de gravier, potée",
+  "asso": "Lavandula, Perovskia, Gaura, Sedum, Salvia, Verbena bonariensis",
+  "cons": "Le mouvement au moindre souffle de vent est tout son intérêt : à placer là où on la voit bouger, en bordure d'allée ou contre le ciel. Blondit en été, ce qui fait sa beauté. Peigner à la main au printemps plutôt que rabattre. Se ressème abondamment, parfois trop. Drainage impératif, elle pourrit en sol lourd.",
+  "bdm": "Front de mer",
+  "dens": 6,
+  "esp": 0.4,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "P8",
+    "tl": "20/30",
+    "px": 0.86
+   },
+   {
+    "cv": "'Pony Tails'",
+    "ct": "P8",
+    "tl": "20/30",
+    "px": 0.86
+   },
+   {
+    "cv": "(Pony Tails)",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.36
+   },
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "40/60",
+    "px": 1.86
+   },
+   {
+    "cv": "'Pony Tails'",
+    "ct": "C1.3",
+    "tl": "40/60",
+    "px": 1.86
+   },
+   {
+    "cv": "(Pony Tails)",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   },
+   {
+    "cv": "",
+    "ct": "C2L",
+    "tl": "30/40",
+    "px": 3.36
+   }
+  ]
+ },
+ {
+  "lat": "Symphoricarpos doorenbosii",
+  "fr": "Symphorine",
+  "type": "Arbuste",
+  "h": 1.5,
+  "l": 1.5,
+  "expo": "Soleil à ombre",
+  "sol": "Tout type, calcaire toléré, pauvre toléré",
+  "hum": "Frais",
+  "rust": -30,
+  "feu": "Caduc",
+  "cfeu": "Vert bleuté",
+  "m1": 6,
+  "m2": 8,
+  "flo": "Juin à août",
+  "cflo": "Rose discret",
+  "plant": "Automne à printemps",
+  "popt": "Octobre à mars",
+  "ent": "Faible",
+  "style": "Haie libre, talus, massif d'ombre, aménagement collectif, jardin de biodiversité",
+  "asso": "Cornus sanguinea, Viburnum, Cotoneaster, graminées",
+  "cons": "Cultivée pour ses grosses baies blanches ou rosées qui tiennent de septembre à Noël, bien après la chute des feuilles. Pousse absolument partout, y compris en ombre sèche et en sol ingrat, d'où son emploi massif en collectif. Drageonne et forme des colonies : lui donner de l'espace ou la contenir.",
+  "bdm": "Second rideau",
+  "dens": 0.5,
+  "esp": 1.4,
+  "refs": [
+   {
+    "cv": "Hancock",
+    "ct": "P8",
+    "tl": "20/40",
+    "px": 0.64
+   },
+   {
+    "cv": "Hancock",
+    "ct": "C1.3",
+    "tl": "30/60",
+    "px": 1.69
+   },
+   {
+    "cv": "Hancock",
+    "ct": "C3L",
+    "tl": "30/40",
+    "px": 4.47
+   },
+   {
+    "cv": "Magic berry",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 4.74
+   },
+   {
+    "cv": "White hedge",
+    "ct": "C3L",
+    "tl": "40/50",
+    "px": 4.74
+   },
+   {
+    "cv": "Magic berry",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 13.4
+   },
+   {
+    "cv": "White hedge",
+    "ct": "C10L",
+    "tl": "60/80",
+    "px": 13.51
+   }
+  ]
+ },
+ {
   "lat": "Syringa vulgaris",
   "fr": "Lilas commun",
   "type": "Arbuste",
@@ -8032,6 +10852,262 @@ const DATA = [
     "ct": "C10L",
     "tl": "60/80",
     "px": 34.2
+   }
+  ]
+ },
+ {
+  "lat": "Tamarix africana",
+  "fr": "Tamaris de printemps",
+  "type": "Arbuste",
+  "h": 4.0,
+  "l": 3.0,
+  "expo": "Plein soleil",
+  "sol": "Drainé, sableux, pauvre, salin toléré",
+  "hum": "Sec",
+  "rust": -18,
+  "feu": "Caduc",
+  "cfeu": "Vert bleuté, très fin",
+  "m1": 4,
+  "m2": 5,
+  "flo": "Avril à mai",
+  "cflo": "Rose pâle",
+  "plant": "Automne à printemps",
+  "popt": "Octobre à mars",
+  "ent": "Moyen",
+  "style": "Bord de mer, haie brise-vent, jardin de sable, sujet isolé",
+  "asso": "Elaeagnus, Phormium, Agapanthus, graminées, Cistus",
+  "cons": "La plante emblématique du front de mer : elle supporte le sel, le sable et le vent comme aucune autre, et sert de premier rideau pour protéger le reste du jardin. Silhouette en nuage rose au printemps. Attention à la période de taille : celui-ci fleurit sur le bois de l'année précédente, on taille donc après floraison, contrairement aux tamaris d'été.",
+  "bdm": "Front de mer",
+  "dens": 0.3,
+  "esp": 1.8,
+  "refs": [
+   {
+    "cv": "Printemps",
+    "ct": "C3.5L",
+    "tl": "60/80",
+    "px": 4.63
+   },
+   {
+    "cv": "Printemps",
+    "ct": "C3.5L",
+    "tl": "80/100",
+    "px": 4.63
+   },
+   {
+    "cv": "Pink cascade",
+    "ct": "C3.5L",
+    "tl": "60/80",
+    "px": 4.63
+   },
+   {
+    "cv": "Pink cascade",
+    "ct": "C3.5L",
+    "tl": "80/100",
+    "px": 4.63
+   },
+   {
+    "cv": "Printemps",
+    "ct": "C10L",
+    "tl": "100/125",
+    "px": 13.57
+   },
+   {
+    "cv": "Pink cascade",
+    "ct": "C10L",
+    "tl": "100/125",
+    "px": 13.57
+   }
+  ]
+ },
+ {
+  "lat": "Taxus baccata",
+  "fr": "If commun",
+  "type": "Conifère",
+  "h": 10.0,
+  "l": 5.0,
+  "expo": "Soleil à ombre",
+  "sol": "Drainé, calcaire toléré, profond",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Persistant",
+  "cfeu": "Vert très foncé",
+  "m1": 3,
+  "m2": 4,
+  "flo": "Mars à avril",
+  "cflo": "Non ornementale",
+  "plant": "Automne à printemps",
+  "popt": "Septembre à novembre ou mars",
+  "ent": "Moyen",
+  "style": "Haie taillée, topiaire, jardin structuré, écran, fond de massif",
+  "asso": "Fond sombre pour rosiers, graminées, vivaces claires, Hydrangea",
+  "cons": "Le meilleur conifère de haie, et le seul qui reparte sur le vieux bois : une haie dégarnie peut être rabattue sévèrement et se refaire, ce qu'aucun cyprès ne permet. Tolère l'ombre. Croissance lente, à intégrer au budget. Toutes les parties sauf la pulpe rouge sont toxiques, y compris pour les chevaux : à signaler.",
+  "bdm": "Second rideau",
+  "dens": 0.5,
+  "esp": 0.6,
+  "refs": [
+   {
+    "cv": "David",
+    "ct": "C7.5L",
+    "tl": "60/80",
+    "px": 17.48
+   },
+   {
+    "cv": "Fastigiata robusta",
+    "ct": "C7.5L",
+    "tl": "80/100",
+    "px": 17.48
+   },
+   {
+    "cv": "Fastigiata robusta",
+    "ct": "C7.5L",
+    "tl": "60/80",
+    "px": 17.48
+   }
+  ]
+ },
+ {
+  "lat": "Thuya plicata",
+  "fr": "Thuya géant",
+  "type": "Conifère",
+  "h": 12.0,
+  "l": 4.0,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Profond, frais, drainé",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Persistant",
+  "cfeu": "Vert foncé brillant",
+  "m1": 0,
+  "m2": 0,
+  "flo": "Non ornementale",
+  "cflo": "—",
+  "plant": "Automne à printemps",
+  "popt": "Septembre à novembre ou mars",
+  "ent": "Moyen",
+  "style": "Haie brise-vue, écran, fond de propriété",
+  "asso": "À intégrer dans une haie mixte plutôt qu'en monospécifique",
+  "cons": "Plus résistant au dessèchement et aux maladies que le thuya occidental, et au feuillage plus brillant. Ne repart pas sur le vieux bois : ne jamais tailler trop court. Deux tailles annuelles. Comme tous les conifères de haie, il appauvrit le sol à son pied et n'offre rien à la biodiversité : proposer systématiquement une haie mixte en alternative.",
+  "bdm": "Second rideau",
+  "dens": 0.5,
+  "esp": 0.8,
+  "refs": [
+   {
+    "cv": "Emeraude",
+    "ct": "C4L",
+    "tl": "60/80",
+    "px": 4.3
+   },
+   {
+    "cv": "Excelsa",
+    "ct": "C10L",
+    "tl": "125/150",
+    "px": 14.89
+   },
+   {
+    "cv": "Jantar",
+    "ct": "C7.5L",
+    "tl": "80/100",
+    "px": 17.32
+   },
+   {
+    "cv": "Ever goldy",
+    "ct": "C7.5L",
+    "tl": "60/80",
+    "px": 17.32
+   },
+   {
+    "cv": "Ever goldy",
+    "ct": "C7.5L",
+    "tl": "80/100",
+    "px": 17.32
+   },
+   {
+    "cv": "Whipcord",
+    "ct": "C7.5L",
+    "tl": "50/60",
+    "px": 17.48
+   },
+   {
+    "cv": "Fire chief",
+    "ct": "C7.5L",
+    "tl": "50/60",
+    "px": 18.37
+   }
+  ]
+ },
+ {
+  "lat": "Thymus serpyllum",
+  "fr": "Serpolet",
+  "type": "Couvre-sol / Aromatique",
+  "h": 0.1,
+  "l": 0.4,
+  "expo": "Plein soleil",
+  "sol": "Drainé, sec, pauvre, caillouteux, calcaire",
+  "hum": "Sec",
+  "rust": -25,
+  "feu": "Persistant",
+  "cfeu": "Vert grisé ou doré",
+  "m1": 5,
+  "m2": 8,
+  "flo": "Mai à août",
+  "cflo": "Rose mauve, blanc",
+  "plant": "Printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Entre-pavés, dallage, toiture végétalisée, rocaille, tapis fleuri praticable",
+  "asso": "Sedum, Sagina, Delosperma, Festuca glauca, Armeria",
+  "cons": "Contrairement au thym commun qui forme un sous-arbrisseau, le serpolet fait un tapis ras de quelques centimètres, praticable : c'est la solution pour les joints de dallage et les allées peu circulées. Supporte un piétinement modéré et libère son parfum quand on marche dessus. Très mellifère. Drainage impératif.",
+  "bdm": "Front de mer",
+  "dens": 9,
+  "esp": 0.3,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "P8",
+    "tl": "15/20",
+    "px": 0.85
+   },
+   {
+    "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "Albiflorus",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.52
+   },
+   {
+    "cv": "Red Carpet",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.52
+   },
+   {
+    "cv": "",
+    "ct": "C1.3",
+    "tl": "20/30",
+    "px": 1.78
+   },
+   {
+    "cv": "Albiflorus",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   },
+   {
+    "cv": "Red Carpet",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
+   },
+   {
+    "cv": "",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 2.96
    }
   ]
  },
@@ -8206,6 +11282,104 @@ const DATA = [
   ]
  },
  {
+  "lat": "Veronica spicata",
+  "fr": "Véronique en épis",
+  "type": "Vivace",
+  "h": 0.5,
+  "l": 0.4,
+  "expo": "Plein soleil",
+  "sol": "Drainé, calcaire toléré, pauvre",
+  "hum": "Sec à frais",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert franc",
+  "m1": 6,
+  "m2": 8,
+  "flo": "Juin à août",
+  "cflo": "Bleu violacé, rose, blanc",
+  "plant": "Automne à printemps",
+  "popt": "Mars à mai",
+  "ent": "Faible",
+  "style": "Bordure, rocaille, massif naturaliste, jardin sec, prairie fleurie",
+  "asso": "Salvia nemorosa, Achillea, Sedum, graminées, Nepeta",
+  "cons": "Épis dressés très verticaux qui rythment un massif bas, dans le même registre que la sauge des bois mais plus compacte. Rabattre après la première floraison pour une remontée. Très mellifère. Redoute l'humidité hivernale en sol lourd, comme la plupart des vivaces de rocaille.",
+  "bdm": "Front de mer",
+  "dens": 6,
+  "esp": 0.4,
+  "refs": [
+   {
+    "cv": "",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "Alba",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.44
+   },
+   {
+    "cv": "Inspire Blue",
+    "ct": "GT8",
+    "tl": "",
+    "px": 1.82
+   },
+   {
+    "cv": "Inspire Blue",
+    "ct": "C1,3L",
+    "tl": "",
+    "px": 3.49
+   }
+  ]
+ },
+ {
+  "lat": "Viburnum bodnantense",
+  "fr": "Viorne de Bodnant",
+  "type": "Arbuste",
+  "h": 3.0,
+  "l": 2.0,
+  "expo": "Soleil à mi-ombre",
+  "sol": "Tout type, humifère, calcaire toléré",
+  "hum": "Frais",
+  "rust": -25,
+  "feu": "Caduc",
+  "cfeu": "Vert bronzé, rouge en automne",
+  "m1": 11,
+  "m2": 3,
+  "flo": "Novembre à mars",
+  "cflo": "Rose tendre, très parfumé",
+  "plant": "Automne à printemps",
+  "popt": "Octobre à mars",
+  "ent": "Faible",
+  "style": "Massif d'hiver, près d'un passage pour le parfum, haie libre, jardin de curé",
+  "asso": "Cornus alba, Hamamelis, Sarcococca, graminées, bulbes de printemps",
+  "cons": "Fleurit en plein hiver sur bois nu, de novembre à mars, avec un parfum puissant : c'est la plante qui répond au client qui trouve son jardin triste en janvier. Les fleurs résistent au gel et se renouvellent après chaque coup de froid. Silhouette banale le reste de l'année, à placer en second plan.",
+  "bdm": "Second rideau",
+  "dens": 0.4,
+  "esp": 1.5,
+  "refs": [
+   {
+    "cv": "C lamont",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 5.35
+   },
+   {
+    "cv": "Dawn",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 6.84
+   },
+   {
+    "cv": "C lamont",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 15.28
+   }
+  ]
+ },
+ {
   "lat": "Viburnum opulus",
   "fr": "Viorne obier",
   "type": "Arbuste",
@@ -8344,10 +11518,28 @@ const DATA = [
     "px": 5.24
    },
    {
+    "cv": "Vertou",
+    "ct": "C3",
+    "tl": "30/40",
+    "px": 5.52
+   },
+   {
     "cv": "Giganteum",
     "ct": "C3",
     "tl": "30/40",
     "px": 5.52
+   },
+   {
+    "cv": "Eve Price",
+    "ct": "C3",
+    "tl": "30/40",
+    "px": 5.52
+   },
+   {
+    "cv": "Lisa Rose",
+    "ct": "C3",
+    "tl": "30/40",
+    "px": 6.07
    },
    {
     "cv": "Spirit",
@@ -8538,6 +11730,18 @@ const DATA = [
     "px": 4.74
    },
    {
+    "cv": "",
+    "ct": "C3.5L",
+    "tl": "60/80",
+    "px": 4.85
+   },
+   {
+    "cv": "",
+    "ct": "C3L",
+    "tl": "40/60",
+    "px": 4.85
+   },
+   {
     "cv": "Hybride Conquete",
     "ct": "C3L",
     "tl": "40/60",
@@ -8572,6 +11776,12 @@ const DATA = [
     "ct": "C10L",
     "tl": "80/100",
     "px": 13.4
+   },
+   {
+    "cv": "",
+    "ct": "C10L",
+    "tl": "80/100",
+    "px": 13.84
    },
    {
     "cv": "Red prince",
