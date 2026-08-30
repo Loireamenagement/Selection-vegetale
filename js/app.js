@@ -1,3 +1,29 @@
+/* ============================================================
+   IDENTITÉ — le seul bloc à modifier pour personnaliser
+   ============================================================ */
+const MARQUE = {
+  nom:      'Loire Aménagement',
+  baseline: 'Vivez vos extérieurs !',
+  gerant:   'Benoît Courtemanche',
+  fonction: 'Gérant',
+  coord: [
+    'Ancenis, Loire-Atlantique',
+    '06 99 86 18 56 · 02 40 96 16 13',
+    'contact@loire-amenagement.com',
+    'www.loire-amenagement.com'
+  ],
+  // Logo affiché sur les documents. Laisser null pour un rendu typographique.
+  logo: 'assets/logo.png',
+  logoHauteur: 62,
+  // Couleurs relevées dans le logo
+  couleur: '#0C5AA2',       // bleu Loire — titres, filets, en-têtes
+  accent:  '#7BBB43',       // vert prairie — mises en valeur
+  accent2: '#3BACD4',       // bleu clair — baseline
+  // Mentions légales du pied de page. Laisser vide pour masquer.
+  legal: 'Loire Aménagement · SIRET 819 008 608 00013'
+};
+const CLIENT = { nom: '', adresse: '', ville: '', projet: '' };
+
 const MOIS = ['J','F','M','A','M','J','J','A','S','O','N','D'];
 const MOIS_LONG = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 
@@ -133,13 +159,15 @@ function moisFloraison(p){
 /* ---------- filtrage ---------- */
 function correspond(p){
   if(F.q){
-    const t = (p.lat+' '+p.fr).toLowerCase();
-    if(!t.includes(F.q)) return false;
+    const norm = t => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    if(!norm(p.lat+' '+p.fr).includes(norm(F.q))) return false;
   }
-  if(F.type.size && ![...F.type].some(v=>p.type.includes(v))) return false;
-  if(F.expo.size && ![...F.expo].some(v=>p.expo.includes(v))) return false;
-  if(F.sol.size && ![...F.sol].some(v=>p.sol.toLowerCase().includes(v.toLowerCase().split(' ')[0]))) return false;
-  if(F.hum.size && ![...F.hum].some(v=>p.hum.includes(v))) return false;
+  const sansAcc = t => t.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  if(F.type.size && ![...F.type].some(v=>sansAcc(p.type).includes(sansAcc(v)))) return false;
+  if(F.expo.size && ![...F.expo].some(v=>sansAcc(p.expo).includes(sansAcc(v)))) return false;
+  if(F.sol.size && ![...F.sol].some(v=>sansAcc(p.sol).includes(sansAcc(v.split(' ')[0])))) return false;
+  if(F.hum.size && ![...F.hum].some(v=>sansAcc(p.hum).includes(sansAcc(v)))) return false;
   if(F.bdm.size){
     const rang = {'Front de mer':2,'Second rideau':1,'Déconseillé en bord de mer':0};
     const exige = Math.max(...[...F.bdm].map(v=>rang[v]));
@@ -179,6 +207,10 @@ function rendre(){
   g.innerHTML = res.map(p=>`
     <div class="cwrap">
     <button class="carte" data-lat="${p.lat}">
+      ${p.ph.length
+        ? `<img class="vign" src="${urlPhoto(p)}" alt="" loading="lazy"
+             onerror="this.remove()">`
+        : `<div class="vign vide3">Pas de photo</div>`}
       <div>
         <div class="nom">${p.fr}</div>
         <div class="lat">${p.lat}</div>
@@ -195,6 +227,9 @@ function rendre(){
     </div>`).join('');
 }
 const fmt = n => String(n).replace('.',',');
+const clePhoto = lat => lat.toLowerCase().normalize('NFD')
+  .replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const urlPhoto = (p, i=1) => `assets/photos/${clePhoto(p.lat)}-${i}.jpg`;
 const dens = d => d>=1 ? fmt(d)+' sujets/m²' : fmt(Math.round(10/d)/10)+' m² par sujet';
 const eur = n => n.toFixed(2).replace('.',',')+' €';
 const prixMin = p => eur(Math.min(...p.refs.map(r=>r.px)));
@@ -318,6 +353,13 @@ function ouvrirFiche(p){
   const mf = moisFloraison(p);
   const couleurs = p.cflo==='—' ? [] : p.cflo.split(',').map(s=>s.trim());
   f.innerHTML = `
+    ${p.ph.length ? `<div class="galerie">
+      <img id="g-grande" src="${urlPhoto(p, p.ph[0])}" alt="${p.fr}">
+      ${p.ph.length > 1 ? `<div class="g-mini">
+        ${p.ph.map((n,i)=>`<img class="${i?'':'on'}" data-n="${n}"
+            src="${urlPhoto(p,n)}" alt="">`).join('')}
+      </div>` : ''}
+    </div>` : ''}
     <div class="fhead">
       <div class="fr">${p.fr}</div>
       <div class="lat">${p.lat}</div>
@@ -415,6 +457,13 @@ function ouvrirFiche(p){
   surf.addEventListener('input',()=>recalc('s'));
   lng.addEventListener('input',()=>recalc('l'));
 
+  const mini = f.querySelector('.g-mini');
+  if(mini) mini.onclick = e=>{
+    const im = e.target.closest('img'); if(!im) return;
+    f.querySelector('#g-grande').src = urlPhoto(p, +im.dataset.n);
+    mini.querySelectorAll('img').forEach(x=>x.classList.toggle('on', x===im));
+  };
+
   f.querySelector('.fclose').onclick = fermerFiche;
   const st = f.querySelector('.star');
   st.classList.toggle('on', estFavori(p.lat));
@@ -456,6 +505,9 @@ function ouvrirPanier(){
   const el = document.getElementById('panier');
   const items = PANIER.length ? PANIER.map(x=>`
     <div class="pitem" data-k="${x.k}">
+      ${(DATA.find(d=>d.lat===x.lat)||{ph:[]}).ph.length
+        ? `<img class="pvign" src="assets/photos/${clePhoto(x.lat)}-1.jpg" alt="" loading="lazy" onerror="this.remove()">`
+        : ''}
       <div class="info">
         <div class="nom">${x.fr}</div>
         <div class="det"><span class="lat">${x.lat}</span>${x.cv?' '+x.cv:''} · ${x.ct}${x.tl?' · '+x.tl:''}</div>
@@ -500,14 +552,13 @@ function ouvrirPanier(){
       </div>`:''}
       <div class="ligne-tot"><span>${PANIER.reduce((s,x)=>s+x.q,0)} sujets · ${PANIER.length} référence${PANIER.length>1?'s':''}</span><span>≈ ${fmt(Math.round(PANIER.reduce((s,x)=>s+x.q/x.dens,0)))} m² plantés</span></div>
       <div class="ligne-tot grand"><span>Total HT</span><span>${eur(totalHT())}</span></div>
-      <button class="envoyer">Envoyer la proposition au client</button>
+      <button class="envoyer">Générer la proposition</button>
     </div>`;
 
   el.querySelector('.fclose').onclick = fermerPanier;
   el.querySelector('.envoyer').onclick = ()=>{
-    alert(PANIER.length
-      ? "Dans l'application, cette action génère le PDF de la proposition — fiches techniques comprises — et l'envoie par email au client.\n\nIci, c'est une maquette : rien n'est envoyé."
-      : "Ajoutez au moins une plante avant d'envoyer la proposition.");
+    if(!PANIER.length){ alert("Ajoutez au moins une plante avant de générer la proposition."); return; }
+    fermerPanier(); ouvrirDocument();
   };
   el.querySelector('.plist').addEventListener('click', e=>{
     const it = e.target.closest('.pitem'); if(!it) return;
@@ -536,9 +587,279 @@ function fermerPanier(){
 document.getElementById('btn-panier').onclick = ouvrirPanier;
 document.getElementById('voile').onclick = ()=>{fermerFiche();fermerPanier();fermerFavoris();};
 document.addEventListener('keydown', e=>{
-  if(e.key==='Escape'){fermerPop();fermerFiche();fermerPanier();fermerFavoris();}
+  if(e.key==='Escape'){
+    if(document.getElementById('doc').classList.contains('on')){fermerDocument();return;}
+    fermerPop();fermerFiche();fermerPanier();fermerFavoris();
+  }
 });
 
+function appliquerMarque(){
+  const r = document.documentElement.style;
+  r.setProperty('--vert', MARQUE.couleur);
+  r.setProperty('--mousse', MARQUE.accent);
+  const t = document.querySelector('header h1');
+  if(t) t.textContent = MARQUE.nom;
+  const s = document.querySelector('header .sub');
+  if(s) s.textContent = 'Sélection végétale';
+}
+
+appliquerMarque();
 bâtirFiltres();
 rendre();
 majCompteurFav();
+
+
+/* ============ Document de proposition ============ */
+const CFG = { coef: 2.2, mode: 'client' };
+
+
+function dateFr(){
+  return new Date().toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
+}
+function refDevis(){
+  const d = new Date();
+  return 'PV-' + d.getFullYear() + String(d.getMonth()+1).padStart(2,'0') +
+         '-' + String(Math.floor(Math.random()*900)+100);
+}
+const REF = refDevis();
+
+function ouvrirDocument(){
+  const doc = document.getElementById('doc');
+  const client = CFG.mode === 'client';
+  const pv = x => x.px * CFG.coef;
+  const totalAchat = PANIER.reduce((s,x)=>s + x.px*x.q, 0);
+  const totalVente = PANIER.reduce((s,x)=>s + pv(x)*x.q, 0);
+  const nbSujets = PANIER.reduce((s,x)=>s+x.q,0);
+  const surface = PANIER.reduce((s,x)=>s + x.q/x.dens, 0);
+
+  const especes = [];
+  PANIER.forEach(x=>{ if(!especes.some(e=>e.lat===x.lat)){
+    const p = DATA.find(d=>d.lat===x.lat); if(p) especes.push(p);
+  }});
+
+  const counts = new Array(12).fill(0);
+  PANIER.forEach(x=>{
+    if(!x.m1||!x.m2) return;
+    let m=x.m1;
+    for(let i=0;i<13;i++){counts[m-1]++; if(m===x.m2)break; m = m===12?1:m+1;}
+  });
+  const trous = counts.map((c,i)=>c===0?MOIS_LONG[i]:null).filter(Boolean);
+
+  /* ---- tableau des vegetaux ---- */
+  const enteteClient = `<tr>
+      <th>Espèce</th><th>Conditionnement</th>
+      <th class="r">Qté</th><th class="r">Surface</th>
+    </tr>`;
+  const enteteInterne = `<tr>
+      <th>Espèce</th><th>Conditionnement</th><th class="r">Qté</th>
+      <th class="r">Achat HT</th><th class="r">Total achat</th><th class="r">Vente HT</th>
+    </tr>`;
+
+  const lignes = PANIER.map(x=>{
+    const nom = `<td>
+        <div class="n1">${x.fr}</div>
+        <div class="n2"><span class="lat">${x.lat}</span>${x.cv?' — '+x.cv:''}</div>
+      </td>
+      <td>${x.ct}${x.tl?'<br><span class="n2">'+x.tl+'</span>':''}</td>
+      <td class="r">${x.q}</td>`;
+    return client
+      ? `<tr>${nom}<td class="r">${fmt(Math.round(x.q/x.dens*10)/10)} m²</td></tr>`
+      : `<tr>${nom}
+          <td class="r">${eur(x.px)}</td>
+          <td class="r">${eur(x.px*x.q)}</td>
+          <td class="r"><b>${eur(pv(x)*x.q)}</b></td>
+        </tr>`;
+  }).join('');
+
+  /* ---- fiches techniques ---- */
+  const fiches = especes.map(p=>`
+    <div class="fichetec">
+      ${p.ph.length ? `<img class="ftphoto" src="${urlPhoto(p, p.ph[0])}" alt="">` : ''}
+      <h4>${p.fr}</h4>
+      <div class="sl"><span class="lat">${p.lat}</span> · ${p.type}</div>
+      <dl class="gr">
+        <div><dt>Taille adulte</dt><dd>${fmt(p.h)} × ${fmt(p.l)} m</dd></div>
+        <div><dt>Exposition</dt><dd>${p.expo}</dd></div>
+        <div><dt>Sol</dt><dd>${p.sol}</dd></div>
+        <div><dt>Rusticité</dt><dd>${p.rust} °C</dd></div>
+        <div><dt>Feuillage</dt><dd>${p.feu}</dd></div>
+        <div><dt>Floraison</dt><dd>${p.flo}</dd></div>
+        <div><dt>Couleur</dt><dd>${p.cflo}</dd></div>
+        <div><dt>Plantation</dt><dd>${p.popt}</dd></div>
+      </dl>
+      <p><b>Situation :</b> ${p.style}.</p>
+      <p><b>Associations :</b> ${p.asso}.</p>
+      <p class="ent"><b>Entretien (${p.ent.toLowerCase()}) :</b> ${p.cons}</p>
+    </div>`).join('');
+
+  /* ---- totaux, uniquement en interne ---- */
+  const totaux = client ? '' : `
+      <div class="totaux">
+        <div><span>Coût d'achat des végétaux HT</span><span>${eur(totalAchat)}</span></div>
+        <div><span>Valeur de vente (coef. ${fmt(CFG.coef)})</span><span>${eur(totalVente)}</span></div>
+        <div><span>Marge brute</span><span>${eur(totalVente - totalAchat)}</span></div>
+        <div class="gd"><span>À reporter au devis, poste végétaux HT</span><span>${eur(totalVente)}</span></div>
+      </div>`;
+
+  /* ---- reglages, uniquement en interne ---- */
+  const saisie = `
+    <div style="padding:16px 18px 0">
+      <div class="reglages">
+        <label style="flex:1.4;min-width:180px">Nom du client
+          <input type="text" id="c-nom" value="${CLIENT.nom}" placeholder="M. et Mme Dupont">
+        </label>
+        <label style="flex:1.6;min-width:200px">Adresse du chantier
+          <input type="text" id="c-adr" value="${CLIENT.adresse}" placeholder="12 rue des Jardins">
+        </label>
+        <label style="flex:1.2;min-width:150px">Code postal et ville
+          <input type="text" id="c-vil" value="${CLIENT.ville}" placeholder="44150 Ancenis">
+        </label>
+        <label style="flex:1.4;min-width:170px">Projet
+          <input type="text" id="c-prj" value="${CLIENT.projet}" placeholder="Massif d'entrée">
+        </label>
+      </div>
+    </div>`;
+
+  const reglages = client ? '' : `
+    <div style="padding:10px 18px 0">
+      <div class="reglages">
+        <label>Coefficient de vente
+          <input type="number" id="r-coef" min="1" max="6" step="0.05" value="${CFG.coef}">
+        </label>
+        <div class="info">Les prix du catalogue sont vos prix d'achat. Le coefficient donne
+          le montant à reporter au poste végétaux de votre devis global.
+          Ce récapitulatif est un document de travail : il ne doit pas être transmis au client.</div>
+      </div>
+    </div>`;
+
+  const bandeau = client ? '' : `
+      <div class="interne">Document interne — ne pas transmettre au client</div>`;
+
+  doc.innerHTML = `
+    <div class="docbar">
+      <span class="t">${client ? 'Proposition client' : 'Récapitulatif chantier'} · ${REF}</span>
+      <div class="modes">
+        <button class="${client?'act':''}" data-mode="client">Client</button>
+        <button class="${client?'':'act'}" data-mode="interne">Interne</button>
+      </div>
+      <span class="spacer"></span>
+      <button id="d-fermer">Fermer</button>
+      ${client?'<button id="d-mail">Préparer l\'email</button>':''}
+      <button class="pri" id="d-pdf">Imprimer / Enregistrer en PDF</button>
+    </div>
+
+    ${saisie}
+    ${reglages}
+
+    <div class="page" style="--m:${MARQUE.couleur};--a:${MARQUE.accent};--a2:${MARQUE.accent2}">
+      ${bandeau}
+      <div class="dh">
+        <div class="ident">
+          ${MARQUE.logo
+            ? `<img class="logo" src="${MARQUE.logo}" alt="${MARQUE.nom}"
+                 style="height:${MARQUE.logoHauteur}px"
+                 onerror="this.outerHTML='<div class=\'ent\'>${MARQUE.nom}</div>'">`
+            : `<div class="ent">${MARQUE.nom}</div>`}
+          <div class="bl">${MARQUE.baseline}</div>
+          <div class="coord" contenteditable="true">
+            ${MARQUE.gerant}${MARQUE.fonction?', '+MARQUE.fonction.toLowerCase():''}<br>
+            ${MARQUE.coord.join('<br>')}
+          </div>
+        </div>
+        <div class="droite">
+          <b>${CLIENT.nom || '<span class="vide2">Nom du client</span>'}</b>
+          ${CLIENT.adresse ? CLIENT.adresse+'<br>' : ''}${CLIENT.ville || ''}
+          <div class="meta2">${dateFr()}<br>Réf. ${REF}</div>
+        </div>
+      </div>
+
+      <h1 class="dtitre">${client ? 'Palette végétale proposée' : 'Récapitulatif des végétaux'}</h1>
+      ${CLIENT.projet ? `<p class="projet">${CLIENT.projet}</p>` : ''}
+      <p class="dsstitre">${nbSujets} sujets · ${especes.length} espèces · environ ${fmt(Math.round(surface))} m² plantés</p>
+
+      ${client ? `<p class="intro">Cette palette a été composée pour les conditions de votre terrain :
+        exposition, nature du sol et entretien souhaité. Chaque espèce est présentée en détail
+        dans les fiches qui suivent. Le chiffrage de ces plantations figure au devis d'aménagement.</p>` : ''}
+
+      <div class="dsec">${client ? 'Composition de la palette' : 'Détail par référence'}</div>
+      <table class="dev">
+        <thead>${client ? enteteClient : enteteInterne}</thead>
+        <tbody>${lignes}</tbody>
+      </table>
+      ${totaux}
+
+      <div class="dsec">Échelonnement des floraisons sur l'année</div>
+      <div class="dcal">
+        ${counts.map(c=>`<i class="${c?'on':''}" style="height:${c?5+(c/Math.max(1,...counts))*20:5}px"></i>`).join('')}
+      </div>
+      <div class="dcal-lab">${MOIS_LONG.map(m=>`<span>${m.slice(0,1).toUpperCase()}</span>`).join('')}</div>
+      <p style="font-size:11.5px;color:var(--encre-2);margin-top:8px;line-height:1.5">
+        ${trous.length && trous.length<12
+          ? `Cette palette ne présente pas de floraison en ${trous.join(', ')}. Un arbuste à floraison hivernale ou une graminée à épis persistants comblerait ce creux.`
+          : `Cette palette assure une présence florale sur l'ensemble de l'année.`}
+      </p>
+
+      <div class="dsec">Fiches techniques des espèces retenues</div>
+      ${fiches}
+
+      <div class="mentions" contenteditable="true">
+        ${client
+          ? `Les végétaux sont fournis dans les conditionnements indiqués ; les tailles peuvent
+             varier légèrement selon les disponibilités de la pépinière au moment de la commande.
+             La reprise suppose une préparation du sol adaptée, un arrosage suivi la première année
+             et le respect des périodes de plantation mentionnées sur les fiches. Les surfaces
+             indiquées correspondent aux densités de plantation habituelles et peuvent être ajustées
+             selon l'effet recherché. Palette susceptible d'évoluer selon les disponibilités
+             en pépinière au moment de la commande.`
+          : `Prix d'achat HT du premier palier de quantité, catalogue AD.V Production 2026/2027.
+             Des tarifs dégressifs s'appliquent aux quantités supérieures : vérifier les seuils
+             avant commande. Disponibilités à confirmer auprès du fournisseur.`}
+      </div>
+      ${MARQUE.legal ? `<div class="legal">${MARQUE.legal}</div>` : ''}
+    </div>`;
+
+  [['c-nom','nom'],['c-adr','adresse'],['c-vil','ville'],['c-prj','projet']].forEach(([id,cle])=>{
+    const ch = document.getElementById(id);
+    ch.addEventListener('input', e=>{ CLIENT[cle] = e.target.value; });
+    ch.addEventListener('change', ()=>ouvrirDocument());
+  });
+
+  doc.querySelector('.modes').onclick = e=>{
+    const b = e.target.closest('button'); if(!b) return;
+    CFG.mode = b.dataset.mode; ouvrirDocument();
+  };
+  if(!client){
+    document.getElementById('r-coef').addEventListener('change', e=>{
+      CFG.coef = Math.max(1, parseFloat(e.target.value)||1);
+      ouvrirDocument();
+    });
+  }
+  document.getElementById('d-fermer').onclick = fermerDocument;
+  document.getElementById('d-pdf').onclick = ()=>window.print();
+  const mail = document.getElementById('d-mail');
+  if(mail) mail.onclick = ()=>{
+    const corps =
+`Bonjour${CLIENT.nom ? ' '+CLIENT.nom : ''},
+
+Vous trouverez ci-joint la palette végétale proposée pour votre projet.
+
+Elle comprend ${nbSujets} sujets répartis sur ${especes.length} espèces, pour environ ${fmt(Math.round(surface))} m² plantés.
+
+Chaque espèce est accompagnée de sa fiche technique : conditions de culture, période de plantation et conseils d'entretien. Le chiffrage de ces plantations figure au devis d'aménagement.
+
+Je reste à votre disposition pour en discuter.
+
+Cordialement,
+
+${MARQUE.gerant}
+${MARQUE.nom} — ${MARQUE.baseline}
+${MARQUE.coord.join(' · ')}`;
+    location.href = 'mailto:?subject=' + encodeURIComponent('Palette végétale' + (CLIENT.projet ? ' — '+CLIENT.projet : '') + ' — ' + REF) +
+                    '&body=' + encodeURIComponent(corps);
+  };
+
+  doc.classList.add('on');
+  doc.scrollTop = 0;
+}
+
+function fermerDocument(){ document.getElementById('doc').classList.remove('on'); }

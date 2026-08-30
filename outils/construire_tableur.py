@@ -4,10 +4,32 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from fiches import FICHES
+from fiches2 import FICHES2, ALIAS as ALIAS2
+from fiches3 import FICHES3, ALIAS3
+from fiches4 import FICHES4, ALIAS4
+from fiches5 import FICHES5, ALIAS5
+from fiches6 import FICHES6, ALIAS6
+
+ALIAS = {**ALIAS2, **ALIAS3, **ALIAS4, **ALIAS5, **ALIAS6}
 from complements import COMPLEMENTS
 
+FICHES_TOUTES = []
+for _f in FICHES:
+    _d = dict(_f)
+    _b, _dn, _e = COMPLEMENTS[_f["lat"]]
+    _d["bdm"], _d["dens"], _d["esp"] = _b, _dn, _e
+    FICHES_TOUTES.append(_d)
+FICHES_TOUTES.extend(dict(_f) for _f in FICHES2)
+FICHES_TOUTES.extend(dict(_f) for _f in FICHES3)
+FICHES_TOUTES.extend(dict(_f) for _f in FICHES4)
+FICHES_TOUTES.extend(dict(_f) for _f in FICHES5)
+FICHES_TOUTES.extend(dict(_f) for _f in FICHES6)
+
 cat = pd.read_pickle("/home/claude/cat.pkl")
-fmap = {f["lat"]: f for f in FICHES}
+fmap = {f["lat"]: f for f in FICHES_TOUTES}
+for _variante, _cible in ALIAS.items():          # variantes d'ecriture du catalogue
+    if _cible in fmap:
+        fmap[_variante] = fmap[_cible]
 
 MOIS = ["", "janvier", "février", "mars", "avril", "mai", "juin", "juillet",
         "août", "septembre", "octobre", "novembre", "décembre"]
@@ -25,7 +47,6 @@ lignes = []
 for _, r in g.iterrows():
     lat = r["Nom latin"]
     f = fmap.get(lat)
-    cp = COMPLEMENTS.get(lat)
     q = urllib.parse.quote(lat)
     d = {
         "Fiche complétée": "Oui" if f else "",
@@ -38,7 +59,7 @@ for _, r in g.iterrows():
         "Nature de sol": f["sol"] if f else "",
         "Humidité du sol": f["hum"] if f else "",
         "Rusticité (°C)": f["rust"] if f else "",
-        "Bord de mer": cp[0] if cp else "",
+        "Bord de mer": f["bdm"] if f else "",
         "Feuillage": f["feu"] if f else "",
         "Couleur feuillage": f["cfeu"] if f else "",
         "Floraison début (mois)": f["m1"] if f and f["m1"] else "",
@@ -48,8 +69,8 @@ for _, r in g.iterrows():
         "Période de plantation": f["plant"] if f else "",
         "Période optimale": f["popt"] if f else "",
         "Niveau d'entretien": f["ent"] if f else "",
-        "Densité (sujets/m²)": cp[1] if cp else "",
-        "Distance de plantation (m)": cp[2] if cp else "",
+        "Densité (sujets/m²)": f["dens"] if f else "",
+        "Distance de plantation (m)": f["esp"] if f else "",
         "Style / usages": f["style"] if f else "",
         "Associations": f["asso"] if f else "",
         "Conseils d'entretien": f["cons"] if f else "",
@@ -177,8 +198,8 @@ notice = [
     ("", ""),
     ("ÉTAT D'AVANCEMENT", ""),
     ("Espèces au total", f"{len(especes)} espèces botaniques issues du catalogue"),
-    ("Fiches complétées", f"{len(FICHES)} — les espèces les plus représentées chez AD.V (colonne « Fiche complétée » = Oui, fond vert)"),
-    ("Fiches à compléter", f"{len(especes) - len(FICHES)} — cellules sur fond jaune"),
+    ("Fiches complétées", f"{len(FICHES_TOUTES)} — les espèces les plus représentées chez AD.V (colonne « Fiche complétée » = Oui, fond vert)"),
+    ("Fiches à compléter", f"{len(especes) - len(FICHES_TOUTES)} — cellules sur fond jaune"),
     ("", ""),
     ("DEUX CHAMPS DE CHIFFRAGE", ""),
     ("Bord de mer", "Trois niveaux. « Front de mer » supporte les embruns directs, « Second rideau » demande la protection d'une haie brise-vent, « Déconseillé » souffre du sel et du vent. Critère déterminant sur le littoral atlantique."),
@@ -216,5 +237,5 @@ for i, (a, b) in enumerate(notice, start=1):
     if b == "" and a:
         ca.fill = GRIS
 
-wb.save("/mnt/user-data/outputs/Base_vegetale_AD-V_lot1.xlsx")
-print("OK -", len(especes), "especes dont", len(FICHES), "completees")
+wb.save("/mnt/user-data/outputs/Base_vegetale_AD-V.xlsx")
+print("OK -", len(especes), "especes dont", sum(1 for l in lignes if l["Fiche complétée"]=="Oui"), "completees")

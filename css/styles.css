@@ -270,3 +270,169 @@ table.cal td.px{font-weight:600;white-space:nowrap}
   #filtres.on{display:block}
   header .sub{display:none}
 }
+
+/* ============ Document de proposition ============ */
+#doc{
+  position:fixed;inset:0;z-index:80;background:#6E7670;overflow-y:auto;display:none;
+}
+#doc.on{display:block}
+.docbar{
+  position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:10px;
+  padding:11px 18px;background:var(--vert);color:#EDF0EA;
+}
+.docbar .t{font-size:14px;font-weight:600}
+.docbar button{
+  padding:9px 15px;border-radius:8px;font-size:13px;font-weight:600;
+  background:rgba(255,255,255,.14);color:#EDF0EA;
+}
+.docbar button:hover{background:rgba(255,255,255,.24)}
+.docbar button.pri{background:#F1F3EE;color:var(--vert)}
+.docbar button.pri:hover{background:#fff}
+.page{
+  background:#fff;max-width:800px;margin:22px auto;padding:38px 44px 46px;
+  box-shadow:0 6px 30px rgba(0,0,0,.22);color:#14201A;
+}
+.dh{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;
+  border-bottom:2px solid var(--vert);padding-bottom:16px;margin-bottom:20px}
+.dh .ent{font-size:19px;font-weight:700;line-height:1.2}
+.dh .coord{font-size:12px;color:var(--encre-2);line-height:1.6;margin-top:5px}
+.dh .droite{text-align:right;font-size:12px;color:var(--encre-2);line-height:1.7}
+.dh .droite b{display:block;font-size:15px;color:var(--encre);margin-bottom:3px}
+[contenteditable]{outline:0}
+[contenteditable]:hover{background:#FBF6E6;border-radius:3px}
+[contenteditable]:focus{background:#FDF6E7;box-shadow:0 0 0 2px #EBD9AE;border-radius:3px}
+.dtitre{font-size:22px;font-weight:700;margin:0 0 4px}
+.dsstitre{font-size:13.5px;color:var(--encre-2);margin:0 0 22px}
+.dsec{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--encre-2);margin:26px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--ligne)}
+table.dev{width:100%;border-collapse:collapse;font-size:12.5px}
+table.dev th{
+  text-align:left;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--encre-2);font-weight:700;padding:0 6px 7px;border-bottom:1px solid var(--ligne);
+}
+table.dev th.r,table.dev td.r{text-align:right}
+table.dev td{padding:8px 6px;border-bottom:1px solid #EDEBE2;vertical-align:top}
+table.dev .n1{font-weight:600;font-size:13px}
+table.dev .n2{font-size:11px;color:var(--encre-2)}
+.totaux{margin-top:14px;margin-left:auto;width:280px;font-size:13px}
+.totaux div{display:flex;justify-content:space-between;padding:5px 0}
+.totaux .gd{border-top:2px solid var(--vert);margin-top:5px;padding-top:9px;
+  font-size:16px;font-weight:700}
+.dcal{display:flex;gap:3px;height:26px;align-items:flex-end;margin-top:4px}
+.dcal i{flex:1;background:#E4E1D6;border-radius:2px}
+.dcal i.on{background:var(--ocre)}
+.dcal-lab{display:flex;gap:3px;font-size:9px;color:var(--encre-2);margin-top:3px}
+.dcal-lab span{flex:1;text-align:center}
+.fichetec{
+  border:1px solid var(--ligne);border-radius:8px;padding:13px 15px;margin-bottom:11px;
+  break-inside:avoid;page-break-inside:avoid;
+}
+.fichetec h4{margin:0;font-size:15px;font-weight:700}
+.fichetec .sl{font-size:12.5px;color:var(--encre-2);margin-bottom:9px}
+.fichetec .gr{display:grid;grid-template-columns:repeat(4,1fr);gap:7px 14px;font-size:11.5px;margin-bottom:9px}
+.fichetec .gr dt{color:var(--encre-2);font-size:10px}
+.fichetec .gr dd{margin:0;font-weight:500}
+.fichetec p{margin:0 0 5px;font-size:12px;line-height:1.5}
+.fichetec p.ent{color:#5A4A20}
+.mentions{margin-top:24px;padding-top:14px;border-top:1px solid var(--ligne);
+  font-size:11px;color:var(--encre-2);line-height:1.65}
+.reglages{
+  background:#EFEDE4;border:1px solid var(--ligne);border-radius:8px;
+  padding:12px 14px;margin:0 auto 0;max-width:800px;display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;
+}
+.reglages label{font-size:11px;color:var(--encre-2);display:flex;flex-direction:column;gap:4px}
+.reglages input[type=number]{width:92px;padding:8px 9px;border:1px solid var(--ligne);
+  border-radius:7px;font:inherit;font-size:14px;background:#fff}
+.reglages .info{flex:1;min-width:220px;font-size:12px;line-height:1.45;color:var(--encre-2)}
+
+@media print{
+  body{overflow:visible;background:#fff}
+  #app,#voile,#fiche,#panier,#favoris,#pop,.docbar,.reglages{display:none !important}
+  #doc{position:static;background:#fff;overflow:visible;display:block}
+  .page{box-shadow:none;margin:0;max-width:none;padding:0}
+  [contenteditable]:hover,[contenteditable]:focus{background:none;box-shadow:none}
+  @page{margin:16mm 14mm}
+}
+
+.docbar .modes{display:flex;gap:2px;background:rgba(0,0,0,.18);padding:2px;border-radius:9px}
+.docbar .modes button{padding:7px 14px;border-radius:7px;background:none;font-size:12.5px}
+.docbar .modes button.act{background:#F1F3EE;color:var(--vert)}
+.interne{
+  background:#FBEDE8;border:1px solid #E4BFB2;color:#8A3A1E;border-radius:6px;
+  padding:8px 12px;font-size:11.5px;font-weight:600;margin-bottom:18px;
+  letter-spacing:.03em;text-transform:uppercase;
+}
+.intro{font-size:13.5px;line-height:1.6;margin:0 0 4px;color:#3A4640}
+
+/* ---------- identité de marque sur le document ---------- */
+.page{--m:#1F3D30;--a:#6F8F3F}
+.page .dh{border-bottom-color:var(--m)}
+.page .dsec{color:#5A6660}
+.page .dtitre{color:var(--m)}
+.page .totaux .gd{border-top-color:var(--m)}
+.page .dcal i.on{background:var(--a)}
+.dh .ident{max-width:62%}
+.dh .logo{display:block;max-width:230px;object-fit:contain;margin-bottom:7px}
+.legal{
+  margin-top:18px;padding-top:11px;border-top:1px solid var(--ligne);
+  font-size:10px;color:#8A918C;text-align:center;letter-spacing:.02em;
+}
+
+/* ---------- charte Loire Aménagement ---------- */
+.page{--a2:#3BACD4}
+.dh .bl{
+  font-family:Spectral,Georgia,serif;font-style:italic;
+  color:var(--a2);font-size:14px;margin:2px 0 8px;
+}
+.page .dsec{
+  color:var(--m);border-bottom-color:var(--m);
+}
+.page .dtitre{color:var(--m)}
+.page table.dev th{color:var(--m)}
+.page .fichetec h4{color:var(--m)}
+.page .fichetec{border-left:3px solid var(--a)}
+.page .intro{border-left:3px solid var(--a2);padding-left:12px}
+
+.reglages input[type=text]{
+  width:100%;padding:9px 10px;border:1px solid var(--ligne);
+  border-radius:7px;font:inherit;font-size:14px;background:#fff;
+}
+.reglages input[type=text]:focus{outline:0;border-color:var(--mousse);box-shadow:0 0 0 2px rgba(111,143,63,.18)}
+.dh .droite .vide2{color:#B9BDB8;font-weight:400}
+.dh .droite .meta2{margin-top:7px;font-size:11.5px;color:#8A918C}
+.page .projet{
+  font-size:15px;font-weight:600;color:var(--a2);margin:0 0 3px;
+}
+@media print{ .dh .droite .vide2{display:none} }
+
+/* ---------- photographies ---------- */
+.carte .vign{
+  width:calc(100% + 28px);margin:-13px -14px 2px;height:150px;
+  object-fit:cover;display:block;border-radius:var(--r) var(--r) 0 0;
+  background:#EDEBE2;
+}
+.carte .vign.vide3{
+  display:grid;place-items:center;font-size:11.5px;color:#B9BDB8;
+  background:repeating-linear-gradient(45deg,#F1EFE7,#F1EFE7 8px,#EDEBE2 8px,#EDEBE2 16px);
+}
+.galerie{background:#EDEBE2}
+.galerie>img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.g-mini{display:flex;gap:4px;padding:6px;background:var(--carte)}
+.g-mini img{
+  width:58px;height:58px;object-fit:cover;border-radius:6px;cursor:pointer;
+  opacity:.55;border:2px solid transparent;transition:opacity .12s;
+}
+.g-mini img:hover{opacity:.85}
+.g-mini img.on{opacity:1;border-color:var(--mousse)}
+.pitem .pvign{
+  width:56px;height:56px;object-fit:cover;border-radius:7px;flex:0 0 auto;
+  background:#EDEBE2;
+}
+.fichetec{position:relative;padding-left:15px}
+.fichetec .ftphoto{
+  float:right;width:96px;height:96px;object-fit:cover;border-radius:6px;
+  margin:0 0 8px 12px;
+}
+@media print{
+  .fichetec .ftphoto{width:84px;height:84px}
+}
