@@ -30,8 +30,20 @@ taille, prix) sont rattachées à la fiche sous forme de références.
 | `asso` | Associations | Fiche | Texte |
 | `cons` | Conseils d'entretien | Fiche | Texte |
 | `rq` | Risques | Filtre d'exclusion, encart fiche, document | Tableau |
+| `rc` | Système racinaire | Coupe, filtres sol et recul | `{t, p, d}` |
 | `ph` | Photographies | Numéros des vues disponibles | Tableau |
 | `refs` | Références commerciales | Choix du calibre | Tableau |
+
+## Système racinaire
+
+`t` : type d'enracinement — `piv` pivotant, `tra` traçant, `sup` superficiel étalé,
+`fas` fasciculé, `dra` drageonnant, `cha` charnu fragile.
+`p` : profondeur d'enracinement principal, en mètres.
+`d` : distance de sécurité aux canalisations, fosses, murs et dallages, en mètres.
+Valeur 0 : aucune précaution particulière.
+
+Les valeurs sont des ordres de grandeur en conditions courantes. Un même sujet pivote
+en terrain profond et s'étale sur substrat superficiel.
 
 ## Risques
 
