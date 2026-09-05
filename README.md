@@ -53,7 +53,8 @@ dont le chemin est indiqué en tête de `outils/nettoyage.py`.
 | Chiffrage | Par surface (densité) et par longueur (distance de plantation) |
 | Signalement des risques | 109 espèces classées, dont 38 en attention forte |
 | Photographies | 757 vues sur 338 espèces, issues de la photothèque Jardisoft |
-| Favoris | Collections par usage, en mémoire de session uniquement |
+| Projets | Enregistrés sur l'appareil, avec zones multiples par projet |
+| Favoris | Collections par usage, enregistrées sur l'appareil |
 | Documents | Palette client sans prix · Récapitulatif interne chiffré · Élévation à l'échelle |
 | Envoi au client | Simulé |
 
