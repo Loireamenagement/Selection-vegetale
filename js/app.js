@@ -34,6 +34,15 @@ const RISQ = {
 };
 const forte = p => p.rq.some(r=>r.n===2);
 
+const RAC = {
+  piv:{lib:'Pivotant',           d:"Racine verticale profonde, ancrage puissant. Résiste bien à la sécheresse mais supporte mal la transplantation une fois installé."},
+  tra:{lib:'Traçant',            d:"Racines horizontales s'étendant loin du pied, souvent au-delà de l'aplomb du feuillage. À éloigner des réseaux et des ouvrages."},
+  sup:{lib:'Superficiel étalé',  d:"Réseau dense dans les premiers décimètres, sur une large surface. Complique les plantations au pied et peut soulever les dallages."},
+  fas:{lib:'Fasciculé',          d:"Chevelu compact et localisé. Sans risque pour les ouvrages, reprise et transplantation faciles."},
+  dra:{lib:'Drageonnant',        d:"Émet des rejets à distance du pied et forme progressivement une colonie. À contenir ou à isoler."},
+  cha:{lib:'Charnu fragile',     d:"Racines épaisses et cassantes. Ne pas travailler le sol au pied, ne jamais déplacer une fois installé."}
+};
+
 const MOIS = ['J','F','M','A','M','J','J','A','S','O','N','D'];
 const MOIS_LONG = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 
@@ -71,7 +80,7 @@ function majCompteurFav(){
 const F = {
   q:'', type:new Set(), expo:new Set(), sol:new Set(), hum:new Set(),
   feu:new Set(), ent:new Set(), plant:new Set(), mois:new Set(), bdm:new Set(),
-  sansRq:new Set(),
+  sansRq:new Set(), sol:0, recul:0,
   rust:0, hmax:20
 };
 
@@ -124,6 +133,16 @@ function bâtirFiltres(){
     ${g('Se plante en','plant',OPTIONS.plant)}
     ${g("Niveau d'entretien",'ent',OPTIONS.ent)}
     <div class="fgroup">
+      <span class="flabel">Profondeur de sol disponible</span>
+      <input type="range" id="solp" min="0.1" max="3" step="0.1" value="3">
+      <div class="rangeval"><span>Au plus</span><b id="solpv">indifférent</b></div>
+    </div>
+    <div class="fgroup">
+      <span class="flabel">Recul aux réseaux</span>
+      <input type="range" id="recul" min="0" max="15" step="0.5" value="15">
+      <div class="rangeval"><span>Je dispose de</span><b id="reculv">indifférent</b></div>
+    </div>
+    <div class="fgroup">
       <span class="flabel">Écarter les espèces…</span>
       <div class="chips" data-cle="sansRq">
         ${['tox','epi','irr','pol','env','rac'].map(k=>
@@ -148,6 +167,20 @@ function bâtirFiltres(){
     if(F.rust===-8){F.rust=0;document.getElementById('rustv').textContent='indifférent';}
     rendre();
   });
+  const sp = document.getElementById('solp');
+  sp.addEventListener('input', e=>{
+    F.sol = +e.target.value;
+    document.getElementById('solpv').textContent = F.sol>=3 ? 'indifférent' : fmt(F.sol)+' m';
+    if(F.sol>=3) F.sol=0;
+    rendre();
+  });
+  const rc = document.getElementById('recul');
+  rc.addEventListener('input', e=>{
+    F.recul = +e.target.value;
+    document.getElementById('reculv').textContent = F.recul>=15 ? 'indifférent' : fmt(F.recul)+' m';
+    if(F.recul>=15) F.recul=0;
+    rendre();
+  });
   const hm = document.getElementById('hmax');
   hm.addEventListener('input', e=>{
     F.hmax = +e.target.value;
@@ -156,7 +189,10 @@ function bâtirFiltres(){
   });
   document.getElementById('reset').addEventListener('click', ()=>{
     F.q=''; ['type','expo','sol','hum','feu','ent','plant','mois','bdm','sansRq'].forEach(k=>F[k].clear());
-    F.rust=0; F.hmax=20;
+    F.rust=0; F.hmax=20; F.sol=0; F.recul=0;
+    sp.value=3; rc.value=15;
+    document.getElementById('solpv').textContent='indifférent';
+    document.getElementById('reculv').textContent='indifférent';
     el.querySelectorAll('.chip.on').forEach(c=>c.classList.remove('on'));
     document.getElementById('q').value='';
     rust.value=-8; hm.value=20;
@@ -199,6 +235,8 @@ function correspond(p){
     if(![...F.mois].every(m=>mf.includes(m))) return false;
   }
   if(F.sansRq.size && p.rq.some(r=>F.sansRq.has(r.c))) return false;
+  if(F.sol && p.rc.p > F.sol) return false;
+  if(F.recul && p.rc.d > F.recul) return false;
   if(F.rust && p.rust > F.rust) return false;
   if(F.hmax<20 && p.h > F.hmax) return false;
   return true;
@@ -307,7 +345,8 @@ function ouvrirFavoris(){
       <div class="chead">
         <h4>${c.nom}</h4>
         <span class="n">${c.items.length}</span>
-        ${c.items.length?`<button class="all" data-a="all">Tout ajouter</button>`:''}
+        ${c.items.length?`<button class="all" data-a="elev">Élévation</button>
+          <button class="all" data-a="all">Tout ajouter</button>`:''}
       </div>
       ${c.items.length ? c.items.map(lat=>{
         const p = DATA.find(x=>x.lat===lat); if(!p) return '';
@@ -342,6 +381,11 @@ function ouvrirFavoris(){
   el.querySelector('.plist').addEventListener('click', e=>{
     const b = e.target.closest('button'); if(!b || !b.dataset.a) return;
     const coll = COLLECTIONS.find(x=>x.id === +b.closest('.coll').dataset.c);
+    if(b.dataset.a==='elev'){
+      const sel = coll.items.map(l=>DATA.find(x=>x.lat===l)).filter(Boolean);
+      fermerFavoris(); ouvrirElevation(sel, coll.nom);
+      return;
+    }
     if(b.dataset.a==='all'){
       coll.items.forEach(lat=>{
         const p = DATA.find(x=>x.lat===lat);
@@ -405,6 +449,8 @@ function ouvrirFiche(p){
           <div class="paire"><dt>Couleur du feuillage</dt><dd>${p.cfeu}</dd></div>
           <div class="paire"><dt>Bord de mer</dt><dd>${p.bdm}</dd></div>
           <div class="paire"><dt>Densité</dt><dd>${dens(p.dens)} · ${fmt(p.esp)} m entre sujets</dd></div>
+          <div class="paire"><dt>Enracinement</dt><dd>${RAC[p.rc.t].lib} · ${fmt(p.rc.p)} m
+            ${p.rc.d ? '<br><span class="recul">recul conseillé ' + fmt(p.rc.d) + ' m</span>' : ''}</dd></div>
         </dl>
       </div>
 
@@ -429,6 +475,16 @@ function ouvrirFiche(p){
         <h3>Style et associations</h3>
         <p class="txt" style="margin:0 0 8px">${p.style}.</p>
         <p class="txt gris" style="margin:0">S'associe avec ${p.asso.toLowerCase()}.</p>
+      </div>
+
+      <div class="fsec">
+        <h3>Système racinaire</h3>
+        <div class="rqbloc ${p.rc.d>=3?'n2':''}">
+          <div class="rqt"><span class="ic">⌇</span>${RAC[p.rc.t].lib}
+            <em>${fmt(p.rc.p)} m de profondeur</em></div>
+          <p>${RAC[p.rc.t].d}${p.rc.d ? ` Prévoir au minimum <b>${fmt(p.rc.d)} m</b> de recul
+            vis-à-vis des canalisations, fosses et dallages.` : ''}</p>
+        </div>
       </div>
 
       ${p.rq.length ? `<div class="fsec">
@@ -586,9 +642,16 @@ function ouvrirPanier(){
       <div class="ligne-tot"><span>${PANIER.reduce((s,x)=>s+x.q,0)} sujets · ${PANIER.length} référence${PANIER.length>1?'s':''}</span><span>≈ ${fmt(Math.round(PANIER.reduce((s,x)=>s+x.q/x.dens,0)))} m² plantés</span></div>
       <div class="ligne-tot grand"><span>Total HT</span><span>${eur(totalHT())}</span></div>
       <button class="envoyer">Générer la proposition</button>
+      <button class="secondaire" id="p-elev">Voir en élévation</button>
     </div>`;
 
   el.querySelector('.fclose').onclick = fermerPanier;
+  el.querySelector('#p-elev').onclick = ()=>{
+    const vus = new Set(), sel = [];
+    PANIER.forEach(x=>{ if(!vus.has(x.lat)){ vus.add(x.lat);
+      const p = DATA.find(d=>d.lat===x.lat); if(p) sel.push(p); }});
+    fermerPanier(); ouvrirElevation(sel, 'sélection en cours');
+  };
   el.querySelector('.envoyer').onclick = ()=>{
     if(!PANIER.length){ alert("Ajoutez au moins une plante avant de générer la proposition."); return; }
     fermerPanier(); ouvrirDocument();
@@ -621,6 +684,7 @@ document.getElementById('btn-panier').onclick = ouvrirPanier;
 document.getElementById('voile').onclick = ()=>{fermerFiche();fermerPanier();fermerFavoris();};
 document.addEventListener('keydown', e=>{
   if(e.key==='Escape'){
+    if(document.getElementById('elev').classList.contains('on')){fermerElevation();return;}
     if(document.getElementById('doc').classList.contains('on')){fermerDocument();return;}
     fermerPop();fermerFiche();fermerPanier();fermerFavoris();
   }
@@ -912,5 +976,267 @@ ${MARQUE.coord.join(' · ')}`;
   doc.classList.add('on');
   doc.scrollTop = 0;
 }
+
+
+
+/* ============ Élévation à l'échelle ============ */
+const TEINTES = [
+  [/noir/,                 '#3A3A42'],
+  [/pourpre|rouge|bronze|caramel/, '#7C4B54'],
+  [/argent|gris|glauque/,  '#AEBCB0'],
+  [/bleu/,                 '#7D9AA2'],
+  [/dor|jaune|chartreuse/, '#BFA845'],
+  [/panach|creme|crème/,   '#9DBC86'],
+  [/fonce/,                '#33553F'],
+  [/clair|tendre|pomme|vif/, '#7DA557'],
+];
+function teinte(p){
+  const t = (p.cfeu||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  for(const [re,c] of TEINTES) if(re.test(t)) return c;
+  return '#4C7A4E';
+}
+
+/* silhouettes par type, dessinées dans un repère (0,0) au sol, y vers le haut */
+function silhouette(p, L, H, col){
+  const t = (p.type||'').toLowerCase();
+  const g = (s)=>`<g>${s}</g>`;
+  const persistant = /persistant/i.test(p.feu||'');
+  const op = persistant ? 1 : .88;
+
+  if(/arbre|fruitier/.test(t) && !/arbuste/.test(t)){
+    const tr = H*0.34, lt = Math.max(3, L*0.06);
+    return g(`
+      <rect x="${-lt/2}" y="${-H}" width="${lt}" height="${H-0}" fill="#6B5344" transform="translate(0,${H})"/>
+      <ellipse cx="0" cy="${-(H-tr)/2-tr}" rx="${L/2}" ry="${(H-tr)/2}" fill="${col}" opacity="${op}"/>
+      <ellipse cx="${-L*0.18}" cy="${-(H-tr)*0.62-tr}" rx="${L*0.3}" ry="${(H-tr)*0.32}" fill="${col}" opacity=".55"/>`);
+  }
+  if(/conif/.test(t)){
+    if(H/L > 3) return g(`<ellipse cx="0" cy="${-H/2}" rx="${L/2}" ry="${H/2}" fill="${col}"/>`);
+    return g(`<path d="M 0 ${-H} L ${L/2} 0 L ${-L/2} 0 Z" fill="${col}"/>
+              <path d="M 0 ${-H*0.72} L ${L*0.34} ${-H*0.06} L ${-L*0.34} ${-H*0.06} Z" fill="${col}" opacity=".45"/>`);
+  }
+  if(/grimpante/.test(t)){
+    return g(`
+      <line x1="${-L/2}" y1="0" x2="${-L/2}" y2="${-H}" stroke="#8A8578" stroke-width="1.4"/>
+      <line x1="${L/2}" y1="0" x2="${L/2}" y2="${-H}" stroke="#8A8578" stroke-width="1.4"/>
+      <line x1="${-L/2}" y1="${-H}" x2="${L/2}" y2="${-H}" stroke="#8A8578" stroke-width="1.4"/>
+      <path d="M ${-L/2} 0 Q ${-L/2} ${-H*0.7} 0 ${-H} Q ${L/2} ${-H*0.7} ${L/2} 0 Z"
+            fill="${col}" opacity=".82"/>`);
+  }
+  if(/gramin|bambou/.test(t)){
+    let b='';
+    const n=9;
+    for(let i=0;i<n;i++){
+      const x=(-L/2)+L*(i+.5)/n, dev=(i-(n-1)/2)/n*L*0.9, hh=H*(0.72+0.28*Math.sin(i*1.7));
+      b+=`<path d="M ${x} 0 Q ${x+dev*0.3} ${-hh*0.6} ${x+dev} ${-hh}"
+             stroke="${col}" stroke-width="${Math.max(1,L*0.035)}" fill="none" stroke-linecap="round"/>`;
+    }
+    return g(b);
+  }
+  if(/fougere|fougère/.test(t)){
+    let b='';
+    for(let i=0;i<7;i++){
+      const a=(i/6-0.5)*1.5, x2=Math.sin(a)*L/2, y2=-H*Math.cos(a*0.6);
+      b+=`<path d="M 0 0 Q ${x2*0.35} ${y2*0.75} ${x2} ${y2}"
+             stroke="${col}" stroke-width="${Math.max(1.2,L*0.05)}" fill="none" stroke-linecap="round"/>`;
+    }
+    return g(b);
+  }
+  if(/couvre-sol/.test(t)){
+    return g(`<path d="M ${-L/2} 0 Q ${-L/2} ${-H*1.4} 0 ${-H} Q ${L/2} ${-H*1.4} ${L/2} 0 Z"
+              fill="${col}" opacity="${op}"/>`);
+  }
+  if(/vivace|aromatique/.test(t)){
+    return g(`<path d="M ${-L/2} 0 Q ${-L*0.42} ${-H*1.15} 0 ${-H} Q ${L*0.42} ${-H*1.15} ${L/2} 0 Z"
+              fill="${col}" opacity="${op}"/>
+      <line x1="${-L*0.2}" y1="${-H*0.9}" x2="${-L*0.24}" y2="${-H*1.25}" stroke="${col}" stroke-width="1"/>
+      <line x1="${L*0.15}" y1="${-H*0.9}" x2="${L*0.2}" y2="${-H*1.3}" stroke="${col}" stroke-width="1"/>`);
+  }
+  // arbuste par défaut
+  const tr=H*0.12;
+  return g(`
+    <rect x="-1.2" y="${-tr}" width="2.4" height="${tr}" fill="#6B5344"/>
+    <path d="M ${-L/2} 0 Q ${-L/2} ${-H*1.15} 0 ${-H} Q ${L/2} ${-H*1.15} ${L/2} 0 Z"
+          fill="${col}" opacity="${op}"/>
+    <path d="M ${-L*0.3} 0 Q ${-L*0.34} ${-H*0.8} 0 ${-H*0.72}"
+          fill="none" stroke="#fff" stroke-width=".8" opacity=".18"/>`);
+}
+
+/* racines : repère (0,0) au sol, y vers le bas */
+function racines(p, L, P, col){
+  const t = p.rc.t, D = (p.rc.d||0);
+  const c = col, o = .62;
+  const brin = (x1,y1,x2,y2,w)=>`<path d="M ${x1} ${y1} Q ${(x1+x2)/2} ${(y1+y2)*0.55} ${x2} ${y2}"
+      stroke="${c}" stroke-width="${w}" fill="none" opacity="${o}" stroke-linecap="round"/>`;
+  let s='';
+
+  if(t==='piv'){
+    s += `<path d="M 0 0 L ${-L*0.05} ${P*0.55} L 0 ${P} L ${L*0.05} ${P*0.55} Z"
+            fill="${c}" opacity="${o}"/>`;
+    for(let i=0;i<6;i++){
+      const y=P*(0.15+0.13*i), lat=L*0.22*(1-i/7)*(i%2?1:-1);
+      s += brin(0,y,lat,y+P*0.12,1.6);
+    }
+  } else if(t==='tra'){
+    const E = Math.max(L*0.9, D*100*0.85);
+    for(let i=0;i<7;i++){
+      const dir=i%2?1:-1, f=(Math.floor(i/2)+1)/4;
+      s += brin(0,P*0.08,dir*E*f,P*(0.18+0.22*Math.random()*0+0.16*f),2.2);
+    }
+    s += `<path d="M ${-E} ${P*0.22} Q 0 ${-P*0.05} ${E} ${P*0.22}"
+            stroke="${c}" stroke-width="2.6" fill="none" opacity="${o}"/>`;
+  } else if(t==='sup'){
+    s += `<path d="M ${-L*0.75} 0 Q 0 ${P*1.5} ${L*0.75} 0 Z" fill="${c}" opacity="${o*0.55}"/>`;
+    for(let i=0;i<9;i++){
+      const x=(-L*0.7)+L*1.4*i/8;
+      s += brin(0,0,x,P*(0.5+0.4*Math.cos(i-4)),1.8);
+    }
+  } else if(t==='dra'){
+    const E = Math.max(L*1.1, D*100*0.8);
+    s += `<path d="M ${-L*0.5} 0 Q 0 ${P*1.3} ${L*0.5} 0 Z" fill="${c}" opacity="${o*0.5}"/>`;
+    for(const dir of [-1,1]) for(const f of [0.55,1]){
+      const x=dir*E*f;
+      s += brin(0,P*0.25,x,P*0.35,2);
+      s += `<line x1="${x}" y1="${P*0.35}" x2="${x}" y2="${-P*0.5}"
+              stroke="${c}" stroke-width="1.6" opacity="${o}"/>`;
+      s += `<ellipse cx="${x}" cy="${-P*0.62}" rx="${L*0.09}" ry="${P*0.16}" fill="${c}" opacity="${o*0.8}"/>`;
+    }
+  } else if(t==='cha'){
+    for(let i=0;i<5;i++){
+      const dir=(i-2)/2;
+      s += `<path d="M 0 0 Q ${dir*L*0.28} ${P*0.5} ${dir*L*0.34} ${P*0.92}"
+              stroke="${c}" stroke-width="${Math.max(3,L*0.07)}" fill="none"
+              opacity="${o}" stroke-linecap="round"/>`;
+    }
+  } else {
+    s += `<path d="M ${-L*0.45} 0 Q 0 ${P*1.35} ${L*0.45} 0 Z" fill="${c}" opacity="${o*0.55}"/>`;
+    for(let i=0;i<7;i++){
+      const x=(-L*0.38)+L*0.76*i/6;
+      s += brin(0,0,x,P*(0.55+0.35*Math.cos((i-3)*0.9)),1.5);
+    }
+  }
+  return `<g>${s}</g>`;
+}
+
+const SILHOUETTE_HUMAINE = `
+<g opacity=".5">
+  <circle cx="0" cy="-155" r="15"/>
+  <path d="M -13 -138 L 13 -138 L 17 -78 L 9 -78 L 7 0 L -3 0 L -6 -78 L -17 -78 Z"/>
+</g>`;
+
+function ouvrirElevation(especes, titre){
+  const el = document.getElementById('elev');
+  const list = especes.filter(p=>p.h && p.l).sort((a,b)=>b.h-a.h);
+  if(!list.length){ alert("Ajoutez des plantes avant d'afficher l'élévation."); return; }
+
+  const ECH = 100;                       // 100 unités SVG = 1 mètre
+  const ECART = 0.35 * ECH;
+  const hMax = Math.max(1.9, ...list.map(p=>p.h));
+  const pMax = Math.max(0.6, ...list.map(p=>p.rc.p));
+  // emprise horizontale : la plus large du feuillage ou des racines
+  const empr = p => Math.max(p.l*ECH,
+      /tra|dra/.test(p.rc.t) ? Math.max(p.l*ECH*1.2, (p.rc.d||0)*ECH*1.7) : p.l*ECH);
+  const lTot = list.reduce((s,p)=>s + empr(p), 0) + ECART*(list.length+1) + 1.0*ECH;
+  const H = hMax*ECH, P = pMax*ECH, MARGE_H = 46, MARGE_B = 96;
+  const SOL = MARGE_H + H;
+  const vbH = H + P + MARGE_H + MARGE_B;
+
+  // graduations aériennes et souterraines
+  let grille = `<rect x="0" y="${SOL}" width="${lTot}" height="${P}" fill="#EFEAE0"/>`;
+  const pas = hMax > 12 ? 5 : hMax > 6 ? 2 : 1;
+  for(let m=0; m<=Math.ceil(hMax); m+=pas){
+    const y = SOL - m*ECH;
+    grille += `<line x1="0" y1="${y}" x2="${lTot}" y2="${y}"
+                 stroke="#D8D6CC" stroke-width="1" stroke-dasharray="${m?'3 5':'0'}"/>
+               <text x="6" y="${y-5}" class="ech">${m} m</text>`;
+  }
+  const pasP = pMax > 2 ? 1 : 0.5;
+  for(let m=pasP; m<=pMax+0.01; m+=pasP){
+    const y = SOL + m*ECH;
+    grille += `<line x1="0" y1="${y}" x2="${lTot}" y2="${y}"
+                 stroke="#DCD3C2" stroke-width="1" stroke-dasharray="3 5"/>
+               <text x="6" y="${y+13}" class="ech">−${fmt(m)} m</text>`;
+  }
+
+  let x = ECART, corps='', racs='', legende='';
+  list.forEach((p,i)=>{
+    const L = p.l*ECH, Hp = p.h*ECH, Pp = p.rc.p*ECH, e = empr(p), cx = x + e/2;
+    const col = teinte(p);
+    racs  += `<g transform="translate(${cx},${SOL})">${racines(p,L,Pp,col)}</g>`;
+    corps += `<g transform="translate(${cx},${SOL})">${silhouette(p,L,Hp,col)}</g>`;
+    corps += `<text x="${cx}" y="${SOL+P+26}" class="etq">${i+1}</text>`;
+    legende += `<div class="lgi"><span class="pastl" style="background:${col}"></span>
+      <span class="num">${i+1}</span>
+      <span class="txtl"><b>${p.fr}</b><i>${p.lat}</i></span>
+      <span class="dim">${fmt(p.h)} × ${fmt(p.l)} m<em>${RAC[p.rc.t].lib.toLowerCase()}${
+        p.rc.d ? ' · recul ' + fmt(p.rc.d) + ' m' : ''}</em></span></div>`;
+    x += e + ECART;
+  });
+
+  // silhouette humaine, à droite
+  const xh = x + 0.35*ECH;
+  const ech = 1.70*ECH/155;
+  corps += `<g transform="translate(${xh},${SOL}) scale(${ech})" fill="#A8ADA6">
+      ${SILHOUETTE_HUMAINE}</g>
+      <text x="${xh}" y="${SOL+P+26}" class="etq">1,70 m</text>`;
+
+  el.innerHTML = `
+    <div class="docbar">
+      <span class="t">Élévation — ${titre}</span>
+      <span class="spacer"></span>
+      <button id="e-fermer">Fermer</button>
+      <button class="pri" id="e-pdf">Imprimer / Enregistrer en PDF</button>
+    </div>
+    <div class="page" style="--m:${MARQUE.couleur};--a:${MARQUE.accent}">
+      <div class="dh">
+        <div class="ident">
+          ${MARQUE.logo ? `<img class="logo" src="${MARQUE.logo}" alt=""
+              style="height:${MARQUE.logoHauteur}px" onerror="this.remove()">`
+            : `<div class="ent">${MARQUE.nom}</div>`}
+        </div>
+        <div class="droite"><b>${CLIENT.nom || ''}</b>${CLIENT.projet?'<br>'+CLIENT.projet:''}
+          <div class="meta2">${dateFr()}</div></div>
+      </div>
+      <h1 class="dtitre">Coupe à maturité</h1>
+      <p class="dsstitre">${list.length} espèces représentées à l'échelle de leurs dimensions
+        adultes, parties aérienne et racinaire — soit ${hMax >= 6 ? 'quinze à vingt ans' : 'cinq à dix ans'} après plantation.</p>
+      <div class="svgwrap">
+        <svg viewBox="0 0 ${lTot} ${vbH}" preserveAspectRatio="xMidYMid meet">
+          <style>
+            .ech{font:400 11px Archivo,sans-serif;fill:#8A918C}
+            .etq{font:600 12px Archivo,sans-serif;fill:#5A6660;text-anchor:middle}
+          </style>
+          ${grille}
+          ${racs}
+          <line x1="0" y1="${SOL}" x2="${lTot}" y2="${SOL}"
+                stroke="#5A6660" stroke-width="1.8"/>
+          ${corps}
+        </svg>
+      </div>
+      <div class="legende">${legende}</div>
+      ${(() => {
+        const r = list.filter(p=>p.rc.d >= 3).sort((a,b)=>b.rc.d-a.rc.d);
+        if(!r.length) return '';
+        return `<div class="reculs">
+          <b>Distances à respecter</b>
+          ${r.map(p=>`<div><span>${p.fr}</span><em>${fmt(p.rc.d)} m</em></div>`).join('')}
+          <p>Recul minimal conseillé vis-à-vis des canalisations, fosses, murs de
+             soutènement et dallages.</p></div>`;
+      })()}
+
+      <p class="mentions" style="margin-top:14px">
+        Les silhouettes sont schématiques ; seules les proportions sont exactes. Les dimensions
+        indiquées correspondent au développement adulte en conditions favorables et peuvent varier
+        selon le sol, l'exposition et la conduite de taille. Cette coupe sert à apprécier les
+        volumes et les rapports d'échelle, elle ne constitue pas un plan de plantation.
+      </p>
+    </div>`;
+
+  document.getElementById('e-fermer').onclick = fermerElevation;
+  document.getElementById('e-pdf').onclick = ()=>window.print();
+  el.classList.add('on');
+  el.scrollTop = 0;
+}
+function fermerElevation(){ document.getElementById('elev').classList.remove('on'); }
 
 function fermerDocument(){ document.getElementById('doc').classList.remove('on'); }
