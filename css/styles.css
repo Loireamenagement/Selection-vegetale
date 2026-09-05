@@ -348,6 +348,7 @@ table.dev .n2{font-size:11px;color:var(--encre-2)}
 @media print{
   body{overflow:visible;background:#fff}
   #app,#voile,#fiche,#panier,#favoris,#pop,.docbar,.reglages{display:none !important}
+  #elev:not(.on){display:none !important}
   #doc{position:static;background:#fff;overflow:visible;display:block}
   .page{box-shadow:none;margin:0;max-width:none;padding:0}
   [contenteditable]:hover,[contenteditable]:focus{background:none;box-shadow:none}
@@ -473,3 +474,55 @@ table.dev .n2{font-size:11px;color:var(--encre-2)}
 .page .alt .lat{font-weight:400;color:var(--encre-2);font-size:12px}
 .page .al p{margin:0 0 3px;font-size:11.5px;line-height:1.5}
 .page .rqdoc{font-size:11px;line-height:1.45;color:#7A5E18;margin-top:5px}
+
+/* ---------- élévation ---------- */
+#elev{
+  position:fixed;inset:0;z-index:80;background:#6E7670;overflow-y:auto;display:none;
+}
+#elev.on{display:block}
+#elev .page{max-width:1080px}
+.svgwrap{
+  background:#FCFBF7;border:1px solid var(--ligne);border-radius:8px;
+  padding:10px 8px 4px;margin:6px 0 14px;overflow-x:auto;
+}
+.svgwrap svg{width:100%;height:auto;min-width:520px;display:block}
+.legende{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:4px 16px;
+}
+.lgi{display:flex;align-items:baseline;gap:7px;font-size:12px;padding:3px 0;
+  border-bottom:1px solid #EDEBE2}
+.lgi .pastl{width:9px;height:9px;border-radius:2px;flex:0 0 auto;
+  border:1px solid rgba(0,0,0,.12);transform:translateY(1px)}
+.lgi .num{font-weight:700;color:var(--encre-2);min-width:15px;font-size:11px}
+.lgi .txtl{flex:1;min-width:0}
+.lgi .txtl b{font-weight:600;display:block;line-height:1.25}
+.lgi .txtl i{font-family:Spectral,Georgia,serif;color:var(--encre-2);font-size:11px}
+.lgi .dim{color:var(--encre-2);white-space:nowrap;font-size:11px}
+.secondaire{
+  width:100%;padding:11px;margin-top:8px;border-radius:9px;
+  border:1px solid var(--ligne);background:#fff;font-size:14px;font-weight:500;
+}
+.secondaire:hover{border-color:var(--mousse);color:var(--mousse)}
+@media print{
+  #elev{position:static;background:#fff;overflow:visible}
+  #elev:not(.on){display:none}
+  #doc:not(.on){display:none}
+  .svgwrap{border:0;padding:0;background:none}
+  .svgwrap svg{min-width:0}
+  @page{size:landscape}
+}
+
+/* ---------- système racinaire ---------- */
+.lgi .dim{display:flex;flex-direction:column;align-items:flex-end;line-height:1.3}
+.lgi .dim em{font-style:normal;font-size:10px;color:#9AA096}
+.paire .recul{color:#8A3A1E;font-size:11.5px;font-weight:600}
+.reculs{
+  background:#FBEDE8;border:1px solid #E4BFB2;border-radius:8px;
+  padding:11px 14px;margin-top:14px;font-size:12px;
+}
+.reculs b{display:block;color:#8A3A1E;font-size:11px;letter-spacing:.07em;
+  text-transform:uppercase;margin-bottom:6px}
+.reculs>div{display:flex;justify-content:space-between;padding:2px 0;
+  border-bottom:1px solid rgba(138,58,30,.12)}
+.reculs>div em{font-style:normal;font-weight:700;color:#8A3A1E}
+.reculs p{margin:7px 0 0;font-size:11px;color:#8A6A5E;line-height:1.45}
