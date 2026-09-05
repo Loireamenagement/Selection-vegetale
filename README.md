@@ -49,11 +49,12 @@ dont le chemin est indiqué en tête de `outils/nettoyage.py`.
 | Fiches horticoles complètes | **341 — catalogue couvert à 100 %** |
 | Références commerciales | 1 884 |
 | Filtres | Type, exposition, sol, humidité, rusticité, littoral, hauteur, feuillage, floraison, plantation, entretien |
+| Système racinaire | Type, profondeur et distance de sécurité, coupe à l'échelle |
 | Chiffrage | Par surface (densité) et par longueur (distance de plantation) |
 | Signalement des risques | 109 espèces classées, dont 38 en attention forte |
 | Photographies | 757 vues sur 338 espèces, issues de la photothèque Jardisoft |
 | Favoris | Collections par usage, en mémoire de session uniquement |
-| Documents | Palette client sans prix · Récapitulatif interne chiffré |
+| Documents | Palette client sans prix · Récapitulatif interne chiffré · Élévation à l'échelle |
 | Envoi au client | Simulé |
 
 ## Données commerciales
