@@ -22,7 +22,13 @@ const MARQUE = {
   // Mentions légales du pied de page. Laisser vide pour masquer.
   legal: 'Loire Aménagement · SIRET 819 008 608 00013'
 };
-const CLIENT = { nom: '', adresse: '', ville: '', projet: '' };
+/* CLIENT reflète le projet actif : nom, adresse, ville et intitulé du projet */
+const CLIENT = {
+  get nom(){ return projet().client.nom || ''; },      set nom(v){ projet().client.nom = v; enregistrer(); },
+  get adresse(){ return projet().client.adresse || ''; }, set adresse(v){ projet().client.adresse = v; enregistrer(); },
+  get ville(){ return projet().client.ville || ''; },  set ville(v){ projet().client.ville = v; enregistrer(); },
+  get projet(){ return projet().nom || ''; },          set projet(v){ projet().nom = v; enregistrer(); }
+};
 
 const RISQ = {
   tox:{lib:'Toxique par ingestion',    ic:'☠'},
@@ -60,14 +66,67 @@ function pastilleCouleur(t){
   return c;
 }
 
+/* ============ Stockage local ============ */
+const STORE = (() => {
+  let ok = true;
+  try { localStorage.setItem('__t','1'); localStorage.removeItem('__t'); }
+  catch(e){ ok = false; }
+  const memoire = {};
+  return {
+    persistant: ok,
+    lire(cle, defaut){
+      try {
+        const v = ok ? localStorage.getItem('sv.'+cle) : memoire[cle];
+        return v ? JSON.parse(v) : defaut;
+      } catch(e){ return defaut; }
+    },
+    ecrire(cle, val){
+      const s = JSON.stringify(val);
+      try { ok ? localStorage.setItem('sv.'+cle, s) : (memoire[cle] = s); }
+      catch(e){ memoire[cle] = s; }
+    }
+  };
+})();
+
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+
+/* ============ Projets et zones ============ */
+function projetNeuf(){
+  return { id: uid(), nom: '', client: {nom:'', adresse:'', ville:''},
+           maj: Date.now(), zones: [{ id: uid(), nom: 'Massif principal', items: [] }] };
+}
+
+let PROJETS = STORE.lire('projets', null);
+if(!PROJETS || !PROJETS.length) PROJETS = [projetNeuf()];
+let idProjet = STORE.lire('projetActif', PROJETS[0].id);
+if(!PROJETS.some(p=>p.id===idProjet)) idProjet = PROJETS[0].id;
+let idZone = null;
+
+const projet = () => PROJETS.find(p=>p.id===idProjet) || PROJETS[0];
+function zone(){
+  const p = projet();
+  if(!p.zones.length) p.zones.push({id:uid(), nom:'Massif principal', items:[]});
+  let z = p.zones.find(x=>x.id===idZone);
+  if(!z){ z = p.zones[0]; idZone = z.id; }
+  return z;
+}
+function enregistrer(){
+  projet().maj = Date.now();
+  STORE.ecrire('projets', PROJETS);
+  STORE.ecrire('projetActif', idProjet);
+}
+const toutesLignes = () => projet().zones.flatMap(z=>z.items);
+const zonesActives = () => projet().zones.filter(z=>z.items.length);
+
 /* ---------- favoris ---------- */
-let COLLECTIONS = [
+let COLLECTIONS = STORE.lire('collections', null) || [
   {id:1, nom:'Haie persistante', items:['Prunus laurocerasus','Viburnum tinus','Pyracantha']},
   {id:2, nom:'Massif sec plein soleil', items:['Lavandula angustifolia','Perovskia atriplicifolia','Gaura lindheimeri','Salvia nemorosa','Euphorbia characias']},
   {id:3, nom:'Couvre-sol ombre', items:['Vinca','Hedera','Ajuga reptans','Carex morrowii']},
   {id:4, nom:'Bord de mer', items:['Hydrangea macrophylla','Rosmarinus officinalis','Cotoneaster','Achillea millefolium']}
 ];
-let idColl = 5;
+let idColl = Math.max(4, ...COLLECTIONS.map(c=>c.id)) + 1;
+const sauverCollections = () => STORE.ecrire('collections', COLLECTIONS);
 const estFavori = lat => COLLECTIONS.some(c=>c.items.includes(lat));
 const nbFavoris = () => new Set(COLLECTIONS.flatMap(c=>c.items)).size;
 function majCompteurFav(){
@@ -328,7 +387,7 @@ function ouvrirPop(anchor, lat){
       const i = c.items.indexOf(lat);
       i>=0 ? c.items.splice(i,1) : c.items.push(lat);
     }
-    fermerPop(); majCompteurFav(); rendre();
+    fermerPop(); sauverCollections(); majCompteurFav(); rendre();
     if(document.getElementById('favoris').classList.contains('on')) ouvrirFavoris();
   };
 }
@@ -402,7 +461,7 @@ function ouvrirFavoris(){
       setTimeout(()=>{b.textContent='Ajouter';b.style.background='';b.style.color='';},1100);
     } else {
       coll.items = coll.items.filter(x=>x!==lat);
-      majCompteurFav(); rendre(); ouvrirFavoris();
+      sauverCollections(); majCompteurFav(); rendre(); ouvrirFavoris();
     }
   });
 
@@ -574,25 +633,33 @@ function fermerFiche(){
 }
 
 /* ---------- panier ---------- */
-let PANIER = [];
 function cle(p,r){return p.lat+'|'+r.cv+'|'+r.ct+'|'+r.tl}
 function ajouter(p,r,q=1){
-  const k = cle(p,r);
-  const ex = PANIER.find(x=>x.k===k);
+  const z = zone(), k = cle(p,r);
+  const ex = z.items.find(x=>x.k===k);
   if(ex) ex.q += q;
-  else PANIER.push({k, lat:p.lat, fr:p.fr, m1:p.m1, m2:p.m2, cv:r.cv, ct:r.ct,
-                    tl:r.tl, px:r.px, q, dens:p.dens});
-  majCompteur();
+  else z.items.push({k, lat:p.lat, fr:p.fr, m1:p.m1, m2:p.m2, cv:r.cv, ct:r.ct,
+                     tl:r.tl, px:r.px, q, dens:p.dens});
+  majCompteur(); enregistrer();
 }
 function majCompteur(){
-  const n = PANIER.reduce((s,x)=>s+x.q,0);
-  document.getElementById('cpt').textContent = n;
+  const n = toutesLignes().reduce((s,x)=>s+x.q,0);
+  const e = document.getElementById('cpt');
+  if(e) e.textContent = n;
 }
-function totalHT(){return PANIER.reduce((s,x)=>s+x.px*x.q,0)}
+function totalHT(lignes){return (lignes||toutesLignes()).reduce((s,x)=>s+x.px*x.q,0)}
 
 function ouvrirPanier(){
   const el = document.getElementById('panier');
-  const items = PANIER.length ? PANIER.map(x=>`
+  const p = projet(), z = zone();
+
+  const onglets = p.zones.map(zz=>`
+    <button class="ong ${zz.id===z.id?'on':''}" data-z="${zz.id}">
+      ${zz.nom}<span>${zz.items.reduce((s,x)=>s+x.q,0)}</span>
+    </button>`).join('') +
+    `<button class="ong plus" data-a="zone+" title="Ajouter une zone">+</button>`;
+
+  const items = z.items.length ? z.items.map(x=>`
     <div class="pitem" data-k="${x.k}">
       ${(DATA.find(d=>d.lat===x.lat)||{ph:[]}).ph.length
         ? `<img class="pvign" src="assets/photos/${clePhoto(x.lat)}-1.jpg" alt="" loading="lazy" onerror="this.remove()">`
@@ -609,86 +676,218 @@ function ouvrirPanier(){
         <div class="sup" data-a="sup">Retirer</div>
       </div>
       <div class="tot">${eur(x.px*x.q)}<br><span style="font-weight:400;font-size:11.5px;color:var(--encre-2)">${eur(x.px)} l'unité</span></div>
-    </div>`).join('') : `<div class="vide"><b>La sélection est vide.</b>
-      Ouvrez une fiche et ajoutez un calibre pour composer la proposition du client.</div>`;
+    </div>`).join('') : `<div class="vide"><b>Cette zone est vide.</b>
+      Ouvrez une fiche et ajoutez un calibre, ou partez d'une collection de favoris.</div>`;
 
-  /* calendrier agrege */
+  /* calendrier agrégé, sur tout le projet */
+  const lignes = toutesLignes();
   const counts = new Array(12).fill(0);
-  PANIER.forEach(x=>{
+  lignes.forEach(x=>{
     if(!x.m1||!x.m2) return;
     let m=x.m1;
     for(let i=0;i<13;i++){counts[m-1]++; if(m===x.m2)break; m = m===12?1:m+1;}
   });
   const max = Math.max(1,...counts);
   const trous = counts.map((c,i)=>c===0?MOIS_LONG[i]:null).filter(Boolean);
+  const nz = zonesActives().length;
 
   el.innerHTML = `
     <div class="phead">
-      <h2>Sélection pour le client</h2>
+      <h2>${p.client.nom || p.nom || 'Projet en cours'}</h2>
       <span class="spacer"></span>
+      <button class="lienp" id="p-projets">Mes projets</button>
       <button class="fclose" style="position:static" aria-label="Fermer">✕</button>
     </div>
+    <div class="onglets">${onglets}</div>
+    ${p.zones.length > 1 || z.nom !== 'Massif principal' ? `<div class="zbar">
+      <button data-a="zone-nom">Renommer la zone</button>
+      ${p.zones.length > 1 ? `<button data-a="zone-sup">Supprimer la zone</button>` : ''}
+    </div>` : ''}
     <div class="plist">${items}</div>
     <div class="pfoot">
-      ${PANIER.length?`
+      ${lignes.length?`
       <div class="calmassif">
-        <span class="flabel">Échelonnement des floraisons</span>
+        <span class="flabel">Échelonnement des floraisons${nz>1?' — projet entier':''}</span>
         <div class="calbar">
           ${counts.map(c=>`<i ${c?`data-n="${c}"`:''} style="height:${c?4+(c/max)*18:4}px" title="${c} espèce(s)"></i>`).join('')}
         </div>
         <div class="frise-lab">${MOIS.map(m=>`<span>${m}</span>`).join('')}</div>
         ${trous.length && trous.length<12 ? `<p class="trou">Aucune floraison prévue en ${trous.join(', ')}. Un arbuste à floraison hivernale ou une graminée à épis persistants comblerait ce creux.</p>`:''}
       </div>`:''}
-      <div class="ligne-tot"><span>${PANIER.reduce((s,x)=>s+x.q,0)} sujets · ${PANIER.length} référence${PANIER.length>1?'s':''}</span><span>≈ ${fmt(Math.round(PANIER.reduce((s,x)=>s+x.q/x.dens,0)))} m² plantés</span></div>
-      <div class="ligne-tot grand"><span>Total HT</span><span>${eur(totalHT())}</span></div>
+      <div class="ligne-tot">
+        <span>${lignes.reduce((s,x)=>s+x.q,0)} sujets · ${nz} zone${nz>1?'s':''}</span>
+        <span>≈ ${fmt(Math.round(lignes.reduce((s,x)=>s+x.q/x.dens,0)))} m² plantés</span>
+      </div>
+      <div class="ligne-tot grand"><span>Total achat HT</span><span>${eur(totalHT())}</span></div>
       <button class="envoyer">Générer la proposition</button>
       <button class="secondaire" id="p-elev">Voir en élévation</button>
     </div>`;
 
   el.querySelector('.fclose').onclick = fermerPanier;
+  el.querySelector('#p-projets').onclick = ()=>{ fermerPanier(); ouvrirProjets(); };
+
   el.querySelector('#p-elev').onclick = ()=>{
     const vus = new Set(), sel = [];
-    PANIER.forEach(x=>{ if(!vus.has(x.lat)){ vus.add(x.lat);
-      const p = DATA.find(d=>d.lat===x.lat); if(p) sel.push(p); }});
-    fermerPanier(); ouvrirElevation(sel, 'sélection en cours');
+    lignes.forEach(x=>{ if(!vus.has(x.lat)){ vus.add(x.lat);
+      const q = DATA.find(d=>d.lat===x.lat); if(q) sel.push(q); }});
+    fermerPanier(); ouvrirElevation(sel, p.client.nom || 'projet en cours');
   };
+
   el.querySelector('.envoyer').onclick = ()=>{
-    if(!PANIER.length){ alert("Ajoutez au moins une plante avant de générer la proposition."); return; }
+    if(!lignes.length){ alert("Ajoutez au moins une plante avant de générer la proposition."); return; }
     fermerPanier(); ouvrirDocument();
   };
+
+  /* onglets de zones */
+  el.querySelector('.onglets').onclick = e=>{
+    const b = e.target.closest('button'); if(!b) return;
+    if(b.dataset.a === 'zone+'){
+      const nom = prompt('Nom de la zone', 'Nouvelle zone');
+      if(nom && nom.trim()){
+        const nz = {id:uid(), nom:nom.trim(), items:[]};
+        p.zones.push(nz); idZone = nz.id; enregistrer(); ouvrirPanier();
+      }
+      return;
+    }
+    idZone = b.dataset.z; enregistrer(); ouvrirPanier();
+  };
+
+  const zb = el.querySelector('.zbar');
+  if(zb) zb.onclick = e=>{
+    const b = e.target.closest('button'); if(!b) return;
+    if(b.dataset.a === 'zone-nom'){
+      const nom = prompt('Nom de la zone', z.nom);
+      if(nom && nom.trim()){ z.nom = nom.trim(); enregistrer(); ouvrirPanier(); }
+    } else {
+      if(z.items.length && !confirm(`Supprimer « ${z.nom} » et ses ${z.items.length} lignes ?`)) return;
+      p.zones = p.zones.filter(x=>x.id!==z.id);
+      idZone = p.zones[0] ? p.zones[0].id : null;
+      majCompteur(); enregistrer(); ouvrirPanier();
+    }
+  };
+
+  /* lignes */
   el.querySelector('.plist').addEventListener('click', e=>{
     const it = e.target.closest('.pitem'); if(!it) return;
     const a = e.target.dataset.a; if(!a) return;
-    const x = PANIER.find(z=>z.k===it.dataset.k);
-    if(a==='+') x.q++;
-    else if(a==='-') x.q = Math.max(1,x.q-1);
-    else if(a==='sup') PANIER = PANIER.filter(z=>z.k!==x.k);
-    majCompteur(); ouvrirPanier();
+    const i = z.items.findIndex(y=>y.k===it.dataset.k); if(i<0) return;
+    if(a==='+') z.items[i].q++;
+    else if(a==='-') z.items[i].q = Math.max(1, z.items[i].q-1);
+    else if(a==='sup') z.items.splice(i,1);
+    majCompteur(); enregistrer(); ouvrirPanier();
   });
   el.querySelector('.plist').addEventListener('change', e=>{
     if(e.target.dataset.a!=='set') return;
     const it = e.target.closest('.pitem');
-    const x = PANIER.find(z=>z.k===it.dataset.k);
+    const x = z.items.find(y=>y.k===it.dataset.k); if(!x) return;
     x.q = Math.max(1, parseInt(e.target.value)||1);
-    majCompteur(); ouvrirPanier();
+    majCompteur(); enregistrer(); ouvrirPanier();
   });
 
   el.classList.add('on'); el.setAttribute('aria-hidden','false');
   document.getElementById('voile').classList.add('on');
 }
+
+/* ============ Mes projets ============ */
+function ouvrirProjets(){
+  const el = document.getElementById('projets');
+  const fdate = t => new Date(t).toLocaleDateString('fr-FR',
+    {day:'numeric', month:'short', year:'numeric'});
+
+  const liste = PROJETS.slice().sort((a,b)=>b.maj-a.maj).map(p=>{
+    const n = p.zones.reduce((s,z)=>s+z.items.reduce((t,x)=>t+x.q,0), 0);
+    const esp = new Set(p.zones.flatMap(z=>z.items.map(x=>x.lat))).size;
+    return `<div class="prj ${p.id===idProjet?'act':''}" data-p="${p.id}">
+      <div class="pinfo">
+        <div class="pn">${p.client.nom || p.nom || 'Projet sans nom'}</div>
+        <div class="pd">${[p.client.ville, p.nom].filter(Boolean).join(' · ') || 'Aucun détail'}</div>
+        <div class="pd">${n} sujets · ${esp} espèces · ${p.zones.length} zone${p.zones.length>1?'s':''} · ${fdate(p.maj)}</div>
+      </div>
+      <button class="mini" data-a="ouvrir">${p.id===idProjet?'En cours':'Ouvrir'}</button>
+      <button class="x" data-a="dup" title="Dupliquer">⧉</button>
+      <button class="x" data-a="sup" title="Supprimer">✕</button>
+    </div>`;
+  }).join('');
+
+  el.innerHTML = `
+    <div class="phead">
+      <h2>Mes projets</h2>
+      <span class="spacer"></span>
+      <button class="fclose" style="position:static" aria-label="Fermer">✕</button>
+    </div>
+    <div class="plist">
+      ${liste}
+      <button class="newcoll" id="p-neuf">+ Nouveau projet</button>
+      <p class="txt gris" style="font-size:11.5px;margin:14px 0 0;line-height:1.5">
+        ${STORE.persistant
+          ? 'Les projets et les favoris sont enregistrés sur cet appareil. Ils ne sont pas partagés entre l’iPad et le PC.'
+          : 'Le navigateur n’autorise pas l’enregistrement : les projets seront perdus au rechargement.'}
+      </p>
+    </div>`;
+
+  el.querySelector('.fclose').onclick = fermerProjets;
+  el.querySelector('#p-neuf').onclick = ()=>{
+    const np = projetNeuf();
+    const nom = prompt('Nom du client', '');
+    if(nom && nom.trim()) np.client.nom = nom.trim();
+    PROJETS.push(np); idProjet = np.id; idZone = np.zones[0].id;
+    majCompteur(); enregistrer(); ouvrirProjets();
+  };
+  el.querySelector('.plist').addEventListener('click', e=>{
+    const b = e.target.closest('button'); if(!b || !b.dataset.a) return;
+    const id = b.closest('.prj').dataset.p;
+    const p = PROJETS.find(x=>x.id===id);
+    if(b.dataset.a==='ouvrir'){
+      idProjet = id; idZone = null; majCompteur(); enregistrer();
+      fermerProjets(); ouvrirPanier(); return;
+    }
+    if(b.dataset.a==='dup'){
+      const c = JSON.parse(JSON.stringify(p));
+      c.id = uid(); c.maj = Date.now();
+      c.client.nom = (c.client.nom || 'Projet') + ' (copie)';
+      c.zones.forEach(z=>z.id = uid());
+      PROJETS.push(c); enregistrer(); ouvrirProjets(); return;
+    }
+    if(!confirm(`Supprimer définitivement « ${p.client.nom || 'ce projet'} » ?`)) return;
+    PROJETS = PROJETS.filter(x=>x.id!==id);
+    if(!PROJETS.length) PROJETS = [projetNeuf()];
+    if(idProjet===id){ idProjet = PROJETS[0].id; idZone = null; }
+    majCompteur(); enregistrer(); ouvrirProjets();
+  });
+
+  el.classList.add('on'); el.setAttribute('aria-hidden','false');
+  document.getElementById('voile').classList.add('on');
+}
+function fermerProjets(){
+  document.getElementById('projets').classList.remove('on');
+  document.getElementById('voile').classList.remove('on');
+}
+
 function fermerPanier(){
   document.getElementById('panier').classList.remove('on');
   document.getElementById('voile').classList.remove('on');
 }
 document.getElementById('btn-panier').onclick = ouvrirPanier;
-document.getElementById('voile').onclick = ()=>{fermerFiche();fermerPanier();fermerFavoris();};
+document.getElementById('voile').onclick = ()=>{fermerFiche();fermerPanier();fermerFavoris();fermerProjets();};
 document.addEventListener('keydown', e=>{
   if(e.key==='Escape'){
     if(document.getElementById('elev').classList.contains('on')){fermerElevation();return;}
     if(document.getElementById('doc').classList.contains('on')){fermerDocument();return;}
-    fermerPop();fermerFiche();fermerPanier();fermerFavoris();
+    fermerPop();fermerFiche();fermerPanier();fermerFavoris();fermerProjets();
   }
 });
+
+/* les conteneurs d'overlay sont créés s'ils manquent dans index.html */
+function garantirConteneurs(){
+  ['pop','doc','elev','projets'].forEach(id=>{
+    if(!document.getElementById(id)){
+      const d = document.createElement('div');
+      d.id = id;
+      if(id!=='pop') d.setAttribute('aria-hidden','true');
+      document.body.appendChild(d);
+    }
+  });
+}
 
 function appliquerMarque(){
   const r = document.documentElement.style;
@@ -700,6 +899,7 @@ function appliquerMarque(){
   if(s) s.textContent = 'Sélection végétale';
 }
 
+garantirConteneurs();
 appliquerMarque();
 bâtirFiltres();
 rendre();
@@ -724,18 +924,19 @@ function ouvrirDocument(){
   const doc = document.getElementById('doc');
   const client = CFG.mode === 'client';
   const pv = x => x.px * CFG.coef;
-  const totalAchat = PANIER.reduce((s,x)=>s + x.px*x.q, 0);
-  const totalVente = PANIER.reduce((s,x)=>s + pv(x)*x.q, 0);
-  const nbSujets = PANIER.reduce((s,x)=>s+x.q,0);
-  const surface = PANIER.reduce((s,x)=>s + x.q/x.dens, 0);
+  const LIGNES = toutesLignes();
+  const totalAchat = LIGNES.reduce((s,x)=>s + x.px*x.q, 0);
+  const totalVente = LIGNES.reduce((s,x)=>s + pv(x)*x.q, 0);
+  const nbSujets = LIGNES.reduce((s,x)=>s+x.q,0);
+  const surface = LIGNES.reduce((s,x)=>s + x.q/x.dens, 0);
 
   const especes = [];
-  PANIER.forEach(x=>{ if(!especes.some(e=>e.lat===x.lat)){
+  LIGNES.forEach(x=>{ if(!especes.some(e=>e.lat===x.lat)){
     const p = DATA.find(d=>d.lat===x.lat); if(p) especes.push(p);
   }});
 
   const counts = new Array(12).fill(0);
-  PANIER.forEach(x=>{
+  LIGNES.forEach(x=>{
     if(!x.m1||!x.m2) return;
     let m=x.m1;
     for(let i=0;i<13;i++){counts[m-1]++; if(m===x.m2)break; m = m===12?1:m+1;}
@@ -752,7 +953,7 @@ function ouvrirDocument(){
       <th class="r">Achat HT</th><th class="r">Total achat</th><th class="r">Vente HT</th>
     </tr>`;
 
-  const lignes = PANIER.map(x=>{
+  const lignesDe = (arr) => arr.map(x=>{
     const nom = `<td>
         <div class="n1">${x.fr}</div>
         <div class="n2"><span class="lat">${x.lat}</span>${x.cv?' — '+x.cv:''}</div>
@@ -766,6 +967,19 @@ function ouvrirDocument(){
           <td class="r">${eur(x.px*x.q)}</td>
           <td class="r"><b>${eur(pv(x)*x.q)}</b></td>
         </tr>`;
+  }).join('');
+
+  const ZONES = zonesActives();
+  const multi = ZONES.length > 1;
+  const tableaux = ZONES.map(z=>{
+    const sous = z.items.reduce((s,x)=>s + (client ? 0 : pv(x)*x.q), 0);
+    return `${multi ? `<div class="zt">${z.nom}</div>` : ''}
+      <table class="dev">
+        <thead>${client ? enteteClient : enteteInterne}</thead>
+        <tbody>${lignesDe(z.items)}</tbody>
+      </table>
+      ${multi && !client ? `<div class="sstot">Sous-total ${z.nom} :
+        <b>${eur(sous)}</b></div>` : ''}`;
   }).join('');
 
   /* ---- fiches techniques ---- */
@@ -874,17 +1088,16 @@ function ouvrirDocument(){
 
       <h1 class="dtitre">${client ? 'Palette végétale proposée' : 'Récapitulatif des végétaux'}</h1>
       ${CLIENT.projet ? `<p class="projet">${CLIENT.projet}</p>` : ''}
-      <p class="dsstitre">${nbSujets} sujets · ${especes.length} espèces · environ ${fmt(Math.round(surface))} m² plantés</p>
+      <p class="dsstitre">${nbSujets} sujets · ${especes.length} espèces${
+        multi ? ` · ${ZONES.length} zones` : ''} · environ ${fmt(Math.round(surface))} m² plantés</p>
 
       ${client ? `<p class="intro">Cette palette a été composée pour les conditions de votre terrain :
         exposition, nature du sol et entretien souhaité. Chaque espèce est présentée en détail
         dans les fiches qui suivent. Le chiffrage de ces plantations figure au devis d'aménagement.</p>` : ''}
 
-      <div class="dsec">${client ? 'Composition de la palette' : 'Détail par référence'}</div>
-      <table class="dev">
-        <thead>${client ? enteteClient : enteteInterne}</thead>
-        <tbody>${lignes}</tbody>
-      </table>
+      <div class="dsec">${client ? 'Composition de la palette' : 'Détail par référence'}${
+        multi ? ` — ${ZONES.length} zones` : ''}</div>
+      ${tableaux}
       ${totaux}
 
       <div class="dsec">Échelonnement des floraisons sur l'année</div>
@@ -1232,8 +1445,8 @@ function ouvrirElevation(especes, titre){
       </p>
     </div>`;
 
-  document.getElementById('e-fermer').onclick = fermerElevation;
-  document.getElementById('e-pdf').onclick = ()=>window.print();
+  el.querySelector('#e-fermer').onclick = fermerElevation;
+  el.querySelector('#e-pdf').onclick = ()=>window.print();
   el.classList.add('on');
   el.scrollTop = 0;
 }
