@@ -114,6 +114,7 @@ function enregistrer(){
   projet().maj = Date.now();
   STORE.ecrire('projets', PROJETS);
   STORE.ecrire('projetActif', idProjet);
+  majEnteteProjet();
 }
 const toutesLignes = () => projet().zones.flatMap(z=>z.items);
 const zonesActives = () => projet().zones.filter(z=>z.items.length);
@@ -646,6 +647,7 @@ function majCompteur(){
   const n = toutesLignes().reduce((s,x)=>s+x.q,0);
   const e = document.getElementById('cpt');
   if(e) e.textContent = n;
+  majEnteteProjet();
 }
 function totalHT(lignes){return (lignes||toutesLignes()).reduce((s,x)=>s+x.px*x.q,0)}
 
@@ -804,6 +806,7 @@ function ouvrirProjets(){
         <div class="pd">${n} sujets · ${esp} espèces · ${p.zones.length} zone${p.zones.length>1?'s':''} · ${fdate(p.maj)}</div>
       </div>
       <button class="mini" data-a="ouvrir">${p.id===idProjet?'En cours':'Ouvrir'}</button>
+      <button class="x" data-a="nom" title="Renommer">✎</button>
       <button class="x" data-a="dup" title="Dupliquer">⧉</button>
       <button class="x" data-a="sup" title="Supprimer">✕</button>
     </div>`;
@@ -840,6 +843,16 @@ function ouvrirProjets(){
     if(b.dataset.a==='ouvrir'){
       idProjet = id; idZone = null; majCompteur(); enregistrer();
       fermerProjets(); ouvrirPanier(); return;
+    }
+    if(b.dataset.a==='nom'){
+      const nom = prompt('Nom du client', p.client.nom || '');
+      if(nom !== null){
+        p.client.nom = nom.trim();
+        const pr = prompt('Intitulé du projet (facultatif)', p.nom || '');
+        if(pr !== null) p.nom = pr.trim();
+        enregistrer(); ouvrirProjets();
+      }
+      return;
     }
     if(b.dataset.a==='dup'){
       const c = JSON.parse(JSON.stringify(p));
@@ -889,6 +902,40 @@ function garantirConteneurs(){
   });
 }
 
+/* bouton Projet dans le bandeau, créé si index.html ne le contient pas */
+let BTN_PROJET = null, LBL_PROJET = null;
+function garantirBoutonProjet(){
+  BTN_PROJET = document.getElementById('btn-projet');
+  if(!BTN_PROJET){
+    const h = document.querySelector('header');
+    const avant = document.getElementById('btn-favoris');
+    if(!h) return;
+    BTN_PROJET = document.createElement('button');
+    BTN_PROJET.className = 'hbtn';
+    BTN_PROJET.id = 'btn-projet';
+    LBL_PROJET = document.createElement('span');
+    LBL_PROJET.className = 'lbl';
+    LBL_PROJET.id = 'lblprojet';
+    LBL_PROJET.textContent = 'Projet';
+    BTN_PROJET.appendChild(LBL_PROJET);
+    avant ? h.insertBefore(BTN_PROJET, avant) : h.appendChild(BTN_PROJET);
+  } else {
+    LBL_PROJET = document.getElementById('lblprojet') || BTN_PROJET;
+  }
+  BTN_PROJET.onclick = ouvrirProjets;
+}
+function majEnteteProjet(){
+  const e = LBL_PROJET;
+  if(!e) return;
+  const p = projet();
+  const n = p.client.nom || p.nom;
+  const q = toutesLignes().reduce((s,x)=>s+x.q,0);
+  e.textContent = n ? (n.length>22 ? n.slice(0,21)+'…' : n) : 'Nouveau projet';
+  if(BTN_PROJET) BTN_PROJET.title = n
+    ? `${n}${p.nom && p.client.nom ? ' — '+p.nom : ''} · ${q} sujets`
+    : 'Aucun client renseigné';
+}
+
 function appliquerMarque(){
   const r = document.documentElement.style;
   r.setProperty('--vert', MARQUE.couleur);
@@ -900,7 +947,9 @@ function appliquerMarque(){
 }
 
 garantirConteneurs();
+garantirBoutonProjet();
 appliquerMarque();
+majEnteteProjet();
 bâtirFiltres();
 rendre();
 majCompteurFav();
