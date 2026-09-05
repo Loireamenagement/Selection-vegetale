@@ -181,7 +181,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Acanthus mollis",
@@ -231,7 +236,12 @@ const DATA = [
     "n": 1,
     "t": "Bractées florales à pointes piquantes : gants conseillés pour la taille."
    }
-  ]
+  ],
+  "rc": {
+   "t": "cha",
+   "p": 1.0,
+   "d": 1
+  }
  },
  {
   "lat": "Acer campestris",
@@ -296,7 +306,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 1.2,
+   "d": 4
+  }
  },
  {
   "lat": "Acer negundo",
@@ -349,7 +364,12 @@ const DATA = [
     "n": 2,
     "t": "Classé envahissant, notamment en bord de cours d'eau où il se ressème massivement. Préférer les cultivars horticoles panachés, moins prolifiques."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 1.0,
+   "d": 5
+  }
  },
  {
   "lat": "Acer palmatum",
@@ -402,7 +422,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 0.6,
+   "d": 1.5
+  }
  },
  {
   "lat": "Acer platanoides",
@@ -485,7 +510,12 @@ const DATA = [
     "n": 1,
     "t": "Racines superficielles compliquant les plantations au pied et soulevant les dallages."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 1.2,
+   "d": 6
+  }
  },
  {
   "lat": "Acer rubrum",
@@ -523,7 +553,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 1.2,
+   "d": 5
+  }
  },
  {
   "lat": "Acer sac",
@@ -575,7 +610,12 @@ const DATA = [
     "n": 1,
     "t": "Racines puissantes et bois cassant : éloigner des constructions et des passages."
    }
-  ]
+  ],
+  "rc": {
+   "t": "tra",
+   "p": 1.2,
+   "d": 8
+  }
  },
  {
   "lat": "Achillea filipendulina",
@@ -619,7 +659,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Achillea millefolium",
@@ -720,7 +765,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Actinidia deliciosa",
@@ -773,7 +823,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 1.0,
+   "d": 3
+  }
  },
  {
   "lat": "Agapanthus africanus",
@@ -853,7 +908,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "cha",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Agastache foeniculum",
@@ -903,7 +963,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Ajuga reptans",
@@ -977,7 +1042,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.2,
+   "d": 0
+  }
  },
  {
   "lat": "Akebia quinata",
@@ -1015,7 +1085,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.5
+  }
  },
  {
   "lat": "Albizzia julibrissin",
@@ -1060,7 +1135,12 @@ const DATA = [
     "n": 1,
     "t": "Bois cassant sous le vent fort."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 1.0,
+   "d": 4
+  }
  },
  {
   "lat": "Alcea rosea",
@@ -1116,7 +1196,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Alchemilla mollis",
@@ -1160,7 +1245,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Allium schoenoprasum",
@@ -1222,7 +1312,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Alnus glutinosa",
@@ -1267,7 +1362,12 @@ const DATA = [
     "n": 2,
     "t": "Pollen très allergisant émis dès février. À éloigner des zones de séjour."
    }
-  ]
+  ],
+  "rc": {
+   "t": "tra",
+   "p": 1.5,
+   "d": 6
+  }
  },
  {
   "lat": "Alstroemeria",
@@ -1350,7 +1450,12 @@ const DATA = [
     "n": 1,
     "t": "Contact répété avec la sève pouvant provoquer une dermatite, surtout à la coupe."
    }
-  ]
+  ],
+  "rc": {
+   "t": "cha",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Amelanchier lamarckii",
@@ -1388,7 +1493,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 1.0,
+   "d": 2
+  }
  },
  {
   "lat": "Anaphalis triplinervis",
@@ -1432,7 +1542,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Anemone hupehensis",
@@ -1590,7 +1705,12 @@ const DATA = [
     "n": 1,
     "t": "La sève peut provoquer une irritation cutanée légère : gants conseillés à la taille."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Angelica archangelica",
@@ -1634,7 +1754,12 @@ const DATA = [
     "n": 2,
     "t": "Contient des furocoumarines : le contact avec la sève suivi d'une exposition au soleil provoque des brûlures. Manipuler avec des gants."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Anthemis tinctoria",
@@ -1679,7 +1804,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Aquilegia vulgaris",
@@ -1735,7 +1865,12 @@ const DATA = [
     "n": 1,
     "t": "Graines et racines toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Arabis caucasica",
@@ -1792,7 +1927,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Arbutus unedo",
@@ -1839,7 +1979,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 1.2,
+   "d": 2
+  }
  },
  {
   "lat": "Arenaria montana",
@@ -1877,7 +2022,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Armeria maritima",
@@ -1922,7 +2072,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Aronia prunifolia",
@@ -1984,7 +2139,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Artemisia absinthium",
@@ -2052,7 +2212,12 @@ const DATA = [
     "n": 1,
     "t": "Pollen d'armoise allergisant en fin d'été, et feuillage pouvant irriter au contact."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Asplenium trichomanes",
@@ -2096,7 +2261,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Aster alpinus",
@@ -2147,7 +2317,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Astrantia major",
@@ -2197,7 +2372,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Athyrium filix-femina",
@@ -2241,7 +2421,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Aubrieta",
@@ -2324,7 +2509,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Azalea japonica",
@@ -2437,7 +2627,12 @@ const DATA = [
     "n": 2,
     "t": "Feuilles et fleurs contiennent des grayanotoxines, toxiques pour l'homme comme pour les animaux domestiques. Le miel produit à partir de ses fleurs est lui-même toxique."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Ballota pseudodictamnus",
@@ -2505,7 +2700,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Berberis thunbergii",
@@ -2557,7 +2757,12 @@ const DATA = [
     "n": 1,
     "t": "Classé envahissant dans certaines régions : se ressème par les oiseaux."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Bergenia cordifolia",
@@ -2607,7 +2812,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Betula verrucosa",
@@ -2686,7 +2896,12 @@ const DATA = [
     "n": 1,
     "t": "Racines superficielles et traçantes : éloigner des dallages et réseaux."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 0.8,
+   "d": 5
+  }
  },
  {
   "lat": "Brachypodium sylvaticum",
@@ -2724,7 +2939,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Briza media",
@@ -2768,7 +2988,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Buddleia davidii",
@@ -2929,7 +3154,12 @@ const DATA = [
     "n": 2,
     "t": "Classé envahissant dans plusieurs régions : un pied produit des millions de graines qui colonisent friches et berges. Privilégier les cultivars stériles et supprimer les fleurs fanées."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 1.0,
+   "d": 2
+  }
  },
  {
   "lat": "Bulbine frutescens",
@@ -2989,7 +3219,12 @@ const DATA = [
    }
   ],
   "ph": [],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Calamagrostis acutiflora",
@@ -3083,7 +3318,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Calistemon laevis",
@@ -3124,7 +3364,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Callicarpa bodinieri",
@@ -3187,7 +3432,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Campanula lactiflora",
@@ -3243,7 +3493,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Campanula persicifolia",
@@ -3288,7 +3543,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Campsis",
@@ -3326,7 +3586,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 1.0,
+   "d": 4
+  }
  },
  {
   "lat": "Cardamine pratensis",
@@ -3362,7 +3627,12 @@ const DATA = [
    }
   ],
   "ph": [],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Carex buchananii",
@@ -3448,7 +3718,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Carex grayi",
@@ -3504,7 +3779,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Carex morrowii",
@@ -3629,7 +3909,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Carex pendula",
@@ -3685,7 +3970,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Carpinus betulus",
@@ -3749,7 +4039,12 @@ const DATA = [
     "n": 1,
     "t": "Pollen modérément allergisant au printemps."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 2.0,
+   "d": 4
+  }
  },
  {
   "lat": "Caryopteris clandonensis",
@@ -3819,7 +4114,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Castanea sativa",
@@ -3881,7 +4181,12 @@ const DATA = [
     "n": 1,
     "t": "Bogues très piquantes au sol à l'automne."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 2.5,
+   "d": 8
+  }
  },
  {
   "lat": "Catalpa bignoides",
@@ -3926,7 +4231,12 @@ const DATA = [
     "n": 1,
     "t": "Bois cassant sous le vent : éloigner des passages."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 1.2,
+   "d": 5
+  }
  },
  {
   "lat": "Ceanothus thyrsiflorus",
@@ -4001,7 +4311,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Centaurea montana",
@@ -4045,7 +4360,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Centranthus ruber",
@@ -4113,7 +4433,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Cephalotaxus fastigiata",
@@ -4152,7 +4477,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Cerastium tomentosum",
@@ -4197,7 +4527,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Ceratostigma plumbaginoides",
@@ -4247,7 +4582,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Cercis siliquastrum",
@@ -4292,7 +4632,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "cha",
+   "p": 1.5,
+   "d": 3
+  }
  },
  {
   "lat": "Chaenomeles superba",
@@ -4387,7 +4732,12 @@ const DATA = [
     "n": 1,
     "t": "Rameaux épineux : à écarter des passages."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Chamaecyparis obtusa",
@@ -4445,7 +4795,12 @@ const DATA = [
     "n": 1,
     "t": "Pollen allergisant en fin d'hiver."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.5
+  }
  },
  {
   "lat": "Chamaemelum nobile",
@@ -4490,7 +4845,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Cistus corbariensis",
@@ -4549,7 +4909,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Cistus pulverulentus",
@@ -4607,7 +4972,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Cistus purpureus",
@@ -4665,7 +5035,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Clerodendron bungei",
@@ -4709,7 +5084,12 @@ const DATA = [
     "n": 1,
     "t": "Drageonne fortement et peut coloniser un massif entier. À isoler ou à contenir."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.6,
+   "d": 2
+  }
  },
  {
   "lat": "Convolvulus cneorum",
@@ -4754,7 +5134,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Cordyline australis",
@@ -4807,7 +5192,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 1.0,
+   "d": 1
+  }
  },
  {
   "lat": "Coreopsis grandiflora",
@@ -4857,7 +5247,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Cornus alba",
@@ -5018,7 +5413,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Cornus mas",
@@ -5056,7 +5456,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 1.5,
+   "d": 2
+  }
  },
  {
   "lat": "Cornus sanguinea",
@@ -5114,7 +5519,12 @@ const DATA = [
    2,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 1.0,
+   "d": 2
+  }
  },
  {
   "lat": "Corylus avellana",
@@ -5263,7 +5673,12 @@ const DATA = [
     "n": 2,
     "t": "Pollen très allergisant, libéré très tôt, dès janvier. À déconseiller aux foyers sensibles."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 1.0,
+   "d": 3
+  }
  },
  {
   "lat": "Cotinus coggygria",
@@ -5334,7 +5749,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 1.5,
+   "d": 2
+  }
  },
  {
   "lat": "Cotoneaster",
@@ -5464,7 +5884,12 @@ const DATA = [
     "n": 1,
     "t": "Sensible au feu bactérien : éviter la taille par temps humide."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Cotoneaster dammeri",
@@ -5546,7 +5971,12 @@ const DATA = [
     "n": 1,
     "t": "Sensible au feu bactérien."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Cotoneaster horizontalis",
@@ -5602,7 +6032,12 @@ const DATA = [
     "n": 1,
     "t": "Sensible au feu bactérien."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Crataegus monogyna",
@@ -5657,7 +6092,12 @@ const DATA = [
     "n": 2,
     "t": "Plantation restreinte ou interdite dans certaines zones au titre de la lutte contre le feu bactérien. Vérifier auprès de la mairie ou de la DRAAF avant tout chantier."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 2.0,
+   "d": 3
+  }
  },
  {
   "lat": "Crocosmia crocosmiiflora",
@@ -5708,7 +6148,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Cryptomeria japonica",
@@ -5754,7 +6199,12 @@ const DATA = [
     "n": 1,
     "t": "Pollen allergisant en fin d'hiver."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 1.0,
+   "d": 3
+  }
  },
  {
   "lat": "Cupressocyparis leylandii",
@@ -5855,7 +6305,12 @@ const DATA = [
     "n": 2,
     "t": "Pollen allergisant en fin d'hiver. Une haie de plusieurs dizaines de mètres émet des quantités importantes à proximité immédiate de l'habitation."
    }
-  ]
+  ],
+  "rc": {
+   "t": "tra",
+   "p": 1.2,
+   "d": 5
+  }
  },
  {
   "lat": "Cupressus sempervirens",
@@ -5902,7 +6357,12 @@ const DATA = [
     "n": 2,
     "t": "Pollen fortement allergisant de janvier à mars, responsable de la « rhinite des cyprès ». À déconseiller en haie près d'une habitation si le foyer est sensible."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 2.0,
+   "d": 2
+  }
  },
  {
   "lat": "Cydonia oblanga",
@@ -5952,7 +6412,12 @@ const DATA = [
     "n": 1,
     "t": "Fruits immangeables crus, comestibles cuits."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 1.2,
+   "d": 3
+  }
  },
  {
   "lat": "Cyrtomium falcatum",
@@ -5996,7 +6461,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Delosperma cooperi",
@@ -6064,7 +6534,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.1,
+   "d": 0
+  }
  },
  {
   "lat": "Deschampsia cespitosa",
@@ -6169,7 +6644,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Deutzia magnifica",
@@ -6311,7 +6791,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Diospyros",
@@ -6355,7 +6840,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 1.8,
+   "d": 4
+  }
  },
  {
   "lat": "Doronicum orientale",
@@ -6399,7 +6889,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Dorycnium hirsutum",
@@ -6437,7 +6932,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Dryopteris erythrosora",
@@ -6487,7 +6987,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Dryopteris filix-mas",
@@ -6543,7 +7048,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Echinacea",
@@ -6620,7 +7130,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Echinops ritro",
@@ -6670,7 +7185,12 @@ const DATA = [
     "n": 1,
     "t": "Feuillage épineux : gants conseillés à la taille."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 1.0,
+   "d": 0
+  }
  },
  {
   "lat": "Echium candicans",
@@ -6708,7 +7228,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Elaeagnus ebbingei",
@@ -6821,7 +7346,12 @@ const DATA = [
     "n": 1,
     "t": "Rameaux parfois épineux chez certains sujets."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 1.0,
+   "d": 1.5
+  }
  },
  {
   "lat": "Epimedium versicolor",
@@ -6867,7 +7397,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Equisetum hyemale",
@@ -6911,7 +7446,12 @@ const DATA = [
     "n": 2,
     "t": "Traçante et pratiquement impossible à éradiquer en pleine terre. À planter systématiquement en bac ou en panier de bassin."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.8,
+   "d": 3
+  }
  },
  {
   "lat": "Eragrostis spectabilis",
@@ -6955,7 +7495,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Erigeron karvinskianus",
@@ -6999,7 +7544,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Erodium chrysanthum",
@@ -7039,7 +7589,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Eryngium planum",
@@ -7089,7 +7644,12 @@ const DATA = [
     "n": 1,
     "t": "Bractées piquantes : gants conseillés à la taille."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 1.0,
+   "d": 0
+  }
  },
  {
   "lat": "Escallonia",
@@ -7154,7 +7714,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Euonymus",
@@ -7237,7 +7802,12 @@ const DATA = [
     "n": 1,
     "t": "Fruits toxiques par ingestion, en faible quantité."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Euonymus alatus",
@@ -7295,7 +7865,12 @@ const DATA = [
     "n": 1,
     "t": "Fruits toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Euonymus europaeus",
@@ -7346,7 +7921,12 @@ const DATA = [
     "n": 2,
     "t": "Les fruits roses s'ouvrant sur des graines orange vif sont très attirants et toxiques. À écarter des aires de jeu des enfants."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 1.0,
+   "d": 1.5
+  }
  },
  {
   "lat": "Euonymus japonicus",
@@ -7423,7 +8003,12 @@ const DATA = [
     "n": 1,
     "t": "Fruits toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Eupatorium cannabinum",
@@ -7482,7 +8067,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Euphorbia amygdaloides",
@@ -7545,7 +8135,12 @@ const DATA = [
     "n": 2,
     "t": "Latex irritant pour la peau et les yeux. Port de gants obligatoire à la taille."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Euphorbia characias",
@@ -7716,7 +8311,12 @@ const DATA = [
     "n": 2,
     "t": "Le latex blanc est fortement irritant pour la peau et dangereux pour les yeux. Gants et lunettes obligatoires à la taille. À signaler s'il y a de jeunes enfants."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Euphorbia myrsinites",
@@ -7766,7 +8366,12 @@ const DATA = [
     "n": 2,
     "t": "Latex irritant pour la peau et les yeux. Port de gants obligatoire à la taille."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Exochorda racemosa",
@@ -7816,7 +8421,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Fagus sylvatica",
@@ -7869,7 +8479,12 @@ const DATA = [
     "n": 1,
     "t": "Pollen modérément allergisant au printemps."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 1.5,
+   "d": 8
+  }
  },
  {
   "lat": "Fargesia murielae",
@@ -7919,7 +8534,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Festuca gautieri",
@@ -7975,7 +8595,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Festuca glauca",
@@ -8051,7 +8676,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Ficus carica",
@@ -8217,7 +8847,12 @@ const DATA = [
     "n": 2,
     "t": "Racines puissantes et traçantes : prévoir au moins 5 m de recul des canalisations, murs et dallages."
    }
-  ]
+  ],
+  "rc": {
+   "t": "tra",
+   "p": 1.2,
+   "d": 6
+  }
  },
  {
   "lat": "Filipendula ulmaria",
@@ -8261,7 +8896,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Foeniculum vulgare",
@@ -8323,7 +8963,12 @@ const DATA = [
     "n": 1,
     "t": "Sève légèrement phototoxique : éviter le contact prolongé par temps ensoleillé."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 1.0,
+   "d": 0
+  }
  },
  {
   "lat": "Forsythia intermedia",
@@ -8405,7 +9050,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Fuchsia magellanica",
@@ -8450,7 +9100,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Gaillardia grandiflora",
@@ -8496,7 +9151,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Galium odoratum",
@@ -8540,7 +9200,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.2,
+   "d": 0
+  }
  },
  {
   "lat": "Gaura lindheimeri",
@@ -8676,7 +9341,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Genista porlock",
@@ -8717,7 +9387,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 1.5,
+   "d": 0
+  }
  },
  {
   "lat": "Geranium",
@@ -8812,7 +9487,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Geranium endressii",
@@ -8856,7 +9536,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Geranium macrorrhizum",
@@ -8930,7 +9615,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Geranium phaeum",
@@ -8968,7 +9658,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Ginkgo biloba",
@@ -9012,7 +9707,12 @@ const DATA = [
     "n": 1,
     "t": "Les fruits des sujets femelles dégagent une odeur nauséabonde en se décomposant. Exiger un sujet mâle à la commande."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 2.5,
+   "d": 4
+  }
  },
  {
   "lat": "Grevillea juniperina",
@@ -9081,7 +9781,12 @@ const DATA = [
     "n": 1,
     "t": "Feuillage fin et piquant : à écarter des passages."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Griselina litoralis",
@@ -9119,7 +9824,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Hedera",
@@ -9255,7 +9965,12 @@ const DATA = [
     "n": 1,
     "t": "La sève peut provoquer une dermatite de contact : gants à la taille."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 0.8,
+   "d": 2
+  }
  },
  {
   "lat": "Helleborus niger",
@@ -9311,7 +10026,12 @@ const DATA = [
     "n": 2,
     "t": "Toute la plante est toxique, avec un effet sur le rythme cardiaque. La sève est également irritante pour la peau : porter des gants à la taille."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Hemerocallis",
@@ -9382,7 +10102,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Heuchera",
@@ -9477,7 +10202,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Hibiscus moscheutos",
@@ -9533,7 +10263,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Hibiscus syriacus",
@@ -9622,7 +10357,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 1.2,
+   "d": 1.5
+  }
  },
  {
   "lat": "Holcus mollis",
@@ -9661,7 +10401,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Hosta",
@@ -9798,7 +10543,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Houttuynia cordata",
@@ -9848,7 +10598,12 @@ const DATA = [
     "n": 2,
     "t": "Extrêmement traçante en sol humide et pratiquement impossible à éradiquer : le moindre fragment de rhizome repart. À planter uniquement en bac ou en panier."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.4,
+   "d": 2
+  }
  },
  {
   "lat": "Hyacynthoides non-scripta",
@@ -9894,7 +10649,12 @@ const DATA = [
     "n": 1,
     "t": "Bulbe toxique par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.2,
+   "d": 0
+  }
  },
  {
   "lat": "Hydrangea arborescens",
@@ -9938,7 +10698,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Hydrangea aspera",
@@ -9985,7 +10750,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Hydrangea macrophylla",
@@ -10122,7 +10892,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Hydrangea paniculata",
@@ -10235,7 +11010,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Hydrangea petiolaris",
@@ -10273,7 +11053,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 0.8,
+   "d": 1.5
+  }
  },
  {
   "lat": "Hydrangea quercifolia",
@@ -10331,7 +11116,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Hypericum calycinum",
@@ -10429,7 +11219,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Hyssopus officinalis",
@@ -10473,7 +11268,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Iberis sempervirens",
@@ -10518,7 +11318,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Ilex aquifolium",
@@ -10570,7 +11375,12 @@ const DATA = [
     "n": 1,
     "t": "Feuillage à pointes acérées : à écarter des passages étroits."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 1.5,
+   "d": 2
+  }
  },
  {
   "lat": "Ilex crenata",
@@ -10615,7 +11425,12 @@ const DATA = [
     "n": 1,
     "t": "Baies noires toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Imperata cylindrica",
@@ -10665,7 +11480,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Iris foetidissima",
@@ -10709,7 +11529,12 @@ const DATA = [
     "n": 1,
     "t": "Baies orange et rhizome toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Iris germanica",
@@ -10774,7 +11599,12 @@ const DATA = [
     "n": 1,
     "t": "Rhizome toxique par ingestion, irritant au contact."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 0.2,
+   "d": 0
+  }
  },
  {
   "lat": "Iris pseudacorus",
@@ -10830,7 +11660,12 @@ const DATA = [
     "n": 1,
     "t": "Rhizome toxique par ingestion, irritant au contact."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Iris sibirica",
@@ -10874,7 +11709,12 @@ const DATA = [
     "n": 1,
     "t": "Rhizome toxique par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Isopogon formosus",
@@ -10916,7 +11756,12 @@ const DATA = [
    }
   ],
   "ph": [],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Jasminum officinalis",
@@ -10957,7 +11802,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Juncus inflexus",
@@ -11007,7 +11857,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Juniperus chin",
@@ -11120,7 +11975,12 @@ const DATA = [
     "n": 1,
     "t": "Feuillage piquant chez certains cultivars."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Juniperus communis",
@@ -11185,7 +12045,12 @@ const DATA = [
     "n": 1,
     "t": "Feuillage piquant : à écarter des passages."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 1.5,
+   "d": 1
+  }
  },
  {
   "lat": "Kerria japonica",
@@ -11238,7 +12103,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.5,
+   "d": 1.5
+  }
  },
  {
   "lat": "Knautia arvensis",
@@ -11282,7 +12152,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Kniphofia uvaria",
@@ -11344,7 +12219,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Koeleria glauca",
@@ -11388,7 +12268,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Kolkwitzia amabilis",
@@ -11432,7 +12317,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Laburnum anagyroides",
@@ -11482,7 +12372,12 @@ const DATA = [
     "n": 2,
     "t": "Toute la plante est très toxique, en particulier les graines contenues dans les gousses, qui ressemblent à des petits pois et attirent les enfants. À déconseiller dans un jardin fréquenté par de jeunes enfants ou des animaux."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 1.5,
+   "d": 3
+  }
  },
  {
   "lat": "Lagerstroemia indica",
@@ -11571,7 +12466,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 1.2,
+   "d": 2
+  }
  },
  {
   "lat": "Laurus nobilis",
@@ -11610,7 +12510,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 1.2,
+   "d": 2
+  }
  },
  {
   "lat": "Lavandula angustifolia",
@@ -11807,7 +12712,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Lavandula intermedia",
@@ -11906,7 +12816,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 0.7,
+   "d": 0
+  }
  },
  {
   "lat": "Lavatera cachemiriana",
@@ -11953,7 +12868,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Leptospermum",
@@ -11994,7 +12914,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Lespedeza thunbergii",
@@ -12032,7 +12957,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 1.0,
+   "d": 0
+  }
  },
  {
   "lat": "Leucanthemum maximum",
@@ -12079,7 +13009,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Levistichum officinalis",
@@ -12131,7 +13066,12 @@ const DATA = [
     "n": 1,
     "t": "Sève légèrement phototoxique : porter des gants pour une récolte importante."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 1.0,
+   "d": 0
+  }
  },
  {
   "lat": "Leycesteria formosa",
@@ -12181,7 +13121,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Liatris spicata",
@@ -12225,7 +13170,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Ligustrum japonicum",
@@ -12304,7 +13254,12 @@ const DATA = [
     "n": 1,
     "t": "Floraison au parfum entêtant."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 1.0,
+   "d": 1.5
+  }
  },
  {
   "lat": "Ligustrum ovalifolium",
@@ -12390,7 +13345,12 @@ const DATA = [
     "n": 1,
     "t": "Floraison au parfum entêtant."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 1.0,
+   "d": 2
+  }
  },
  {
   "lat": "Ligustrum vulgare",
@@ -12440,7 +13400,12 @@ const DATA = [
     "n": 1,
     "t": "Floraison au parfum entêtant, mal supportée par certaines personnes."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 1.0,
+   "d": 1.5
+  }
  },
  {
   "lat": "Limonium latifolium",
@@ -12484,7 +13449,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Lippia citriodora",
@@ -12540,7 +13510,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Liquidambar styraciflua",
@@ -12579,7 +13554,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 2.0,
+   "d": 5
+  }
  },
  {
   "lat": "Liriodendron tulipifera",
@@ -12625,7 +13605,12 @@ const DATA = [
     "n": 1,
     "t": "Grand développement : prévoir un large recul."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 2.5,
+   "d": 8
+  }
  },
  {
   "lat": "Liriope muscari",
@@ -12705,7 +13690,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Lobelia cardinalis",
@@ -12749,7 +13739,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Lonicera japonica",
@@ -12829,7 +13824,12 @@ const DATA = [
     "n": 2,
     "t": "Classée envahissante dans plusieurs régions : très vigoureuse, elle étouffe la végétation voisine. Taille annuelle sévère indispensable."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.8,
+   "d": 2
+  }
  },
  {
   "lat": "Lonicera nitida",
@@ -12915,7 +13915,12 @@ const DATA = [
     "n": 1,
     "t": "Baies violacées toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Lonicera pileata",
@@ -12977,7 +13982,12 @@ const DATA = [
     "n": 1,
     "t": "Baies toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Loropetalum",
@@ -13039,7 +14049,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Luzula nivea",
@@ -13107,7 +14122,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Lythrum salicaria",
@@ -13169,7 +14189,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Magnolia soulangiana",
@@ -13228,7 +14253,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "cha",
+   "p": 1.0,
+   "d": 3
+  }
  },
  {
   "lat": "Magnolia stellata",
@@ -13290,7 +14320,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "cha",
+   "p": 0.8,
+   "d": 2
+  }
  },
  {
   "lat": "Mahonia",
@@ -13337,7 +14372,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Malus coccinela",
@@ -13408,7 +14448,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 1.2,
+   "d": 3
+  }
  },
  {
   "lat": "Malus domestica",
@@ -13629,7 +14674,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 1.2,
+   "d": 3
+  }
  },
  {
   "lat": "Malva moschata",
@@ -13685,7 +14735,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Matteuccia struthiopteris",
@@ -13731,7 +14786,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Melissa officinalis",
@@ -13775,7 +14835,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Mentha spicata",
@@ -13837,7 +14902,12 @@ const DATA = [
     "n": 1,
     "t": "Traçante par rhizomes : en pleine terre elle envahit le massif en deux saisons. À planter en pot enterré ou en bac."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.3,
+   "d": 1
+  }
  },
  {
   "lat": "Miscanthus sinensis",
@@ -14016,7 +15086,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Molinia arundinacea",
@@ -14085,7 +15160,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.7,
+   "d": 0
+  }
  },
  {
   "lat": "Morus kagayamae",
@@ -14132,7 +15212,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 1.2,
+   "d": 4
+  }
  },
  {
   "lat": "Muehlenbeckia complexa",
@@ -14176,7 +15261,12 @@ const DATA = [
     "n": 1,
     "t": "Vigoureuse et enchevêtrée : taille régulière nécessaire pour la contenir."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.6,
+   "d": 1
+  }
  },
  {
   "lat": "Muhlenbergia capillaris",
@@ -14221,7 +15311,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Muscari armeniacum",
@@ -14265,7 +15360,12 @@ const DATA = [
     "n": 1,
     "t": "Bulbe toxique par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.15,
+   "d": 0
+  }
  },
  {
   "lat": "Nandina domestica",
@@ -14353,7 +15453,12 @@ const DATA = [
     "n": 1,
     "t": "Les baies rouges contiennent des composés cyanogènes. Toxiques en quantité, notamment pour les chats et les oiseaux domestiques."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Nepeta faassenii",
@@ -14476,7 +15581,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Oenothera fruticosa",
@@ -14517,7 +15627,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Ophiopogon planiscapus",
@@ -14563,7 +15678,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Origanum vulgare",
@@ -14619,7 +15739,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Osmanthus burkwoodii",
@@ -14696,7 +15821,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Osmunda regalis",
@@ -14740,7 +15870,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Oxalis triangularis",
@@ -14778,7 +15913,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Pachysandra terminalis",
@@ -14846,7 +15986,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Panicum virgatum",
@@ -14928,7 +16073,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Passiflore",
@@ -14969,7 +16119,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.8,
+   "d": 2
+  }
  },
  {
   "lat": "Paulownia",
@@ -15013,7 +16168,12 @@ const DATA = [
     "n": 1,
     "t": "Croissance très rapide et bois cassant : éloigner des constructions."
    }
-  ]
+  ],
+  "rc": {
+   "t": "tra",
+   "p": 1.5,
+   "d": 6
+  }
  },
  {
   "lat": "Pennisetum alopecuroides",
@@ -15144,7 +16304,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Pennisetum orientale",
@@ -15206,7 +16371,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Perovskia atriplicifolia",
@@ -15310,7 +16480,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Persicaria affinis",
@@ -15357,7 +16532,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Persicaria bistorta",
@@ -15415,7 +16595,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Philadelphus coronarius",
@@ -15490,7 +16675,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Phillyrea angustifolia",
@@ -15552,7 +16742,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 1.5,
+   "d": 1
+  }
  },
  {
   "lat": "Phlomis fruticosa",
@@ -15614,7 +16809,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Phlomis russeliana",
@@ -15670,7 +16870,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Phlox subulata",
@@ -15714,7 +16919,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Phormium tenax",
@@ -15790,7 +17000,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Photinia fraseri",
@@ -15891,7 +17106,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Phragmites australis",
@@ -15940,7 +17160,12 @@ const DATA = [
     "n": 2,
     "t": "Extrêmement traçante, pratiquement impossible à éradiquer une fois installée. À réserver aux bassins de lagunage et aux berges où l'expansion est voulue."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 1.0,
+   "d": 3
+  }
  },
  {
   "lat": "Physocarpus opulifolius",
@@ -16039,7 +17264,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Picea abies",
@@ -16104,7 +17334,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 1.0,
+   "d": 5
+  }
  },
  {
   "lat": "Pinus mugo",
@@ -16187,7 +17422,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 1.2,
+   "d": 1
+  }
  },
  {
   "lat": "Pinus sylvestris",
@@ -16227,7 +17467,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 3.0,
+   "d": 5
+  }
  },
  {
   "lat": "Pittosporum tenuifolium",
@@ -16322,7 +17567,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Platanus acerifolia",
@@ -16379,7 +17629,12 @@ const DATA = [
     "n": 2,
     "t": "Racines très puissantes soulevant dallages et trottoirs : prévoir un large recul des constructions et des réseaux."
    }
-  ]
+  ],
+  "rc": {
+   "t": "tra",
+   "p": 2.0,
+   "d": 12
+  }
  },
  {
   "lat": "Polygonum aubertii",
@@ -16423,7 +17678,12 @@ const DATA = [
     "n": 2,
     "t": "Croissance de plusieurs mètres par an, incontrôlable sans taille sévère annuelle. Elle étouffe toute végétation qu'elle atteint. À réserver aux supports isolés."
    }
-  ]
+  ],
+  "rc": {
+   "t": "tra",
+   "p": 1.0,
+   "d": 4
+  }
  },
  {
   "lat": "Polypodium vulgare",
@@ -16467,7 +17727,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Polystichum aculeatum",
@@ -16511,7 +17776,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Populus tremula",
@@ -16562,7 +17832,12 @@ const DATA = [
     "n": 1,
     "t": "Pollen modérément allergisant en fin d'hiver."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 1.5,
+   "d": 12
+  }
  },
  {
   "lat": "Potentilla fruticosa",
@@ -16729,7 +18004,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Prunus armeniaca",
@@ -16792,7 +18072,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 1.5,
+   "d": 4
+  }
  },
  {
   "lat": "Prunus avium",
@@ -16935,7 +18220,12 @@ const DATA = [
     "n": 1,
     "t": "Système racinaire traçant : prévoir un recul des constructions et des réseaux."
    }
-  ]
+  ],
+  "rc": {
+   "t": "tra",
+   "p": 1.5,
+   "d": 6
+  }
  },
  {
   "lat": "Prunus cerasifera",
@@ -17035,7 +18325,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 1.2,
+   "d": 4
+  }
  },
  {
   "lat": "Prunus domestica",
@@ -17160,7 +18455,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 1.2,
+   "d": 4
+  }
  },
  {
   "lat": "Prunus laurocerasus",
@@ -17320,7 +18620,12 @@ const DATA = [
     "n": 2,
     "t": "Considéré comme envahissant dans plusieurs régions : il se ressème par les oiseaux et colonise les sous-bois. À intégrer de préférence dans une haie mixte."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 1.0,
+   "d": 2
+  }
  },
  {
   "lat": "Prunus lusitanica",
@@ -17400,7 +18705,12 @@ const DATA = [
     "n": 1,
     "t": "Feuilles et noyaux cyanogènes, comme chez le laurier-cerise. Ne pas laisser les déchets de taille à portée du bétail."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 1.0,
+   "d": 1.5
+  }
  },
  {
   "lat": "Prunus persica",
@@ -17591,7 +18901,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 1.2,
+   "d": 3
+  }
  },
  {
   "lat": "Prunus serrulata",
@@ -17668,7 +18983,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "sup",
+   "p": 0.8,
+   "d": 3
+  }
  },
  {
   "lat": "Prunus spinosa",
@@ -17721,7 +19041,12 @@ const DATA = [
     "n": 2,
     "t": "Épines très acérées et longues, susceptibles de provoquer des blessures profondes. À réserver aux haies champêtres éloignées des passages."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 1.2,
+   "d": 3
+  }
  },
  {
   "lat": "Pyracantha",
@@ -17826,7 +19151,12 @@ const DATA = [
     "n": 1,
     "t": "Sensible au feu bactérien : tailler par temps sec."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Pyrus domestica",
@@ -17975,7 +19305,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 2.0,
+   "d": 4
+  }
  },
  {
   "lat": "Rhamnus frangula",
@@ -18021,7 +19356,12 @@ const DATA = [
     "n": 1,
     "t": "Baies fortement purgatives, toxiques en quantité. L'écorce fraîche l'est également."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 1.0,
+   "d": 1
+  }
  },
  {
   "lat": "Rhaphiolepis umbellata",
@@ -18066,7 +19406,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Rheum palmatum",
@@ -18110,7 +19455,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "cha",
+   "p": 0.8,
+   "d": 0
+  }
  },
  {
   "lat": "Ribes rubrum",
@@ -18187,7 +19537,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Ribes sanguineum",
@@ -18238,7 +19593,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Ribes uva-crispa",
@@ -18289,7 +19649,12 @@ const DATA = [
     "n": 1,
     "t": "Rameaux épineux gênant la récolte."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Robinia pseudoacacia",
@@ -18363,7 +19728,12 @@ const DATA = [
     "n": 1,
     "t": "Drageonne à distance du pied : éloigner des zones cultivées."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 2.0,
+   "d": 8
+  }
  },
  {
   "lat": "Rosa",
@@ -18488,7 +19858,12 @@ const DATA = [
     "n": 1,
     "t": "Aiguillons sur les rameaux : prévoir un recul des passages."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Rosa rugosa",
@@ -18537,7 +19912,12 @@ const DATA = [
     "n": 2,
     "t": "Classé envahissant sur le littoral atlantique, où il colonise les dunes. À éviter en bordure d'espace naturel."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.8,
+   "d": 2
+  }
  },
  {
   "lat": "Rosmarinus officinalis",
@@ -18625,7 +20005,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 1.0,
+   "d": 0
+  }
  },
  {
   "lat": "Rubus fructicosus",
@@ -18678,7 +20063,12 @@ const DATA = [
     "n": 1,
     "t": "Rameaux épineux, sauf variétés sans épines qu'il est préférable de choisir."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.8,
+   "d": 1.5
+  }
  },
  {
   "lat": "Rubus idaeus",
@@ -18779,7 +20169,12 @@ const DATA = [
     "n": 1,
     "t": "Rameaux épineux, sauf variétés sélectionnées sans épines."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.6,
+   "d": 1.5
+  }
  },
  {
   "lat": "Rudbeckia sullivantii",
@@ -18823,7 +20218,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Rumex acetosa",
@@ -18869,7 +20269,12 @@ const DATA = [
    2,
    3
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Ruta graveolens",
@@ -18919,7 +20324,12 @@ const DATA = [
     "n": 2,
     "t": "La sève provoque de graves brûlures cutanées en présence de soleil, parfois plusieurs jours après le contact. Manipulation avec gants et manches longues. À proscrire dans un jardin fréquenté par des enfants."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Sagina subulata",
@@ -18963,7 +20373,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.1,
+   "d": 0
+  }
  },
  {
   "lat": "Salix babylonica",
@@ -19013,7 +20428,12 @@ const DATA = [
     "n": 2,
     "t": "Racines très traçantes et avides d'eau, qui s'infiltrent dans les canalisations et fissurent les dallages. Prévoir au minimum 15 m de recul des réseaux et fosses."
    }
-  ]
+  ],
+  "rc": {
+   "t": "tra",
+   "p": 1.5,
+   "d": 15
+  }
  },
  {
   "lat": "Salix caprea",
@@ -19064,7 +20484,12 @@ const DATA = [
     "n": 1,
     "t": "Racines avides d'eau : éloigner des canalisations."
    }
-  ]
+  ],
+  "rc": {
+   "t": "tra",
+   "p": 1.2,
+   "d": 6
+  }
  },
  {
   "lat": "Salix purpurea",
@@ -19156,7 +20581,12 @@ const DATA = [
     "n": 1,
     "t": "Racines avides d'eau : éloigner des canalisations."
    }
-  ]
+  ],
+  "rc": {
+   "t": "tra",
+   "p": 1.0,
+   "d": 5
+  }
  },
  {
   "lat": "Salvia microphylla",
@@ -19284,7 +20714,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Salvia nemorosa",
@@ -19433,7 +20868,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Salvia officinalis",
@@ -19525,7 +20965,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Salvia uliginosa",
@@ -19587,7 +21032,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Sambucus nigra",
@@ -19664,7 +21114,12 @@ const DATA = [
     "n": 1,
     "t": "Les baies crues et les parties vertes sont toxiques. Les baies deviennent comestibles après cuisson, les fleurs le sont crues."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 1.0,
+   "d": 2
+  }
  },
  {
   "lat": "Sanguisorba minor",
@@ -19708,7 +21163,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Santolina chamaecyparissus",
@@ -19776,7 +21236,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Saponaria oxymoides",
@@ -19817,7 +21282,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Satureja montana",
@@ -19861,7 +21331,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Scabiosa columbaria",
@@ -19935,7 +21410,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Sciadopitys verticillata",
@@ -19973,7 +21453,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 2
+  }
  },
  {
   "lat": "Sedum acre",
@@ -20060,7 +21545,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.1,
+   "d": 0
+  }
  },
  {
   "lat": "Sedum spectabile",
@@ -20104,7 +21594,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Sesleria caerulea",
@@ -20154,7 +21649,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Solidago canadensis",
@@ -20210,7 +21710,12 @@ const DATA = [
     "n": 2,
     "t": "L'espèce type est classée envahissante et colonise rapidement par rhizomes et par semis. Choisir impérativement un cultivar horticole compact et stérile."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.6,
+   "d": 0
+  }
  },
  {
   "lat": "Sorbus aucuparia",
@@ -20254,7 +21759,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 1.2,
+   "d": 3
+  }
  },
  {
   "lat": "Spiraea japonica",
@@ -20481,7 +21991,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Spiraea nipponica",
@@ -20567,7 +22082,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Stachys byzanthina",
@@ -20629,7 +22149,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Stipa gigantea",
@@ -20668,7 +22193,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Stipa tenuifolia",
@@ -20773,7 +22303,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.5,
+   "d": 0
+  }
  },
  {
   "lat": "Symphoricarpos doorenbosii",
@@ -20856,7 +22391,12 @@ const DATA = [
     "n": 2,
     "t": "Les grosses baies blanches sont toxiques et particulièrement attirantes pour les enfants, qui les confondent avec des bonbons. À écarter des aires de jeu."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 0.6,
+   "d": 1.5
+  }
  },
  {
   "lat": "Syringa vulgaris",
@@ -20927,7 +22467,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 1.2,
+   "d": 2
+  }
  },
  {
   "lat": "Tamarix africana",
@@ -20998,7 +22543,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 2.0,
+   "d": 3
+  }
  },
  {
   "lat": "Taxus baccata",
@@ -21063,7 +22613,12 @@ const DATA = [
     "n": 2,
     "t": "Toutes les parties sont très toxiques sauf la pulpe rouge du fruit, la graine qu'elle contient étant elle-même mortelle. Dangereux aussi pour les chevaux et les bovins. À écarter des jardins d'enfants et des pâtures."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 1.2,
+   "d": 2
+  }
  },
  {
   "lat": "Tetradium danielli",
@@ -21101,7 +22656,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 1.8,
+   "d": 5
+  }
  },
  {
   "lat": "Teucrium fruticans",
@@ -21151,7 +22711,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Thuya plicata",
@@ -21233,7 +22798,12 @@ const DATA = [
     "n": 1,
     "t": "Pollen allergisant en fin d'hiver."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 1.0,
+   "d": 3
+  }
  },
  {
   "lat": "Thymus serpyllum",
@@ -21319,7 +22889,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.15,
+   "d": 0
+  }
  },
  {
   "lat": "Thymus vulgaris",
@@ -21441,7 +23016,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Tiarella wherryi",
@@ -21485,7 +23065,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Tilia cordata",
@@ -21531,7 +23116,12 @@ const DATA = [
     "n": 1,
     "t": "Le miellat des pucerons peut poisser les véhicules stationnés dessous."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 1.8,
+   "d": 8
+  }
  },
  {
   "lat": "Tilia platyphyllos",
@@ -21582,7 +23172,12 @@ const DATA = [
     "n": 1,
     "t": "Le miellat des pucerons poisse durablement les véhicules stationnés dessous."
    }
-  ]
+  ],
+  "rc": {
+   "t": "sup",
+   "p": 2.0,
+   "d": 10
+  }
  },
  {
   "lat": "Trachelospermum jasminoides",
@@ -21632,7 +23227,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1
+  }
  },
  {
   "lat": "Tulbaghia violacea",
@@ -21676,7 +23276,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Ulmus campestris",
@@ -21723,7 +23328,12 @@ const DATA = [
     "n": 1,
     "t": "Décimé par la graphiose : les sujets meurent généralement avant vingt ans. N'utiliser que des variétés résistantes sélectionnées, ou une conduite en haie basse."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 1.8,
+   "d": 8
+  }
  },
  {
   "lat": "Vaccinum corymbosum",
@@ -21773,7 +23383,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Valeriana officinalis",
@@ -21817,7 +23432,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Verbena bonariensis",
@@ -21897,7 +23517,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Veronica longifolia",
@@ -21947,7 +23572,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Veronica spicata",
@@ -22004,7 +23634,12 @@ const DATA = [
    1,
    2
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.4,
+   "d": 0
+  }
  },
  {
   "lat": "Viburnum bodnantense",
@@ -22063,7 +23698,12 @@ const DATA = [
     "n": 1,
     "t": "Fruits toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Viburnum carlcephalum",
@@ -22110,7 +23750,12 @@ const DATA = [
     "n": 1,
     "t": "Fruits toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Viburnum davidii",
@@ -22154,7 +23799,12 @@ const DATA = [
     "n": 1,
     "t": "Baies toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Viburnum lantana",
@@ -22207,7 +23857,12 @@ const DATA = [
     "n": 1,
     "t": "Baies toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Viburnum opulus",
@@ -22288,7 +23943,12 @@ const DATA = [
     "n": 1,
     "t": "Baies rouges toxiques crues."
    }
-  ]
+  ],
+  "rc": {
+   "t": "dra",
+   "p": 1.0,
+   "d": 1.5
+  }
  },
  {
   "lat": "Viburnum plicatum",
@@ -22347,7 +24007,12 @@ const DATA = [
     "n": 1,
     "t": "Fruits toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Viburnum tinus",
@@ -22496,7 +24161,12 @@ const DATA = [
     "n": 1,
     "t": "Baies bleu-noir toxiques par ingestion."
    }
-  ]
+  ],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Vinca",
@@ -22603,7 +24273,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "dra",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Viola labradorica",
@@ -22647,7 +24322,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.3,
+   "d": 0
+  }
  },
  {
   "lat": "Vitex agnus",
@@ -22697,7 +24377,12 @@ const DATA = [
   "ph": [
    1
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 1.5,
+   "d": 1.5
+  }
  },
  {
   "lat": "Vitis vinifera",
@@ -22744,7 +24429,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "piv",
+   "p": 2.5,
+   "d": 2
+  }
  },
  {
   "lat": "Weigelia",
@@ -22893,7 +24583,12 @@ const DATA = [
    3,
    4
   ],
-  "rq": []
+  "rq": [],
+  "rc": {
+   "t": "fas",
+   "p": 0.8,
+   "d": 1.0
+  }
  },
  {
   "lat": "Yucca filamentosa",
@@ -22969,7 +24664,12 @@ const DATA = [
     "n": 2,
     "t": "Feuilles terminées par une pointe rigide et acérée, à hauteur d'yeux pour un enfant. À écarter des passages et des aires de jeu."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 1.0,
+   "d": 0
+  }
  },
  {
   "lat": "Yucca rostrata",
@@ -23019,6 +24719,11 @@ const DATA = [
     "n": 2,
     "t": "Feuilles à pointe très acérée. À écarter des passages et des aires de jeu."
    }
-  ]
+  ],
+  "rc": {
+   "t": "piv",
+   "p": 1.2,
+   "d": 0
+  }
  }
 ];
